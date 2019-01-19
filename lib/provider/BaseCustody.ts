@@ -1,4 +1,5 @@
 import { Transaction, User, Wallet } from "../models";
+import BaseCustodyFeature from "./BaseCustodyFeature";
 
 export enum UnregisterReason {
   USER_CANCELLATION = 'user-cancelation',
@@ -8,15 +9,8 @@ export enum UnregisterReason {
   OTHER = 'other',
 }
 
-export interface BaseCustodyFeatures {
-  deposit: boolean;
-  withdraw: boolean;
-  p2p: boolean;
-  block: boolean;
-}
-
 export default abstract class BaseCustody {
-  public abstract readonly features: BaseCustodyFeatures;
+  public abstract readonly features: BaseCustodyFeature[];
 
   public abstract async register(user: User, wallet: Wallet);
 
@@ -30,6 +24,6 @@ export default abstract class BaseCustody {
 
   public abstract async balance(wallet: Wallet);
 
-  public abstract async unregister(wallet: Wallet, reason: UnregisterReason);
+  public abstract async unregister(user: User, wallet: Wallet, reason: UnregisterReason);
 
 }
