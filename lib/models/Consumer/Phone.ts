@@ -19,7 +19,7 @@ export interface PhoneSchema extends BaseModelSchema {
 }
 
 export default class Phone extends BaseModel implements PhoneSchema {
-  @IsOptional() type: PhoneType = PhoneType.MOBILE;
+  @IsOptional() type?: PhoneType = PhoneType.MOBILE;
 
   @IsOptional() consumer?: Consumer = undefined;
 

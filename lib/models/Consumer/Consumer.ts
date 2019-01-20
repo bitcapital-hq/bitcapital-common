@@ -31,6 +31,7 @@ export interface ConsumerSchema extends BaseModelSchema {
   status: ConsumerStatus;
   user?: UserSchema;
   userId?: string;
+  taxId?: string;
   documents?: DocumentSchema[];
   phones?: PhoneSchema[];
   addresses?: AddressSchema[];
@@ -38,6 +39,7 @@ export interface ConsumerSchema extends BaseModelSchema {
 
 export default class Consumer extends BaseModel implements ConsumerSchema {
   user?: User = undefined;
+  taxId?: string = undefined;
   @IsUUID() userId?: string = undefined;
 
   @IsNotEmpty()

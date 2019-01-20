@@ -15,7 +15,7 @@ export interface PhoneSchema extends BaseModelSchema {
     verifiedAt?: Date | string;
 }
 export default class Phone extends BaseModel implements PhoneSchema {
-    type: PhoneType;
+    type?: PhoneType;
     consumer?: Consumer;
     consumerId?: string;
     code: string;
