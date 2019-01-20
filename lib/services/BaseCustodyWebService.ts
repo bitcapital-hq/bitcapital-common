@@ -1,43 +1,65 @@
 import { Http, HttpOptions } from "../base";
 import { Transaction, User, Wallet } from "../models";
-import { BaseCustody, UnregisterReason } from "../provider";
+import { BaseCustody, BaseCustodyOptions, UnregisterReason } from "../provider";
 
-export interface CustodyProviderWebServiceOptions extends HttpOptions {
+export interface CustodyProviderWebServiceOptions extends HttpOptions, BaseCustodyOptions {
 }
 
 export default abstract class CustodyProviderWebService extends BaseCustody {
   protected http: Http;
 
-  constructor(protected readonly options: CustodyProviderWebServiceOptions) {
-    super();
+  constructor(public readonly options: CustodyProviderWebServiceOptions) {
+    super(options);
     this.http = new Http(options);
   }
 
-  public register(user: User, wallet: Wallet) {
-    return this.http.post('/provider/register', { user, wallet });
+  public async register(user: User, wallet: Wallet): Promise<{id: string}> {
+    const response = await this.http.post('/provider/register', { user, wallet });
+
+    if(response.data && response.data.id) {
+      return response.data;
+    }
+
+    throw response;
   }
 
-  public wallet(wallet: Wallet) {
-    return this.http.get('/provider/wallets', { wallet });
+  public async update(user: User, wallet: Wallet) {
+    const response = await this.http.post('/provider/update', { user, wallet });
+
+    if(response.data && response.data.id) {
+      return response.data;
+    }
+
+    throw response;
   }
 
-  public transaction(transaction: Transaction) {
-    return this.http.get('/provider/transaction', { transaction });
+  public async history(wallet: Wallet) {
+    const response = await this.http.get('/provider/history', { wallet });
+
+    if(response.data && response.data.length) {
+      return response.data.map(item => new Transaction(item));
+    }
+
+    throw response;
   }
 
-  public update(user: User, wallet: Wallet) {
-    return this.http.post('/provider/update', { user, wallet });
+  public async balance(wallet: Wallet) {
+    const response = await this.http.get('/provider/balance', { wallet });
+
+    if(response.data && response.data.value) {
+      return response.data;
+    }
+
+    throw response;
   }
 
-  public history(wallet: Wallet) {
-    return this.http.get('/provider/history', { wallet });
-  }
+  public async unregister(user: User, wallet: Wallet, reason: UnregisterReason) {
+    const response = await this.http.post('/provider/unregister', { user, wallet, reason });
 
-  public balance(wallet: Wallet) {
-    return this.http.get('/provider/balance', { wallet });
-  }
+    if(response.data && response.data.id) {
+      return response.data;
+    }
 
-  public unregister(user: User, wallet: Wallet, reason: UnregisterReason) {
-    return this.http.post('/provider/wallet', { user, reason, wallet });
+    throw response;
   }
 }

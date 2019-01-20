@@ -1,9 +1,8 @@
-import { Payment, Wallet } from "../../models";
-
+import { Payment } from "../../models";
+import { CustodyFeature } from "../BaseCustodyFeature";
 export default abstract class CustodyPaymentFeature {
+  type = CustodyFeature.PAYMENT;
 
-  public abstract async info(wallet: Wallet);
-
-  public abstract async payment(payment: Payment);
+  public abstract async payment(payment: Payment): Promise<Payment>;
 
 }

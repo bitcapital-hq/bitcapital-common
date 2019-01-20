@@ -14,5 +14,5 @@ export default class BaseModel {
      *
      * @param {boolean} [toString] If toString is true, this will return a formatted error string
      */
-    isValid(toString?: boolean): Promise<string | true | ValidationError[]>;
+    isValid?(toString?: boolean): Promise<string | true | ValidationError[]>;
 }

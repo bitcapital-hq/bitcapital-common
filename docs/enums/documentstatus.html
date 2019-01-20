@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>DocumentType | bitcapital-common (v1.0.0)</title>
+	<title>DocumentStatus | bitcapital-common (v1.0.0)</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,10 +56,10 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="documenttype.html">DocumentType</a>
+					<a href="documentstatus.html">DocumentStatus</a>
 				</li>
 			</ul>
-			<h1>Enumeration DocumentType</h1>
+			<h1>Enumeration DocumentStatus</h1>
 		</div>
 	</div>
 </header>
@@ -73,12 +73,13 @@
 						<section class="tsd-index-section tsd-is-external">
 							<h3>Enumeration members</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-enum-member tsd-parent-kind-enum tsd-is-external"><a href="documenttype.html#brl_address_statement" class="tsd-kind-icon">BRL_<wbr>ADDRESS_<wbr>STATEMENT</a></li>
-								<li class="tsd-kind-enum-member tsd-parent-kind-enum tsd-is-external"><a href="documenttype.html#brl_drivers_license" class="tsd-kind-icon">BRL_<wbr>DRIVERS_<wbr>LICENSE</a></li>
-								<li class="tsd-kind-enum-member tsd-parent-kind-enum tsd-is-external"><a href="documenttype.html#brl_identity" class="tsd-kind-icon">BRL_<wbr>IDENTITY</a></li>
-								<li class="tsd-kind-enum-member tsd-parent-kind-enum tsd-is-external"><a href="documenttype.html#brl_individual_reg" class="tsd-kind-icon">BRL_<wbr>INDIVIDUAL_<wbr>REG</a></li>
-								<li class="tsd-kind-enum-member tsd-parent-kind-enum tsd-is-external"><a href="documenttype.html#passport" class="tsd-kind-icon">PASSPORT</a></li>
-								<li class="tsd-kind-enum-member tsd-parent-kind-enum tsd-is-external"><a href="documenttype.html#tax_id" class="tsd-kind-icon">TAX_<wbr>ID</a></li>
+								<li class="tsd-kind-enum-member tsd-parent-kind-enum tsd-is-external"><a href="documentstatus.html#deleted_by_user" class="tsd-kind-icon">DELETED_<wbr>BY_<wbr>USER</a></li>
+								<li class="tsd-kind-enum-member tsd-parent-kind-enum tsd-is-external"><a href="documentstatus.html#failed_manual_verification" class="tsd-kind-icon">FAILED_<wbr>MANUAL_<wbr>VERIFICATION</a></li>
+								<li class="tsd-kind-enum-member tsd-parent-kind-enum tsd-is-external"><a href="documentstatus.html#failed_verification" class="tsd-kind-icon">FAILED_<wbr>VERIFICATION</a></li>
+								<li class="tsd-kind-enum-member tsd-parent-kind-enum tsd-is-external"><a href="documentstatus.html#manually_verified" class="tsd-kind-icon">MANUALLY_<wbr>VERIFIED</a></li>
+								<li class="tsd-kind-enum-member tsd-parent-kind-enum tsd-is-external"><a href="documentstatus.html#pending_information" class="tsd-kind-icon">PENDING_<wbr>INFORMATION</a></li>
+								<li class="tsd-kind-enum-member tsd-parent-kind-enum tsd-is-external"><a href="documentstatus.html#processing" class="tsd-kind-icon">PROCESSING</a></li>
+								<li class="tsd-kind-enum-member tsd-parent-kind-enum tsd-is-external"><a href="documentstatus.html#verified" class="tsd-kind-icon">VERIFIED</a></li>
 							</ul>
 						</section>
 					</div>
@@ -87,62 +88,72 @@
 			<section class="tsd-panel-group tsd-member-group tsd-is-external">
 				<h2>Enumeration members</h2>
 				<section class="tsd-panel tsd-member tsd-kind-enum-member tsd-parent-kind-enum tsd-is-external">
-					<a name="brl_address_statement" class="tsd-anchor"></a>
-					<h3>BRL_<wbr>ADDRESS_<wbr>STATEMENT</h3>
-					<div class="tsd-signature tsd-kind-icon">BRL_<wbr>ADDRESS_<wbr>STATEMENT<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> =&nbsp;&quot;brl_address_statement&quot;</span></div>
+					<a name="deleted_by_user" class="tsd-anchor"></a>
+					<h3>DELETED_<wbr>BY_<wbr>USER</h3>
+					<div class="tsd-signature tsd-kind-icon">DELETED_<wbr>BY_<wbr>USER<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> =&nbsp;&quot;deleted_by_user&quot;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/bitcapital-hq/bitcapital-common/blob/3ca130f/lib/models/Consumer/Document.ts#L10">models/Consumer/Document.ts:10</a></li>
+							<li>Defined in <a href="https://github.com/bitcapital-hq/bitcapital-common/blob/3ca130f/lib/models/Consumer/Document.ts#L37">models/Consumer/Document.ts:37</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-enum-member tsd-parent-kind-enum tsd-is-external">
-					<a name="brl_drivers_license" class="tsd-anchor"></a>
-					<h3>BRL_<wbr>DRIVERS_<wbr>LICENSE</h3>
-					<div class="tsd-signature tsd-kind-icon">BRL_<wbr>DRIVERS_<wbr>LICENSE<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> =&nbsp;&quot;brl_drivers_license&quot;</span></div>
+					<a name="failed_manual_verification" class="tsd-anchor"></a>
+					<h3>FAILED_<wbr>MANUAL_<wbr>VERIFICATION</h3>
+					<div class="tsd-signature tsd-kind-icon">FAILED_<wbr>MANUAL_<wbr>VERIFICATION<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> =&nbsp;&quot;failed_manual_verification&quot;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/bitcapital-hq/bitcapital-common/blob/3ca130f/lib/models/Consumer/Document.ts#L9">models/Consumer/Document.ts:9</a></li>
+							<li>Defined in <a href="https://github.com/bitcapital-hq/bitcapital-common/blob/3ca130f/lib/models/Consumer/Document.ts#L45">models/Consumer/Document.ts:45</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-enum-member tsd-parent-kind-enum tsd-is-external">
-					<a name="brl_identity" class="tsd-anchor"></a>
-					<h3>BRL_<wbr>IDENTITY</h3>
-					<div class="tsd-signature tsd-kind-icon">BRL_<wbr>IDENTITY<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> =&nbsp;&quot;brl_identity&quot;</span></div>
+					<a name="failed_verification" class="tsd-anchor"></a>
+					<h3>FAILED_<wbr>VERIFICATION</h3>
+					<div class="tsd-signature tsd-kind-icon">FAILED_<wbr>VERIFICATION<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> =&nbsp;&quot;failed_verification&quot;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/bitcapital-hq/bitcapital-common/blob/3ca130f/lib/models/Consumer/Document.ts#L7">models/Consumer/Document.ts:7</a></li>
+							<li>Defined in <a href="https://github.com/bitcapital-hq/bitcapital-common/blob/3ca130f/lib/models/Consumer/Document.ts#L44">models/Consumer/Document.ts:44</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-enum-member tsd-parent-kind-enum tsd-is-external">
-					<a name="brl_individual_reg" class="tsd-anchor"></a>
-					<h3>BRL_<wbr>INDIVIDUAL_<wbr>REG</h3>
-					<div class="tsd-signature tsd-kind-icon">BRL_<wbr>INDIVIDUAL_<wbr>REG<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> =&nbsp;&quot;brl_individual_reg&quot;</span></div>
+					<a name="manually_verified" class="tsd-anchor"></a>
+					<h3>MANUALLY_<wbr>VERIFIED</h3>
+					<div class="tsd-signature tsd-kind-icon">MANUALLY_<wbr>VERIFIED<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> =&nbsp;&quot;manually_verified&quot;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/bitcapital-hq/bitcapital-common/blob/3ca130f/lib/models/Consumer/Document.ts#L8">models/Consumer/Document.ts:8</a></li>
+							<li>Defined in <a href="https://github.com/bitcapital-hq/bitcapital-common/blob/3ca130f/lib/models/Consumer/Document.ts#L36">models/Consumer/Document.ts:36</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-enum-member tsd-parent-kind-enum tsd-is-external">
-					<a name="passport" class="tsd-anchor"></a>
-					<h3>PASSPORT</h3>
-					<div class="tsd-signature tsd-kind-icon">PASSPORT<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> =&nbsp;&quot;passport&quot;</span></div>
+					<a name="pending_information" class="tsd-anchor"></a>
+					<h3>PENDING_<wbr>INFORMATION</h3>
+					<div class="tsd-signature tsd-kind-icon">PENDING_<wbr>INFORMATION<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> =&nbsp;&quot;pending_information&quot;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/bitcapital-hq/bitcapital-common/blob/3ca130f/lib/models/Consumer/Document.ts#L11">models/Consumer/Document.ts:11</a></li>
+							<li>Defined in <a href="https://github.com/bitcapital-hq/bitcapital-common/blob/3ca130f/lib/models/Consumer/Document.ts#L40">models/Consumer/Document.ts:40</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-enum-member tsd-parent-kind-enum tsd-is-external">
-					<a name="tax_id" class="tsd-anchor"></a>
-					<h3>TAX_<wbr>ID</h3>
-					<div class="tsd-signature tsd-kind-icon">TAX_<wbr>ID<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> =&nbsp;&quot;tax_id&quot;</span></div>
+					<a name="processing" class="tsd-anchor"></a>
+					<h3>PROCESSING</h3>
+					<div class="tsd-signature tsd-kind-icon">PROCESSING<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> =&nbsp;&quot;processing&quot;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/bitcapital-hq/bitcapital-common/blob/3ca130f/lib/models/Consumer/Document.ts#L6">models/Consumer/Document.ts:6</a></li>
+							<li>Defined in <a href="https://github.com/bitcapital-hq/bitcapital-common/blob/3ca130f/lib/models/Consumer/Document.ts#L41">models/Consumer/Document.ts:41</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-enum-member tsd-parent-kind-enum tsd-is-external">
+					<a name="verified" class="tsd-anchor"></a>
+					<h3>VERIFIED</h3>
+					<div class="tsd-signature tsd-kind-icon">VERIFIED<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> =&nbsp;&quot;verified&quot;</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/bitcapital-hq/bitcapital-common/blob/3ca130f/lib/models/Consumer/Document.ts#L35">models/Consumer/Document.ts:35</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -161,25 +172,28 @@
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-enum tsd-is-external">
-						<a href="documenttype.html" class="tsd-kind-icon">Document<wbr>Type</a>
+						<a href="documentstatus.html" class="tsd-kind-icon">Document<wbr>Status</a>
 						<ul>
 							<li class=" tsd-kind-enum-member tsd-parent-kind-enum tsd-is-external">
-								<a href="documenttype.html#brl_address_statement" class="tsd-kind-icon">BRL_<wbr>ADDRESS_<wbr>STATEMENT</a>
+								<a href="documentstatus.html#deleted_by_user" class="tsd-kind-icon">DELETED_<wbr>BY_<wbr>USER</a>
 							</li>
 							<li class=" tsd-kind-enum-member tsd-parent-kind-enum tsd-is-external">
-								<a href="documenttype.html#brl_drivers_license" class="tsd-kind-icon">BRL_<wbr>DRIVERS_<wbr>LICENSE</a>
+								<a href="documentstatus.html#failed_manual_verification" class="tsd-kind-icon">FAILED_<wbr>MANUAL_<wbr>VERIFICATION</a>
 							</li>
 							<li class=" tsd-kind-enum-member tsd-parent-kind-enum tsd-is-external">
-								<a href="documenttype.html#brl_identity" class="tsd-kind-icon">BRL_<wbr>IDENTITY</a>
+								<a href="documentstatus.html#failed_verification" class="tsd-kind-icon">FAILED_<wbr>VERIFICATION</a>
 							</li>
 							<li class=" tsd-kind-enum-member tsd-parent-kind-enum tsd-is-external">
-								<a href="documenttype.html#brl_individual_reg" class="tsd-kind-icon">BRL_<wbr>INDIVIDUAL_<wbr>REG</a>
+								<a href="documentstatus.html#manually_verified" class="tsd-kind-icon">MANUALLY_<wbr>VERIFIED</a>
 							</li>
 							<li class=" tsd-kind-enum-member tsd-parent-kind-enum tsd-is-external">
-								<a href="documenttype.html#passport" class="tsd-kind-icon">PASSPORT</a>
+								<a href="documentstatus.html#pending_information" class="tsd-kind-icon">PENDING_<wbr>INFORMATION</a>
 							</li>
 							<li class=" tsd-kind-enum-member tsd-parent-kind-enum tsd-is-external">
-								<a href="documenttype.html#tax_id" class="tsd-kind-icon">TAX_<wbr>ID</a>
+								<a href="documentstatus.html#processing" class="tsd-kind-icon">PROCESSING</a>
+							</li>
+							<li class=" tsd-kind-enum-member tsd-parent-kind-enum tsd-is-external">
+								<a href="documentstatus.html#verified" class="tsd-kind-icon">VERIFIED</a>
 							</li>
 						</ul>
 					</li>

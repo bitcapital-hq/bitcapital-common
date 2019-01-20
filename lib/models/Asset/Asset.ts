@@ -1,11 +1,11 @@
 import { IsNotEmpty, IsOptional } from "class-validator";
 import { BaseModel, BaseModelSchema } from "../../base";
-import { Wallet } from "../Wallet";
+import { Wallet, WalletSchema } from "../Wallet";
 
 export interface AssetSchema extends BaseModelSchema {
   name?: string;
   code: string;
-  wallet?: Wallet;
+  wallet?: WalletSchema;
 }
 
 export default class Asset extends BaseModel implements AssetSchema {

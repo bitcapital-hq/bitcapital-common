@@ -1,5 +1,5 @@
-import { BaseModelSchema, BaseModel } from "../../base";
-import { User } from "../User";
+import { BaseModel, BaseModelSchema } from "../../base";
+import { User, UserSchema } from "../User";
 export interface DomainSettings {
     logo?: string;
     primaryColor?: string;
@@ -12,16 +12,15 @@ export declare enum DomainRole {
 export interface DomainSchema extends BaseModelSchema {
     name: string;
     role: DomainRole;
-    slug: string;
     test?: boolean;
     urls?: string[];
-    users: User[] | null;
+    users: UserSchema[] | null;
     settings: DomainSettings;
 }
 export default class Domain extends BaseModel implements DomainSchema {
     name: string;
     role: DomainRole;
-    slug: string;
+    slug?: string;
     urls?: string[];
     users: User[] | null;
     settings: DomainSettings;

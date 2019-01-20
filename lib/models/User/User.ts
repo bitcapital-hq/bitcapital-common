@@ -1,9 +1,9 @@
 import { IsEmail, IsEnum, IsNotEmpty, IsOptional } from "class-validator";
 import { BaseModel, BaseModelSchema } from "../../base";
-import Consumer from "../Consumer/Consumer";
-import Domain from "../Domain/Domain";
+import Consumer, { ConsumerSchema } from "../Consumer/Consumer";
+import Domain, { DomainSchema } from "../Domain/Domain";
 import { OAuthCredentials } from "../OAuth";
-import Wallet from "../Wallet/Wallet";
+import Wallet, { WalletSchema } from "../Wallet/Wallet";
 import { UserRole } from "./UserRole";
 import { UserStatus } from "./UserStatus";
 
@@ -16,10 +16,10 @@ export interface UserSchema extends BaseModelSchema {
   status?: UserStatus;
   password?: string;
   credentials?: OAuthCredentials;
-  domain?: Domain;
-  consumer?: Consumer;
+  domain?: DomainSchema;
+  consumer?: ConsumerSchema;
   virtual?: boolean;
-  wallets?: Wallet[];
+  wallets?: WalletSchema[];
 }
 
 export default class User extends BaseModel implements UserSchema {

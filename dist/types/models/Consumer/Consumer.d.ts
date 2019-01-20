@@ -1,29 +1,30 @@
-import { BaseModelSchema, BaseModel } from "../../base";
-import { User } from "../User";
-import Phone from "./Phone";
-import Address from "./Address";
+import { BaseModel, BaseModelSchema } from "../../base";
+import { User, UserSchema } from "../User";
+import Address, { AddressSchema } from "./Address";
+import Document, { DocumentSchema } from "./Document";
+import Phone, { PhoneSchema } from "./Phone";
 export declare enum ConsumerStatus {
+    READY = "ready",
+    REJECTED = "rejected",
     PENDING_DOCUMENTS = "pending_documents",
-    PENDING_SELFIE = "pending_selfie",
-    PROCESSING = "processing",
-    VERIFIED = "verified",
-    SUSPENDED = "suspended",
-    DELETED = "deleted",
-    INVALID_DOCUMENTS = "invalid_documennts",
-    INVALID_SELFIE = "invalid_selfie",
-    MANUAL_VERIFICATION = "manual_verification"
+    PROCESSING_DOCUMENTS = "processing_documents",
+    PROCESSING_WALLETS = "processing_wallets",
+    PROVIDER_FAILED = "provider_failed",
+    INVALID_DOCUMENTS = "invalid_documents",
+    MANUAL_VERIFICATION = "manual_verification",
+    BLOCKED = "blocked"
 }
 export interface ConsumerSchema extends BaseModelSchema {
     status: ConsumerStatus;
-    user?: User;
-    userId: string;
-    documents?: Document[];
-    phones?: Phone[];
-    addresses?: Address[];
+    user?: UserSchema;
+    userId?: string;
+    documents?: DocumentSchema[];
+    phones?: PhoneSchema[];
+    addresses?: AddressSchema[];
 }
 export default class Consumer extends BaseModel implements ConsumerSchema {
     user?: User;
-    userId: string;
+    userId?: string;
     status: ConsumerStatus;
     documents?: Document[];
     phones?: Phone[];

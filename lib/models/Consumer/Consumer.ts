@@ -1,33 +1,44 @@
-import { IsNotEmpty, IsEnum, IsUUID } from "class-validator";
-import { BaseModelSchema, BaseModel } from "../../base";
-import { User } from "../User";
-import Phone from "./Phone";
-import Address from "./Address";
+import { IsEnum, IsNotEmpty, IsUUID } from "class-validator";
+import { BaseModel, BaseModelSchema } from "../../base";
+import { User, UserSchema } from "../User";
+import Address, { AddressSchema } from "./Address";
+import Document, { DocumentSchema } from "./Document";
+import Phone, { PhoneSchema } from "./Phone";
 
 export enum ConsumerStatus {
+  /* Success states */
+  READY = "ready",
+  REJECTED = "rejected",
+
+  /* Pending states */
   PENDING_DOCUMENTS = "pending_documents",
-  PENDING_SELFIE = "pending_selfie",
-  PROCESSING = "processing",
-  VERIFIED = "verified",
-  SUSPENDED = "suspended",
-  DELETED = "deleted",
-  INVALID_DOCUMENTS = "invalid_documennts",
-  INVALID_SELFIE = "invalid_selfie",
-  MANUAL_VERIFICATION = "manual_verification"
+
+  /* Processing states */
+  PROCESSING_DOCUMENTS = "processing_documents",
+  PROCESSING_WALLETS = "processing_wallets",
+
+  /* Error states */
+  PROVIDER_FAILED = "provider_failed",
+  INVALID_DOCUMENTS = "invalid_documents",
+  MANUAL_VERIFICATION = "manual_verification",
+
+  /* Blocked state */
+  BLOCKED = "blocked"
 }
+
 
 export interface ConsumerSchema extends BaseModelSchema {
   status: ConsumerStatus;
-  user?: User;
-  userId: string;
-  documents?: Document[];
-  phones?: Phone[];
-  addresses?: Address[];
+  user?: UserSchema;
+  userId?: string;
+  documents?: DocumentSchema[];
+  phones?: PhoneSchema[];
+  addresses?: AddressSchema[];
 }
 
 export default class Consumer extends BaseModel implements ConsumerSchema {
   user?: User = undefined;
-  @IsUUID() userId: string = undefined;
+  @IsUUID() userId?: string = undefined;
 
   @IsNotEmpty()
   @IsEnum(ConsumerStatus)

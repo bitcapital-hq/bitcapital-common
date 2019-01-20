@@ -1,5 +1,5 @@
 import { BaseModel, BaseModelSchema } from "../../base";
-import Consumer from "./Consumer";
+import Consumer, { ConsumerSchema } from "./Consumer";
 export declare enum PhoneType {
     HOME = "home",
     WORK = "work",
@@ -7,8 +7,8 @@ export declare enum PhoneType {
 }
 export interface PhoneSchema extends BaseModelSchema {
     type?: PhoneType;
-    consumer?: Consumer;
-    consumerId: string;
+    consumer?: ConsumerSchema;
+    consumerId?: string;
     code: string;
     number: string;
     extension?: string;
@@ -17,7 +17,7 @@ export interface PhoneSchema extends BaseModelSchema {
 export default class Phone extends BaseModel implements PhoneSchema {
     type: PhoneType;
     consumer?: Consumer;
-    consumerId: string;
+    consumerId?: string;
     code: string;
     number: string;
     extension?: string;

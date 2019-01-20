@@ -1,5 +1,6 @@
-import { Payment, Wallet } from "../../models";
+import { Payment } from "../../models";
+import { CustodyFeature } from "../BaseCustodyFeature";
 export default abstract class CustodyPaymentFeature {
-    abstract info(wallet: Wallet): any;
-    abstract payment(payment: Payment): any;
+    type: CustodyFeature;
+    abstract payment(payment: Payment): Promise<Payment>;
 }

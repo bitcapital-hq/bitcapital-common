@@ -2,12 +2,13 @@ export * from './User';
 export { default as Domain, DomainSchema, DomainRole } from "./Domain/Domain";
 
 export {
-  default as Wallet,
+  Wallet,
   WalletSchema,
   StellarWalletData,
   BankingWalletData,
-  WalletBalance
-} from "./Wallet/Wallet";
+  WalletBalance,
+  WalletStatus,
+} from "./Wallet";
 
 export { default as Payment, PaymentSchema } from "./Payment/Payment";
 export { PaymentRequestSchema } from "./Payment/PaymentRequest";
