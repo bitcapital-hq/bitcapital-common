@@ -60,7 +60,7 @@ export interface DocumentSchema extends BaseModelSchema {
 
 export default class Document extends BaseModel implements DocumentSchema {
   consumer?: Consumer = undefined;
-  @IsUUID() consumerId: string = undefined;
+  @IsUUID() consumerId?: string = undefined;
 
   @IsNotEmpty()
   @IsEnum(DocumentType)

@@ -48,7 +48,7 @@ export interface DocumentSchema extends BaseModelSchema {
 }
 export default class Document extends BaseModel implements DocumentSchema {
     consumer?: Consumer;
-    consumerId: string;
+    consumerId?: string;
     type: DocumentType;
     status: DocumentStatus;
     number?: string;

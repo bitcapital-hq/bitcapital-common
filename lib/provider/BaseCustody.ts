@@ -1,4 +1,4 @@
-import { Transaction, User, Wallet } from "../models";
+import { TransactionSchema, UserSchema, WalletSchema } from "../models";
 import BaseCustodyFeature from "./BaseCustodyFeature";
 
 export enum UnregisterReason {
@@ -17,7 +17,7 @@ export default abstract class BaseCustody {
   public abstract readonly features: BaseCustodyFeature[];
 
   public constructor(public options: BaseCustodyOptions) {
-    
+
   }
 
   /**
@@ -26,7 +26,7 @@ export default abstract class BaseCustody {
    * @param user The user instance to be registered in provider
    * @param wallet The specific wallet to be registered in provider
    */
-  public abstract async register(user: User, wallet: Wallet): Promise<{id: string}>;
+  public abstract async register(user: UserSchema, wallet: WalletSchema): Promise<{ id: string }>;
 
   /**
    * Updates the information of an existing user and wallet in the external provider.
@@ -34,21 +34,21 @@ export default abstract class BaseCustody {
    * @param user The user instance to be updated
    * @param wallet The wallet instance to be updated
    */
-  public abstract async update(user: User, wallet: Wallet): Promise<{id: string}>;
+  public abstract async update(user: UserSchema, wallet: WalletSchema): Promise<{ id: string }>;
 
   /**
    * Gets the history of transactions in the external provider.
    * 
    * @param wallet The wallet instance to get the history from 
    */
-  public abstract async history(wallet: Wallet): Promise<Transaction[]>;
+  public abstract async history(wallet: WalletSchema): Promise<TransactionSchema[]>;
 
   /**
    * Gets the current balance in the external custody provider.
    * 
    * @param wallet The wallet instance to get the history from 
    */
-  public abstract async balance(wallet: Wallet): Promise<{value: string}>;
+  public abstract async balance(wallet: WalletSchema): Promise<[{ balance: string }]>;
 
   /**
    * Unregisters a wallet from the provider for a specific User. This
@@ -57,6 +57,7 @@ export default abstract class BaseCustody {
    * @param user The user instance to be unregistered in provider
    * @param wallet The specific wallet to be unregistered in provider
    */
-  public abstract async unregister(user: User, wallet: Wallet, reason: UnregisterReason): Promise<{id: string}>;
+  public abstract async unregister(user: UserSchema, wallet: WalletSchema, reason: UnregisterReason)
+    : Promise<{ id: string }>;
 
 }

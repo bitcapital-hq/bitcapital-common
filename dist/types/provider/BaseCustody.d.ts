@@ -1,4 +1,4 @@
-import { Transaction, User, Wallet } from "../models";
+import { TransactionSchema, UserSchema, WalletSchema } from "../models";
 import BaseCustodyFeature from "./BaseCustodyFeature";
 export declare enum UnregisterReason {
     USER_CANCELLATION = "user-cancelation",
@@ -19,7 +19,7 @@ export default abstract class BaseCustody {
      * @param user The user instance to be registered in provider
      * @param wallet The specific wallet to be registered in provider
      */
-    abstract register(user: User, wallet: Wallet): Promise<{
+    abstract register(user: UserSchema, wallet: WalletSchema): Promise<{
         id: string;
     }>;
     /**
@@ -28,7 +28,7 @@ export default abstract class BaseCustody {
      * @param user The user instance to be updated
      * @param wallet The wallet instance to be updated
      */
-    abstract update(user: User, wallet: Wallet): Promise<{
+    abstract update(user: UserSchema, wallet: WalletSchema): Promise<{
         id: string;
     }>;
     /**
@@ -36,15 +36,15 @@ export default abstract class BaseCustody {
      *
      * @param wallet The wallet instance to get the history from
      */
-    abstract history(wallet: Wallet): Promise<Transaction[]>;
+    abstract history(wallet: WalletSchema): Promise<TransactionSchema[]>;
     /**
      * Gets the current balance in the external custody provider.
      *
      * @param wallet The wallet instance to get the history from
      */
-    abstract balance(wallet: Wallet): Promise<{
-        value: string;
-    }>;
+    abstract balance(wallet: WalletSchema): Promise<[{
+        balance: string;
+    }]>;
     /**
      * Unregisters a wallet from the provider for a specific User. This
      * may be irreversible.
@@ -52,7 +52,7 @@ export default abstract class BaseCustody {
      * @param user The user instance to be unregistered in provider
      * @param wallet The specific wallet to be unregistered in provider
      */
-    abstract unregister(user: User, wallet: Wallet, reason: UnregisterReason): Promise<{
+    abstract unregister(user: UserSchema, wallet: WalletSchema, reason: UnregisterReason): Promise<{
         id: string;
     }>;
 }
