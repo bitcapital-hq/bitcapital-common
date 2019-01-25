@@ -1,5 +1,6 @@
 import { UserSchema, WalletSchema } from "../models";
-import BaseCustodyFeature from "./BaseCustodyFeature";
+import BaseCustodyFeature, { CustodyFeature } from "./BaseCustodyFeature";
+import { CustodyProvider } from "./CustodyProvider";
 export declare enum UnregisterReason {
     USER_CANCELLATION = "user-cancelation",
     MEDIATOR_CANCELLATION = "mediator-cancelation",
@@ -11,8 +12,10 @@ export interface BaseCustodyOptions {
 }
 export default abstract class BaseCustody {
     options: BaseCustodyOptions;
+    abstract readonly type: CustodyProvider;
     abstract readonly features: BaseCustodyFeature[];
     constructor(options: BaseCustodyOptions);
+    feature(type: CustodyFeature): BaseCustodyFeature;
     /**
      * Registers a new wallet in the provider for a specific User.
      *

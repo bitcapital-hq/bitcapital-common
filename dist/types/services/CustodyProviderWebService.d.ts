@@ -10,6 +10,10 @@ export default abstract class CustodyProviderWebService extends BaseCustody {
     register(user: User, wallet: Wallet): Promise<{
         id: string;
     }>;
-    update(user: User, wallet: Wallet): Promise<any>;
-    unregister(user: User, wallet: Wallet, reason: UnregisterReason): Promise<any>;
+    update(user: User, wallet: Wallet): Promise<{
+        id: string;
+    }>;
+    unregister(user: User, wallet: Wallet, reason: UnregisterReason): Promise<{
+        id: string;
+    }>;
 }

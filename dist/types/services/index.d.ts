@@ -1,1 +1,2 @@
-export { default as CustodyProviderWebService, CustodyProviderWebServiceOptions } from './CustodyProviderWebService';
+export { CustodyProviderWebServiceOptions, default as CustodyProviderWebService } from './CustodyProviderWebService';
+export * from './features';

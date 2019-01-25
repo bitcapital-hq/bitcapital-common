@@ -6,7 +6,7 @@ export interface CustodyProviderWebServiceOptions extends HttpOptions, BaseCusto
 }
 
 export default abstract class CustodyProviderWebService extends BaseCustody {
-  protected http: Http;
+  protected http: Http; 
 
   constructor(public readonly options: CustodyProviderWebServiceOptions) {
     super(options);
@@ -23,7 +23,7 @@ export default abstract class CustodyProviderWebService extends BaseCustody {
     throw response;
   }
 
-  public async update(user: User, wallet: Wallet) {
+  public async update(user: User, wallet: Wallet): Promise<{ id: string }> {
     const response = await this.http.post('/provider/update', { user, wallet });
 
     if (response.data && response.data.id) {
@@ -33,7 +33,7 @@ export default abstract class CustodyProviderWebService extends BaseCustody {
     throw response;
   }
 
-  public async unregister(user: User, wallet: Wallet, reason: UnregisterReason) {
+  public async unregister(user: User, wallet: Wallet, reason: UnregisterReason): Promise<{ id: string }> {
     const response = await this.http.post('/provider/unregister', { user, wallet, reason });
 
     if (response.data && response.data.id) {

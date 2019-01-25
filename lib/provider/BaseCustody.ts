@@ -1,5 +1,6 @@
 import { UserSchema, WalletSchema } from "../models";
-import BaseCustodyFeature from "./BaseCustodyFeature";
+import BaseCustodyFeature, { CustodyFeature } from "./BaseCustodyFeature";
+import { CustodyProvider } from "./CustodyProvider";
 
 export enum UnregisterReason {
   USER_CANCELLATION = 'user-cancelation',
@@ -10,14 +11,18 @@ export enum UnregisterReason {
 }
 
 export interface BaseCustodyOptions {
-
 }
 
 export default abstract class BaseCustody {
+  public abstract readonly type: CustodyProvider;
   public abstract readonly features: BaseCustodyFeature[];
 
   public constructor(public options: BaseCustodyOptions) {
 
+  }
+
+  public feature(type: CustodyFeature) {
+    return this.features.find(f => f.type === type);
   }
 
   /**
