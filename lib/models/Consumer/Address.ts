@@ -16,7 +16,7 @@ export interface AddressSchema extends BaseModelSchema {
   code: string;
   state: string;
   street: string;
-  complement: string;
+  complement?: string;
   number: string;
   reference?: string;
 }
@@ -32,7 +32,7 @@ export default class Address extends BaseModel implements AddressSchema {
   @IsNotEmpty() city: string = undefined;
   @IsNotEmpty() code: string = undefined;
   @IsNotEmpty() street: string = undefined;
-  @IsNotEmpty() complement: string = undefined;
+  @IsNotEmpty() complement?: string = undefined;
   @IsNotEmpty() number: string = undefined;
 
   constructor(data: Partial<AddressSchema>) {

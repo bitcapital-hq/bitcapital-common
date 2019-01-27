@@ -1,7 +1,7 @@
 import { PaymentSchema, Wallet } from "../../models";
-import { CustodyFeature } from "../BaseCustodyFeature";
+import BaseCustodyFeature, { CustodyFeature } from "../BaseCustodyFeature";
 
-export default abstract class CustodyWithdrawFeature {
+export default abstract class CustodyWithdrawFeature extends BaseCustodyFeature {
   type = CustodyFeature.WITHDRAW;
 
   /**

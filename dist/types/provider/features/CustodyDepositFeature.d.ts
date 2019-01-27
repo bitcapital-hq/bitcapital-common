@@ -1,6 +1,6 @@
 import { PaymentSchema, Wallet } from "../../models";
-import { CustodyFeature } from "../BaseCustodyFeature";
-export default abstract class CustodyDepositFeature {
+import BaseCustodyFeature, { CustodyFeature } from "../BaseCustodyFeature";
+export default abstract class CustodyDepositFeature extends BaseCustodyFeature {
     type: CustodyFeature;
     /**
      * Gets information about depositing assets in the specified wallet. This

@@ -1,0 +1,11 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const BaseCustodyFeature_1 = require("../BaseCustodyFeature");
+class CustodyPostbackFeature extends BaseCustodyFeature_1.default {
+    constructor() {
+        super(...arguments);
+        this.type = BaseCustodyFeature_1.CustodyFeature.POSTBACK;
+    }
+}
+exports.default = CustodyPostbackFeature;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiQ3VzdG9keVBvc3RiYWNrRmVhdHVyZS5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIi4uLy4uLy4uL2xpYi9wcm92aWRlci9mZWF0dXJlcy9DdXN0b2R5UG9zdGJhY2tGZWF0dXJlLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7O0FBQUEsOERBQTJFO0FBRTNFLDRCQUFxRCxTQUFRLDRCQUFrQjtJQUEvRTs7UUFDRSxTQUFJLEdBQUcsbUNBQWMsQ0FBQyxRQUFRLENBQUM7SUFJakMsQ0FBQztDQUFBO0FBTEQseUNBS0MiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgQmFzZUN1c3RvZHlGZWF0dXJlLCB7IEN1c3RvZHlGZWF0dXJlIH0gZnJvbSBcIi4uL0Jhc2VDdXN0b2R5RmVhdHVyZVwiO1xuXG5leHBvcnQgZGVmYXVsdCBhYnN0cmFjdCBjbGFzcyBDdXN0b2R5UG9zdGJhY2tGZWF0dXJlIGV4dGVuZHMgQmFzZUN1c3RvZHlGZWF0dXJlIHtcbiAgdHlwZSA9IEN1c3RvZHlGZWF0dXJlLlBPU1RCQUNLO1xuXG4gIHB1YmxpYyBhYnN0cmFjdCBhc3luYyBvblBvc3RiYWNrKGRhdGE/OiBhbnkpOiBQcm9taXNlPHZvaWQ+O1xuXG59Il19

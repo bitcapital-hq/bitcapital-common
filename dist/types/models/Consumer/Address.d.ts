@@ -13,7 +13,7 @@ export interface AddressSchema extends BaseModelSchema {
     code: string;
     state: string;
     street: string;
-    complement: string;
+    complement?: string;
     number: string;
     reference?: string;
 }
@@ -27,7 +27,7 @@ export default class Address extends BaseModel implements AddressSchema {
     city: string;
     code: string;
     street: string;
-    complement: string;
+    complement?: string;
     number: string;
     constructor(data: Partial<AddressSchema>);
 }

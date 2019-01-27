@@ -94,13 +94,13 @@
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-external"><a href="basecustody.html#features" class="tsd-kind-icon">features</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-external"><a href="basecustody.html#options" class="tsd-kind-icon">options</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-external"><a href="basecustody.html#type" class="tsd-kind-icon">type</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section tsd-is-external">
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-external"><a href="basecustody.html#balance" class="tsd-kind-icon">balance</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-external"><a href="basecustody.html#history" class="tsd-kind-icon">history</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-external"><a href="basecustody.html#feature" class="tsd-kind-icon">feature</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-external"><a href="basecustody.html#register" class="tsd-kind-icon">register</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-external"><a href="basecustody.html#unregister" class="tsd-kind-icon">unregister</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-external"><a href="basecustody.html#update" class="tsd-kind-icon">update</a></li>
@@ -121,7 +121,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/bitcapital-hq/bitcapital-common/blob/3ca130f/lib/provider/BaseCustody.ts#L17">provider/BaseCustody.ts:17</a></li>
+									<li>Defined in <a href="https://github.com/bitcapital-hq/bitcapital-common/blob/ac9fd62/lib/provider/BaseCustody.ts#L18">provider/BaseCustody.ts:18</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -143,7 +143,7 @@
 					<div class="tsd-signature tsd-kind-icon">features<span class="tsd-signature-symbol">:</span> <a href="basecustodyfeature.html" class="tsd-signature-type">BaseCustodyFeature</a><span class="tsd-signature-symbol">[]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/bitcapital-hq/bitcapital-common/blob/3ca130f/lib/provider/BaseCustody.ts#L17">provider/BaseCustody.ts:17</a></li>
+							<li>Defined in <a href="https://github.com/bitcapital-hq/bitcapital-common/blob/ac9fd62/lib/provider/BaseCustody.ts#L18">provider/BaseCustody.ts:18</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -153,7 +153,17 @@
 					<div class="tsd-signature tsd-kind-icon">options<span class="tsd-signature-symbol">:</span> <a href="../interfaces/basecustodyoptions.html" class="tsd-signature-type">BaseCustodyOptions</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/bitcapital-hq/bitcapital-common/blob/3ca130f/lib/provider/BaseCustody.ts#L19">provider/BaseCustody.ts:19</a></li>
+							<li>Defined in <a href="https://github.com/bitcapital-hq/bitcapital-common/blob/ac9fd62/lib/provider/BaseCustody.ts#L20">provider/BaseCustody.ts:20</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-external">
+					<a name="type" class="tsd-anchor"></a>
+					<h3>type</h3>
+					<div class="tsd-signature tsd-kind-icon">type<span class="tsd-signature-symbol">:</span> <a href="../enums/custodyprovider.html" class="tsd-signature-type">CustodyProvider</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/bitcapital-hq/bitcapital-common/blob/ac9fd62/lib/provider/BaseCustody.ts#L17">provider/BaseCustody.ts:17</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -161,64 +171,25 @@
 			<section class="tsd-panel-group tsd-member-group tsd-is-external">
 				<h2>Methods</h2>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-external">
-					<a name="balance" class="tsd-anchor"></a>
-					<h3>balance</h3>
+					<a name="feature" class="tsd-anchor"></a>
+					<h3>feature</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-external">
-						<li class="tsd-signature tsd-kind-icon">balance<span class="tsd-signature-symbol">(</span>wallet<span class="tsd-signature-symbol">: </span><a href="wallet.html" class="tsd-signature-type">Wallet</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">feature<span class="tsd-signature-symbol">(</span>type<span class="tsd-signature-symbol">: </span><a href="../enums/custodyfeature.html" class="tsd-signature-type">CustodyFeature</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="basecustodyfeature.html" class="tsd-signature-type">BaseCustodyFeature</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/bitcapital-hq/bitcapital-common/blob/3ca130f/lib/provider/BaseCustody.ts#L51">provider/BaseCustody.ts:51</a></li>
+									<li>Defined in <a href="https://github.com/bitcapital-hq/bitcapital-common/blob/ac9fd62/lib/provider/BaseCustody.ts#L24">provider/BaseCustody.ts:24</a></li>
 								</ul>
 							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Gets the current balance in the external custody provider.</p>
-								</div>
-							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>wallet: <a href="wallet.html" class="tsd-signature-type">Wallet</a></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>The wallet instance to get the history from</p>
-									</div>
+									<h5>type: <a href="../enums/custodyfeature.html" class="tsd-signature-type">CustodyFeature</a></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">&gt;</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-external">
-					<a name="history" class="tsd-anchor"></a>
-					<h3>history</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-external">
-						<li class="tsd-signature tsd-kind-icon">history<span class="tsd-signature-symbol">(</span>wallet<span class="tsd-signature-symbol">: </span><a href="wallet.html" class="tsd-signature-type">Wallet</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="transaction.html" class="tsd-signature-type">Transaction</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/bitcapital-hq/bitcapital-common/blob/3ca130f/lib/provider/BaseCustody.ts#L44">provider/BaseCustody.ts:44</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Gets the history of transactions in the external provider.</p>
-								</div>
-							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>wallet: <a href="wallet.html" class="tsd-signature-type">Wallet</a></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>The wallet instance to get the history from</p>
-									</div>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="transaction.html" class="tsd-signature-type">Transaction</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<h4 class="tsd-returns-title">Returns <a href="basecustodyfeature.html" class="tsd-signature-type">BaseCustodyFeature</a></h4>
 						</li>
 					</ul>
 				</section>
@@ -226,13 +197,13 @@
 					<a name="register" class="tsd-anchor"></a>
 					<h3>register</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-external">
-						<li class="tsd-signature tsd-kind-icon">register<span class="tsd-signature-symbol">(</span>user<span class="tsd-signature-symbol">: </span><a href="user.html" class="tsd-signature-type">User</a>, wallet<span class="tsd-signature-symbol">: </span><a href="wallet.html" class="tsd-signature-type">Wallet</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">register<span class="tsd-signature-symbol">(</span>user<span class="tsd-signature-symbol">: </span><a href="../interfaces/userschema.html" class="tsd-signature-type">UserSchema</a>, wallet<span class="tsd-signature-symbol">: </span><a href="../interfaces/walletschema.html" class="tsd-signature-type">WalletSchema</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/bitcapital-hq/bitcapital-common/blob/3ca130f/lib/provider/BaseCustody.ts#L29">provider/BaseCustody.ts:29</a></li>
+									<li>Defined in <a href="https://github.com/bitcapital-hq/bitcapital-common/blob/ac9fd62/lib/provider/BaseCustody.ts#L34">provider/BaseCustody.ts:34</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -243,13 +214,13 @@
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>user: <a href="user.html" class="tsd-signature-type">User</a></h5>
+									<h5>user: <a href="../interfaces/userschema.html" class="tsd-signature-type">UserSchema</a></h5>
 									<div class="tsd-comment tsd-typography">
 										<p>The user instance to be registered in provider</p>
 									</div>
 								</li>
 								<li>
-									<h5>wallet: <a href="wallet.html" class="tsd-signature-type">Wallet</a></h5>
+									<h5>wallet: <a href="../interfaces/walletschema.html" class="tsd-signature-type">WalletSchema</a></h5>
 									<div class="tsd-comment tsd-typography">
 										<p>The specific wallet to be registered in provider</p>
 									</div>
@@ -263,13 +234,13 @@
 					<a name="unregister" class="tsd-anchor"></a>
 					<h3>unregister</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-external">
-						<li class="tsd-signature tsd-kind-icon">unregister<span class="tsd-signature-symbol">(</span>user<span class="tsd-signature-symbol">: </span><a href="user.html" class="tsd-signature-type">User</a>, wallet<span class="tsd-signature-symbol">: </span><a href="wallet.html" class="tsd-signature-type">Wallet</a>, reason<span class="tsd-signature-symbol">: </span><a href="../enums/unregisterreason.html" class="tsd-signature-type">UnregisterReason</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">unregister<span class="tsd-signature-symbol">(</span>user<span class="tsd-signature-symbol">: </span><a href="../interfaces/userschema.html" class="tsd-signature-type">UserSchema</a>, wallet<span class="tsd-signature-symbol">: </span><a href="../interfaces/walletschema.html" class="tsd-signature-type">WalletSchema</a>, reason<span class="tsd-signature-symbol">: </span><a href="../enums/unregisterreason.html" class="tsd-signature-type">UnregisterReason</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/bitcapital-hq/bitcapital-common/blob/3ca130f/lib/provider/BaseCustody.ts#L60">provider/BaseCustody.ts:60</a></li>
+									<li>Defined in <a href="https://github.com/bitcapital-hq/bitcapital-common/blob/ac9fd62/lib/provider/BaseCustody.ts#L51">provider/BaseCustody.ts:51</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -281,13 +252,13 @@
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>user: <a href="user.html" class="tsd-signature-type">User</a></h5>
+									<h5>user: <a href="../interfaces/userschema.html" class="tsd-signature-type">UserSchema</a></h5>
 									<div class="tsd-comment tsd-typography">
 										<p>The user instance to be unregistered in provider</p>
 									</div>
 								</li>
 								<li>
-									<h5>wallet: <a href="wallet.html" class="tsd-signature-type">Wallet</a></h5>
+									<h5>wallet: <a href="../interfaces/walletschema.html" class="tsd-signature-type">WalletSchema</a></h5>
 									<div class="tsd-comment tsd-typography">
 										<p>The specific wallet to be unregistered in provider</p>
 									</div>
@@ -304,13 +275,13 @@
 					<a name="update" class="tsd-anchor"></a>
 					<h3>update</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-external">
-						<li class="tsd-signature tsd-kind-icon">update<span class="tsd-signature-symbol">(</span>user<span class="tsd-signature-symbol">: </span><a href="user.html" class="tsd-signature-type">User</a>, wallet<span class="tsd-signature-symbol">: </span><a href="wallet.html" class="tsd-signature-type">Wallet</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">update<span class="tsd-signature-symbol">(</span>user<span class="tsd-signature-symbol">: </span><a href="../interfaces/userschema.html" class="tsd-signature-type">UserSchema</a>, wallet<span class="tsd-signature-symbol">: </span><a href="../interfaces/walletschema.html" class="tsd-signature-type">WalletSchema</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/bitcapital-hq/bitcapital-common/blob/3ca130f/lib/provider/BaseCustody.ts#L37">provider/BaseCustody.ts:37</a></li>
+									<li>Defined in <a href="https://github.com/bitcapital-hq/bitcapital-common/blob/ac9fd62/lib/provider/BaseCustody.ts#L42">provider/BaseCustody.ts:42</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -321,13 +292,13 @@
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>user: <a href="user.html" class="tsd-signature-type">User</a></h5>
+									<h5>user: <a href="../interfaces/userschema.html" class="tsd-signature-type">UserSchema</a></h5>
 									<div class="tsd-comment tsd-typography">
 										<p>The user instance to be updated</p>
 									</div>
 								</li>
 								<li>
-									<h5>wallet: <a href="wallet.html" class="tsd-signature-type">Wallet</a></h5>
+									<h5>wallet: <a href="../interfaces/walletschema.html" class="tsd-signature-type">WalletSchema</a></h5>
 									<div class="tsd-comment tsd-typography">
 										<p>The wallet instance to be updated</p>
 									</div>
@@ -363,11 +334,11 @@
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-external">
 								<a href="basecustody.html#options" class="tsd-kind-icon">options</a>
 							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-external">
-								<a href="basecustody.html#balance" class="tsd-kind-icon">balance</a>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-external">
+								<a href="basecustody.html#type" class="tsd-kind-icon">type</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-external">
-								<a href="basecustody.html#history" class="tsd-kind-icon">history</a>
+								<a href="basecustody.html#feature" class="tsd-kind-icon">feature</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-external">
 								<a href="basecustody.html#register" class="tsd-kind-icon">register</a>
