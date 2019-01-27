@@ -6,7 +6,7 @@ export declare type HttpRequestOptions = AxiosRequestConfig;
 export interface HttpOptions extends HttpRequestOptions {
     client?: HttpClient;
 }
-export default class Http {
+export declare class Http {
     protected options: HttpOptions;
     protected client: HttpClient;
     constructor(options: HttpOptions);

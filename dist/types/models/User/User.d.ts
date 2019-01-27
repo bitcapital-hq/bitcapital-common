@@ -1,15 +1,15 @@
 import { BaseModel, BaseModelSchema } from "../../base";
-import Consumer, { ConsumerSchema } from "../Consumer/Consumer";
+import { Consumer, ConsumerSchema } from "../Consumer";
 import Domain, { DomainSchema } from "../Domain/Domain";
 import { OAuthCredentials } from "../OAuth";
-import Wallet, { WalletSchema } from "../Wallet/Wallet";
+import { Wallet, WalletSchema } from "../Wallet/Wallet";
 import { UserRole } from "./UserRole";
 import { UserStatus } from "./UserStatus";
 export interface UserSchema extends BaseModelSchema {
-    name: string;
+    name?: string;
     firstName: string;
     lastName: string;
-    email: string;
+    email?: string;
     role?: UserRole;
     status?: UserStatus;
     password?: string;
@@ -19,7 +19,7 @@ export interface UserSchema extends BaseModelSchema {
     virtual?: boolean;
     wallets?: WalletSchema[];
 }
-export default class User extends BaseModel implements UserSchema {
+export declare class User extends BaseModel implements UserSchema {
     name: string;
     firstName: string;
     lastName: string;

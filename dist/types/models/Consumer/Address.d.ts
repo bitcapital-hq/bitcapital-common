@@ -1,5 +1,5 @@
 import { BaseModelSchema, BaseModel } from "../../base";
-import Consumer, { ConsumerSchema } from "./Consumer";
+import { Consumer, ConsumerSchema } from "./Consumer";
 export declare enum AddressType {
     HOME = "home",
     WORK = "work"
@@ -17,7 +17,7 @@ export interface AddressSchema extends BaseModelSchema {
     number: string;
     reference?: string;
 }
-export default class Address extends BaseModel implements AddressSchema {
+export declare class Address extends BaseModel implements AddressSchema {
     consumer?: Consumer;
     consumerId?: string;
     type?: AddressType;

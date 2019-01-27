@@ -1,1 +1,1 @@
-export { default as Payment, PaymentSchema } from "./Payment";
+export { Payment, PaymentSchema } from "./Payment";

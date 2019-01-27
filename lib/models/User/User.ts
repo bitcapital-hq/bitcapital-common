@@ -1,17 +1,17 @@
 import { IsEmail, IsEnum, IsNotEmpty, IsOptional } from "class-validator";
 import { BaseModel, BaseModelSchema } from "../../base";
-import Consumer, { ConsumerSchema } from "../Consumer/Consumer";
+import { Consumer, ConsumerSchema } from "../Consumer";
 import Domain, { DomainSchema } from "../Domain/Domain";
 import { OAuthCredentials } from "../OAuth";
-import Wallet, { WalletSchema } from "../Wallet/Wallet";
+import { Wallet, WalletSchema } from "../Wallet/Wallet";
 import { UserRole } from "./UserRole";
 import { UserStatus } from "./UserStatus";
 
 export interface UserSchema extends BaseModelSchema {
-  name: string;
+  name?: string;
   firstName: string;
   lastName: string;
-  email: string;
+  email?: string;
   role?: UserRole;
   status?: UserStatus;
   password?: string;
@@ -22,7 +22,7 @@ export interface UserSchema extends BaseModelSchema {
   wallets?: WalletSchema[];
 }
 
-export default class User extends BaseModel implements UserSchema {
+export class User extends BaseModel implements UserSchema {
   @IsOptional()
   name: string = undefined;
 
@@ -44,10 +44,10 @@ export default class User extends BaseModel implements UserSchema {
   @IsEnum(UserStatus)
   status?: UserStatus = undefined;
 
-  @IsOptional() 
+  @IsOptional()
   domain?: Domain = undefined;
 
-  @IsOptional() 
+  @IsOptional()
   password?: string = undefined;
 
   consumer?: Consumer = undefined;
@@ -58,6 +58,7 @@ export default class User extends BaseModel implements UserSchema {
   constructor(data: Partial<UserSchema>) {
     super(data);
 
+    this.name = data.name || `${data.firstName} ${data.lastName}`;
     this.virtual =
       data.credentials && data.credentials.virtual ? data.credentials.virtual : data.virtual || this.virtual;
 

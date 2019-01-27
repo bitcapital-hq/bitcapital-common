@@ -1,22 +1,36 @@
 import { BaseModel, BaseModelSchema } from "../../base";
-import Transaction from "../Transaction/Transaction";
-import Wallet from "../Wallet/Wallet";
-import Recipient from "./Recipient";
+import { Asset, AssetSchema } from "../Asset";
+import { Transaction, TransactionSchema } from "../Transaction";
+import { Wallet, WalletSchema } from "../Wallet";
 
-export interface PaymentSchema extends BaseModelSchema {
-  source: Wallet | string;
-  recipients: Recipient[];
-  totalAmount: number;
-  transaction?: Transaction;
+export enum PaymentType {
+  DEPOSIT = "deposit",
+  WITHDRAWAL = "withdrawal",
+  TRANSFER = "transfer"
 }
 
-export default class Payment extends BaseModel implements PaymentSchema {
-  source: Wallet | string = undefined;
-  transaction: Transaction = undefined;
-  recipients: Recipient[] = undefined;
-  totalAmount: number = 0;
+export interface PaymentSchema extends BaseModelSchema {
+  type: PaymentType;
+  amount: string;
+  destination?: WalletSchema;
+  transaction?: TransactionSchema;
+  asset?: AssetSchema;
+}
 
-  constructor(data: Partial<PaymentSchema>) {
+export class Payment extends BaseModel implements PaymentSchema {
+  type: PaymentType = undefined;
+  amount: string = undefined;
+  transaction?: Transaction;
+  destination?: Wallet;
+  asset?: Asset;
+
+  constructor(data: Partial<PaymentSchema> = {}) {
     super(data);
+
+    Object.assign(this, data);
+
+    this.transaction = data.transaction && new Transaction(data.transaction);
+    this.destination = data.destination && new Wallet(data.destination);
+    this.asset = data.asset && new Asset(data.asset);
   }
 }

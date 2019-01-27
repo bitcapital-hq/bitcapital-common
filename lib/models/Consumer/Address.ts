@@ -1,6 +1,6 @@
 import { IsNotEmpty, IsUUID, IsOptional } from "class-validator";
 import { BaseModelSchema, BaseModel } from "../../base";
-import Consumer, { ConsumerSchema } from "./Consumer";
+import { Consumer, ConsumerSchema } from "./Consumer";
 
 export enum AddressType {
   HOME = "home",
@@ -21,9 +21,9 @@ export interface AddressSchema extends BaseModelSchema {
   reference?: string;
 }
 
-export default class Address extends BaseModel implements AddressSchema {
-  consumer?: Consumer = undefined;
-  @IsUUID() consumerId?: string = undefined;
+export class Address extends BaseModel implements AddressSchema {
+  @IsOptional() consumer?: Consumer = undefined;
+  @IsUUID() @IsOptional() consumerId?: string = undefined;
 
   type?: AddressType = AddressType.HOME;
   @IsOptional() reference?: string;

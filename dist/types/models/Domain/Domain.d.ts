@@ -1,10 +1,6 @@
 import { BaseModel, BaseModelSchema } from "../../base";
 import { User, UserSchema } from "../User";
-export interface DomainSettings {
-    logo?: string;
-    primaryColor?: string;
-    tintColor?: string;
-}
+import { DomainSettingsSchema, DomainSettings } from "./DomainSettings";
 export declare enum DomainRole {
     ROOT = "root",
     COMMON = "common"
@@ -14,8 +10,9 @@ export interface DomainSchema extends BaseModelSchema {
     role: DomainRole;
     test?: boolean;
     urls?: string[];
-    users: UserSchema[] | null;
-    settings: DomainSettings;
+    postbackUrl?: string;
+    users?: UserSchema[];
+    settings: DomainSettingsSchema;
 }
 export default class Domain extends BaseModel implements DomainSchema {
     name: string;

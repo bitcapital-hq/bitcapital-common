@@ -9,7 +9,7 @@ export interface HttpOptions extends HttpRequestOptions {
   client?: HttpClient;
 }
 
-export default class Http {
+export class Http {
   protected options: HttpOptions;
   protected client: HttpClient;
 

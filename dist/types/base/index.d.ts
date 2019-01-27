@@ -1,2 +1,2 @@
-export { default as BaseModel, BaseModelSchema } from './BaseModel';
-export { default as Http, HttpInterceptor, HttpOptions } from "./http/Http";
+export { BaseModel, BaseModelSchema } from './BaseModel';
+export { Http, HttpInterceptor, HttpOptions } from "./http/Http";

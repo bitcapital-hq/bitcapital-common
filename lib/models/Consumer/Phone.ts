@@ -1,6 +1,6 @@
 import { IsDate, IsNotEmpty, IsNumberString, IsOptional, IsUUID, MaxDate } from "class-validator";
 import { BaseModel, BaseModelSchema } from "../../base";
-import Consumer, { ConsumerSchema } from "./Consumer";
+import { Consumer, ConsumerSchema } from "./Consumer";
 
 export enum PhoneType {
   HOME = "home",
@@ -18,7 +18,7 @@ export interface PhoneSchema extends BaseModelSchema {
   verifiedAt?: Date | string;
 }
 
-export default class Phone extends BaseModel implements PhoneSchema {
+export class Phone extends BaseModel implements PhoneSchema {
   @IsOptional() type?: PhoneType = PhoneType.MOBILE;
 
   @IsOptional() consumer?: Consumer = undefined;
