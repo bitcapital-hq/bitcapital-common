@@ -18,7 +18,7 @@ export interface DomainSchema extends BaseModelSchema {
   settings: DomainSettingsSchema;
 }
 
-export default class Domain extends BaseModel implements DomainSchema {
+export class Domain extends BaseModel implements DomainSchema {
   @IsNotEmpty() name: string = undefined;
 
   @IsNotEmpty()

@@ -1,9 +1,9 @@
 import { IsEmail, IsEnum, IsNotEmpty, IsOptional } from "class-validator";
 import { BaseModel, BaseModelSchema } from "../../base";
 import { Consumer, ConsumerSchema } from "../Consumer";
-import Domain, { DomainSchema } from "../Domain/Domain";
+import { Domain, DomainSchema } from "../Domain";
 import { OAuthCredentials } from "../OAuth";
-import { Wallet, WalletSchema } from "../Wallet/Wallet";
+import { Wallet, WalletSchema } from "../Wallet";
 import { UserRole } from "./UserRole";
 import { UserStatus } from "./UserStatus";
 

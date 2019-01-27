@@ -14,7 +14,7 @@ export interface DomainSchema extends BaseModelSchema {
     users?: UserSchema[];
     settings: DomainSettingsSchema;
 }
-export default class Domain extends BaseModel implements DomainSchema {
+export declare class Domain extends BaseModel implements DomainSchema {
     name: string;
     role: DomainRole;
     slug?: string;
