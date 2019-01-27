@@ -1,23 +1,20 @@
-import Transaction from "./Transaction";
+import { Transaction, TransactionSchema } from "./Transaction";
 import { TransactionStatus } from "./TransactionStatus";
 import { BaseModel } from "../../base";
 
 export interface TransactionStateSchema {
-  consumer: Transaction;
+  transaction?: TransactionSchema;
   status: TransactionStatus;
   additionalData?: any;
 }
 
 export class TransactionState extends BaseModel implements TransactionStateSchema {
-  consumer: Transaction;
+  transaction: Transaction;
   status: TransactionStatus;
   additionalData?: any;
 
   constructor(data: Partial<TransactionStateSchema> = {}) {
     super(data);
-
-    Object.assign(this, data);
-
-    this.consumer = data.consumer && new Transaction(data.consumer);
+    this.transaction = data.transaction && new Transaction(data.transaction);
   }
 }

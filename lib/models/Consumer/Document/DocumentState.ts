@@ -1,9 +1,10 @@
 import { BaseModel } from "../../../base";
 import { Document } from "../Document";
 import { DocumentStatus } from "./DocumentStatus";
+import { DocumentSchema } from "./Document";
 
 export interface DocumentStateSchema {
-  document: Document;
+  document: DocumentSchema;
   status: DocumentStatus;
   additionalData?: any;
 }

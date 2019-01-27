@@ -4,6 +4,7 @@ import { Address, AddressSchema } from "./Address";
 import { ConsumerStatus } from "./ConsumerStatus";
 import { Document, DocumentSchema } from "./Document";
 import { Phone, PhoneSchema } from "./Phone";
+import { ConsumerState, ConsumerStateSchema } from "./ConsumerState";
 export interface ConsumerSchema extends BaseModelSchema {
     status: ConsumerStatus;
     user?: UserSchema;
@@ -12,12 +13,14 @@ export interface ConsumerSchema extends BaseModelSchema {
     documents?: DocumentSchema[];
     phones?: PhoneSchema[];
     addresses?: AddressSchema[];
+    states?: ConsumerStateSchema[];
 }
 export declare class Consumer extends BaseModel implements ConsumerSchema {
     user?: User;
     taxId?: string;
     userId?: string;
     status: ConsumerStatus;
+    states?: ConsumerState[];
     documents?: Document[];
     phones?: Phone[];
     addresses?: Address[];

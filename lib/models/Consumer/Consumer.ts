@@ -5,6 +5,7 @@ import { Address, AddressSchema } from "./Address";
 import { ConsumerStatus } from "./ConsumerStatus";
 import { Document, DocumentSchema } from "./Document";
 import { Phone, PhoneSchema } from "./Phone";
+import { ConsumerState, ConsumerStateSchema } from "./ConsumerState";
 
 export interface ConsumerSchema extends BaseModelSchema {
   status: ConsumerStatus;
@@ -14,6 +15,7 @@ export interface ConsumerSchema extends BaseModelSchema {
   documents?: DocumentSchema[];
   phones?: PhoneSchema[];
   addresses?: AddressSchema[];
+  states?: ConsumerStateSchema[];
 }
 
 export class Consumer extends BaseModel implements ConsumerSchema {
@@ -25,6 +27,7 @@ export class Consumer extends BaseModel implements ConsumerSchema {
   @IsEnum(ConsumerStatus)
   status: ConsumerStatus = undefined;
 
+  states?: ConsumerState[] = undefined;
   documents?: Document[] = undefined;
   phones?: Phone[] = undefined;
   addresses?: Address[] = undefined;

@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Observer | bitcapital-common (v1.0.0)</title>
+	<title>ConsumerStateSchema | bitcapital-common (v1.0.0)</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,29 +56,33 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="observer.html">Observer</a>
+					<a href="consumerstateschema.html">ConsumerStateSchema</a>
 				</li>
 			</ul>
-			<h1>Interface Observer</h1>
+			<h1>Interface ConsumerStateSchema</h1>
 		</div>
 	</div>
 </header>
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
-			<section class="tsd-panel tsd-comment">
-				<div class="tsd-comment tsd-typography">
-					<div class="lead">
-						<p>The interface to watch Observable changes.</p>
-					</div>
-				</div>
-			</section>
 			<section class="tsd-panel tsd-hierarchy">
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">Observer</span>
+						<a href="basemodelschema.html" class="tsd-signature-type">BaseModelSchema</a>
+						<ul class="tsd-hierarchy">
+							<li>
+								<span class="target">ConsumerStateSchema</span>
+							</li>
+						</ul>
 					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel">
+				<h3>Implemented by</h3>
+				<ul class="tsd-hierarchy">
+					<li><a href="../classes/consumerstate.html" class="tsd-signature-type">ConsumerState</a></li>
 				</ul>
 			</section>
 			<section class="tsd-panel-group tsd-index-group">
@@ -88,7 +92,12 @@
 						<section class="tsd-index-section tsd-is-external">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="observer.html#update" class="tsd-kind-icon">update</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="consumerstateschema.html#consumer" class="tsd-kind-icon">consumer</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="consumerstateschema.html#consumerid" class="tsd-kind-icon">consumer<wbr>Id</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external"><a href="consumerstateschema.html#createdat" class="tsd-kind-icon">created<wbr>At</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external"><a href="consumerstateschema.html#id" class="tsd-kind-icon">id</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="consumerstateschema.html#status" class="tsd-kind-icon">status</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external"><a href="consumerstateschema.html#updatedat" class="tsd-kind-icon">updated<wbr>At</a></li>
 							</ul>
 						</section>
 					</div>
@@ -97,12 +106,65 @@
 			<section class="tsd-panel-group tsd-member-group tsd-is-external">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
-					<a name="update" class="tsd-anchor"></a>
-					<h3>update</h3>
-					<div class="tsd-signature tsd-kind-icon">update<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Function</span></div>
+					<a name="consumer" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> consumer</h3>
+					<div class="tsd-signature tsd-kind-icon">consumer<span class="tsd-signature-symbol">:</span> <a href="consumerschema.html" class="tsd-signature-type">ConsumerSchema</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/bitcapital-hq/bitcapital-common/blob/c85560a/lib/utils/Observable.ts#L5">utils/Observable.ts:5</a></li>
+							<li>Defined in <a href="https://github.com/bitcapital-hq/bitcapital-common/blob/c85560a/lib/models/Consumer/ConsumerState.ts#L8">models/Consumer/ConsumerState.ts:8</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
+					<a name="consumerid" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> consumer<wbr>Id</h3>
+					<div class="tsd-signature tsd-kind-icon">consumer<wbr>Id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/bitcapital-hq/bitcapital-common/blob/c85560a/lib/models/Consumer/ConsumerState.ts#L9">models/Consumer/ConsumerState.ts:9</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external">
+					<a name="createdat" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> created<wbr>At</h3>
+					<div class="tsd-signature tsd-kind-icon">created<wbr>At<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Date</span></div>
+					<aside class="tsd-sources">
+						<p>Inherited from <a href="basemodelschema.html">BaseModelSchema</a>.<a href="basemodelschema.html#createdat">createdAt</a></p>
+						<ul>
+							<li>Defined in <a href="https://github.com/bitcapital-hq/bitcapital-common/blob/c85560a/lib/base/BaseModel.ts#L5">base/BaseModel.ts:5</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external">
+					<a name="id" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> id</h3>
+					<div class="tsd-signature tsd-kind-icon">id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<p>Inherited from <a href="basemodelschema.html">BaseModelSchema</a>.<a href="basemodelschema.html#id">id</a></p>
+						<ul>
+							<li>Defined in <a href="https://github.com/bitcapital-hq/bitcapital-common/blob/c85560a/lib/base/BaseModel.ts#L4">base/BaseModel.ts:4</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
+					<a name="status" class="tsd-anchor"></a>
+					<h3>status</h3>
+					<div class="tsd-signature tsd-kind-icon">status<span class="tsd-signature-symbol">:</span> <a href="../enums/consumerstatus.html" class="tsd-signature-type">ConsumerStatus</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/bitcapital-hq/bitcapital-common/blob/c85560a/lib/models/Consumer/ConsumerState.ts#L7">models/Consumer/ConsumerState.ts:7</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external">
+					<a name="updatedat" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> updated<wbr>At</h3>
+					<div class="tsd-signature tsd-kind-icon">updated<wbr>At<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Date</span></div>
+					<aside class="tsd-sources">
+						<p>Inherited from <a href="basemodelschema.html">BaseModelSchema</a>.<a href="basemodelschema.html#updatedat">updatedAt</a></p>
+						<ul>
+							<li>Defined in <a href="https://github.com/bitcapital-hq/bitcapital-common/blob/c85560a/lib/base/BaseModel.ts#L6">base/BaseModel.ts:6</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -121,10 +183,25 @@
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-interface tsd-is-external">
-						<a href="observer.html" class="tsd-kind-icon">Observer</a>
+						<a href="consumerstateschema.html" class="tsd-kind-icon">Consumer<wbr>State<wbr>Schema</a>
 						<ul>
 							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
-								<a href="observer.html#update" class="tsd-kind-icon">update</a>
+								<a href="consumerstateschema.html#consumer" class="tsd-kind-icon">consumer</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
+								<a href="consumerstateschema.html#consumerid" class="tsd-kind-icon">consumer<wbr>Id</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external">
+								<a href="consumerstateschema.html#createdat" class="tsd-kind-icon">created<wbr>At</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external">
+								<a href="consumerstateschema.html#id" class="tsd-kind-icon">id</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
+								<a href="consumerstateschema.html#status" class="tsd-kind-icon">status</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external">
+								<a href="consumerstateschema.html#updatedat" class="tsd-kind-icon">updated<wbr>At</a>
 							</li>
 						</ul>
 					</li>

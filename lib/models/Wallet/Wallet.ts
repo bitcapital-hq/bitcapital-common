@@ -12,7 +12,8 @@ export { StellarWalletData, BankingWalletData, WalletBalance };
 export interface WalletSchema extends BaseModelSchema {
   status?: WalletStatus;
   stellar?: StellarWalletData
-  user?: UserSchema | string;
+  user?: UserSchema;
+  userId?: string;
   additionalData?: any;
   balances?: WalletBalance[];
   issuedAssets?: AssetSchema[];
@@ -24,7 +25,8 @@ export interface WalletSchema extends BaseModelSchema {
 export class Wallet extends BaseModel implements WalletSchema {
   status?: WalletStatus = undefined;
   stellar?: StellarWalletData = undefined;
-  user?: User | string = undefined;
+  user?: User = undefined;
+  userId?: string = undefined;
   additionalData?: any = undefined;
   balances?: WalletBalance[] = undefined;
   issuedAssets?: AssetSchema[] = undefined;

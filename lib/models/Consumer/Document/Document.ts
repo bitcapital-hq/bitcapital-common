@@ -1,7 +1,7 @@
 import { IsBase64, IsDate, IsEnum, IsNotEmpty, IsOptional, IsUUID, MinDate } from "class-validator";
 import { BaseModel, BaseModelSchema } from "../../../base";
 import { Consumer, ConsumerSchema } from "../Consumer";
-import { DocumentState } from "./DocumentState";
+import { DocumentState, DocumentStateSchema } from "./DocumentState";
 import { DocumentStatus } from "./DocumentStatus";
 import { DocumentType } from "./DocumentType";
 
@@ -15,7 +15,7 @@ export interface DocumentSchema extends BaseModelSchema {
   back?: string;
   selfie?: string;
   verifiedAt?: Date | string;
-  states?: DocumentState[];
+  states?: DocumentStateSchema[];
 }
 
 export class Document extends BaseModel implements DocumentSchema {

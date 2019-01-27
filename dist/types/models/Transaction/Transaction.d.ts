@@ -22,7 +22,7 @@ export interface TransactionSchema extends BaseModelSchema {
     createdBy?: UserSchema;
     additionalData?: TransactionAdditionalData;
 }
-export default class Transaction extends BaseModel implements TransactionSchema {
+export declare class Transaction extends BaseModel implements TransactionSchema {
     type: TransactionType;
     source: Wallet;
     createdBy?: User;

@@ -27,7 +27,7 @@ export interface TransactionSchema extends BaseModelSchema {
   additionalData?: TransactionAdditionalData;
 }
 
-export default class Transaction extends BaseModel implements TransactionSchema {
+export class Transaction extends BaseModel implements TransactionSchema {
   @IsNotEmpty()
   @IsEnum(TransactionType)
   type: TransactionType = undefined;

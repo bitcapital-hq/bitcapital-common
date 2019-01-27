@@ -10,7 +10,8 @@ export { StellarWalletData, BankingWalletData, WalletBalance };
 export interface WalletSchema extends BaseModelSchema {
     status?: WalletStatus;
     stellar?: StellarWalletData;
-    user?: UserSchema | string;
+    user?: UserSchema;
+    userId?: string;
     additionalData?: any;
     balances?: WalletBalance[];
     issuedAssets?: AssetSchema[];
@@ -21,7 +22,8 @@ export interface WalletSchema extends BaseModelSchema {
 export declare class Wallet extends BaseModel implements WalletSchema {
     status?: WalletStatus;
     stellar?: StellarWalletData;
-    user?: User | string;
+    user?: User;
+    userId?: string;
     additionalData?: any;
     balances?: WalletBalance[];
     issuedAssets?: AssetSchema[];

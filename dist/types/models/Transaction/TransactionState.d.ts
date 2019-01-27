@@ -1,13 +1,13 @@
-import Transaction from "./Transaction";
+import { Transaction, TransactionSchema } from "./Transaction";
 import { TransactionStatus } from "./TransactionStatus";
 import { BaseModel } from "../../base";
 export interface TransactionStateSchema {
-    consumer: Transaction;
+    transaction?: TransactionSchema;
     status: TransactionStatus;
     additionalData?: any;
 }
 export declare class TransactionState extends BaseModel implements TransactionStateSchema {
-    consumer: Transaction;
+    transaction: Transaction;
     status: TransactionStatus;
     additionalData?: any;
     constructor(data?: Partial<TransactionStateSchema>);
