@@ -9,10 +9,6 @@ export interface AddressSchema extends BaseModelSchema {
     consumer?: ConsumerSchema;
     consumerId?: string;
     country: string;
-    geo: {
-        x: number;
-        y: number;
-    };
     city: string;
     code: string;
     state: string;
@@ -33,9 +29,5 @@ export default class Address extends BaseModel implements AddressSchema {
     street: string;
     complement: string;
     number: string;
-    geo: {
-        x: number;
-        y: number;
-    };
     constructor(data: Partial<AddressSchema>);
 }

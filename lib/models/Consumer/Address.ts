@@ -12,7 +12,6 @@ export interface AddressSchema extends BaseModelSchema {
   consumer?: ConsumerSchema;
   consumerId?: string;
   country: string;
-  geo: { x: number; y: number };
   city: string;
   code: string;
   state: string;
@@ -35,8 +34,6 @@ export default class Address extends BaseModel implements AddressSchema {
   @IsNotEmpty() street: string = undefined;
   @IsNotEmpty() complement: string = undefined;
   @IsNotEmpty() number: string = undefined;
-
-  geo: { x: number; y: number } = undefined;
 
   constructor(data: Partial<AddressSchema>) {
     super(data);
