@@ -5,6 +5,7 @@ import { OAuthCredentials } from "../OAuth";
 import { Wallet, WalletSchema } from "../Wallet";
 import { UserRole } from "./UserRole";
 import { UserStatus } from "./UserStatus";
+import { Product, ProductSchema } from "../Domain/Product";
 export interface UserSchema extends BaseModelSchema {
     name?: string;
     firstName: string;
@@ -17,6 +18,7 @@ export interface UserSchema extends BaseModelSchema {
     domain?: DomainSchema;
     consumer?: ConsumerSchema;
     virtual?: boolean;
+    product?: ProductSchema;
     wallets?: WalletSchema[];
 }
 export declare class User extends BaseModel implements UserSchema {
@@ -30,6 +32,7 @@ export declare class User extends BaseModel implements UserSchema {
     password?: string;
     consumer?: Consumer;
     wallets?: Wallet[];
+    product?: Product;
     credentials?: OAuthCredentials;
     virtual: boolean;
     constructor(data: Partial<UserSchema>);
