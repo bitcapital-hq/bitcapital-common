@@ -7,5 +7,5 @@ export interface WithdrawalRequestSchema {
 export interface PaymentRequestSchema {
   source: string;
   asset?: string;
-  recipients: { amount: string, destination: string }[];
+  recipients: { amount: string; destination: string }[];
 }

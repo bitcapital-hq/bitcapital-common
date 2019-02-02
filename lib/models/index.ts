@@ -1,4 +1,4 @@
-export * from './User';
+export * from "./User";
 export * from "./Wallet";
 export * from "./Asset";
 export * from "./Card";

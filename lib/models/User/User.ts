@@ -6,6 +6,7 @@ import { OAuthCredentials } from "../OAuth";
 import { Wallet, WalletSchema } from "../Wallet";
 import { UserRole } from "./UserRole";
 import { UserStatus } from "./UserStatus";
+import { Product, ProductSchema } from "../Domain/Product";
 import { CardSchema, Card } from "../Card";
 
 export interface UserSchema extends BaseModelSchema {
@@ -20,19 +21,17 @@ export interface UserSchema extends BaseModelSchema {
   domain?: DomainSchema;
   consumer?: ConsumerSchema;
   virtual?: boolean;
+  product?: ProductSchema;
   wallets?: WalletSchema[];
   cards?: CardSchema[];
 }
 
 export class User extends BaseModel implements UserSchema {
-  @IsOptional()
-  name: string = undefined;
+  @IsOptional() name: string = undefined;
 
-  @IsNotEmpty()
-  firstName: string = undefined;
+  @IsNotEmpty() firstName: string = undefined;
 
-  @IsNotEmpty()
-  lastName: string = undefined;
+  @IsNotEmpty() lastName: string = undefined;
 
   @IsNotEmpty()
   @IsEmail()
@@ -46,14 +45,13 @@ export class User extends BaseModel implements UserSchema {
   @IsEnum(UserStatus)
   status?: UserStatus = undefined;
 
-  @IsOptional()
-  domain?: Domain = undefined;
+  @IsOptional() domain?: Domain = undefined;
 
-  @IsOptional()
-  password?: string = undefined;
+  @IsOptional() password?: string = undefined;
 
   consumer?: Consumer = undefined;
   wallets?: Wallet[] = undefined;
+  product?: Product = undefined;
   credentials?: OAuthCredentials = undefined;
   cards?: Card[] = undefined;
   virtual: boolean = undefined;
