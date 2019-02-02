@@ -1,4 +1,5 @@
 export * from "./Address";
+export * from "./Banking";
 export * from "./Consumer";
 export * from "./Document";
 export * from "./Phone";
