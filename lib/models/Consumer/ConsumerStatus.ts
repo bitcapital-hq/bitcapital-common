@@ -5,6 +5,7 @@ export enum ConsumerStatus {
 
   /* Pending states */
   PENDING_DOCUMENTS = "pending_documents",
+  PENDING_SELFIE = "pending_selfie",
 
   /* Processing states */
   PROCESSING_DOCUMENTS = "processing_documents",
@@ -16,5 +17,7 @@ export enum ConsumerStatus {
   MANUAL_VERIFICATION = "manual_verification",
 
   /* Blocked state */
-  BLOCKED = "blocked"
+  SUSPENDED = "suspended",
+  BLOCKED = "blocked",
+  DELETED = "deleted",
 }
