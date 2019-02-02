@@ -2,10 +2,11 @@ import { IsEnum, IsNotEmpty, IsUUID } from "class-validator";
 import { BaseModel, BaseModelSchema } from "../../base";
 import { User, UserSchema } from "../User";
 import { Address, AddressSchema } from "./Address";
+import { Banking, BankingSchema } from "./Banking";
+import { ConsumerState, ConsumerStateSchema } from "./ConsumerState";
 import { ConsumerStatus } from "./ConsumerStatus";
 import { Document, DocumentSchema } from "./Document";
 import { Phone, PhoneSchema } from "./Phone";
-import { ConsumerState, ConsumerStateSchema } from "./ConsumerState";
 
 export interface ConsumerSchema extends BaseModelSchema {
   status: ConsumerStatus;
@@ -16,6 +17,7 @@ export interface ConsumerSchema extends BaseModelSchema {
   phones?: PhoneSchema[];
   addresses?: AddressSchema[];
   states?: ConsumerStateSchema[];
+  bankings?: BankingSchema[];
 }
 
 export class Consumer extends BaseModel implements ConsumerSchema {
@@ -31,6 +33,7 @@ export class Consumer extends BaseModel implements ConsumerSchema {
   documents?: Document[] = undefined;
   phones?: Phone[] = undefined;
   addresses?: Address[] = undefined;
+  bankings?: Banking[] = undefined;
 
   constructor(data: Partial<ConsumerSchema>) {
     super(data);
