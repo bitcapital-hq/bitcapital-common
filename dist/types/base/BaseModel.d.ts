@@ -8,7 +8,7 @@ export declare class BaseModel {
     id?: string;
     createdAt?: Date;
     updatedAt?: Date;
-    constructor(data: any);
+    constructor(data?: any);
     /**
      * Returns true if the model is valid or an array of validation errors if invalid
      *

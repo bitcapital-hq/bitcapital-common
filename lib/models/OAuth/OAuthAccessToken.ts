@@ -38,6 +38,7 @@ export default class OAuthAccessToken extends BaseModel {
 
   constructor(data: OAuthAccessTokenSchema) {
     super(data);
+    Object.assign(this, data);
     this.userAgent = data.userAgent || {};
     this.expires = data.expires ? new Date(data.expires) : undefined;
 

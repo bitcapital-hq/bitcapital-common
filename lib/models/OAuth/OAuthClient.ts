@@ -20,5 +20,6 @@ export default class OAuthClient extends BaseModel implements OAuthClientSchema 
 
   constructor(data: OAuthClientSchema) {
     super(data);
+    Object.assign(this, data);
   }
 }

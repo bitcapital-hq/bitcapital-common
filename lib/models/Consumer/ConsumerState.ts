@@ -18,5 +18,6 @@ export class ConsumerState extends BaseModel implements ConsumerStateSchema {
 
   constructor(data: Partial<ConsumerStateSchema>) {
     super(data);
+    Object.assign(this, data);
   }
 }

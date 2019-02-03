@@ -37,5 +37,6 @@ export class Address extends BaseModel implements AddressSchema {
 
   constructor(data: Partial<AddressSchema>) {
     super(data);
+    Object.assign(this, data);
   }
 }

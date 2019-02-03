@@ -42,6 +42,7 @@ export class Phone extends BaseModel implements PhoneSchema {
 
   constructor(data: Partial<PhoneSchema>) {
     super(data);
+    Object.assign(this, data);
     this.verifiedAt = data.verifiedAt instanceof Date ? data.verifiedAt : new Date(data.verifiedAt);
   }
 }

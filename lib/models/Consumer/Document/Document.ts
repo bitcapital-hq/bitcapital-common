@@ -54,6 +54,7 @@ export class Document extends BaseModel implements DocumentSchema {
 
   constructor(data: Partial<DocumentSchema> = {}) {
     super(data);
+    Object.assign(this, data);
     this.expiresAt = data.verifiedAt && new Date(data.verifiedAt);
     this.consumer = data.consumer && new Consumer(data.consumer);
   }

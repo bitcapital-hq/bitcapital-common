@@ -9,24 +9,20 @@ export interface BaseModelSchema {
 export class BaseModel {
   @IsOptional()
   @IsUUID()
-  id?: string;
+  id?: string = undefined;
 
-  @IsOptional() createdAt?: Date;
+  @IsOptional() createdAt?: Date = undefined;
 
-  @IsOptional() updatedAt?: Date;
+  @IsOptional() updatedAt?: Date = undefined;
 
-  constructor(data: any) {
-    if (data) {
-      Object.assign(this, data);
+  constructor(data: any = {}) {
+    this.id = data && data.id ? data.id : undefined;
 
-      this.id = data.id;
-
-      if (data.createdAt) {
-        this.createdAt = new Date(data.createdAt);
-      }
-      if (data.updatedAt) {
-        this.updatedAt = new Date(data.updatedAt);
-      }
+    if (data.createdAt) {
+      this.createdAt = new Date(data.createdAt);
+    }
+    if (data.updatedAt) {
+      this.updatedAt = new Date(data.updatedAt);
     }
   }
 

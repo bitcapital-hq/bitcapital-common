@@ -31,5 +31,6 @@ export class Asset extends BaseModel implements AssetSchema {
 
   constructor(data: Partial<AssetSchema>) {
     super(data);
+    Object.assign(this, data);
   }
 }

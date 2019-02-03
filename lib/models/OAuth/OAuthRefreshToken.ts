@@ -21,5 +21,6 @@ export default class OAuthRefreshToken extends BaseModel implements OAuthRefresh
 
   constructor(data: Partial<OAuthRefreshToken>) {
     super(data);
+    Object.assign(this, data);
   }
 }

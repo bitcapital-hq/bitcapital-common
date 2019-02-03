@@ -31,5 +31,6 @@ export class Banking extends BaseModel implements BankingSchema {
 
   constructor(data: Partial<BankingSchema>) {
     super(data);
+    Object.assign(this, data);
   }
 }

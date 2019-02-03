@@ -25,5 +25,6 @@ export default class OAuthSecretToken extends BaseModel implements OAuthSecretTo
 
   constructor(data: Partial<OAuthSecretTokenSchema>) {
     super(data);
+    Object.assign(this, data);
   }
 }

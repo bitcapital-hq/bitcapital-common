@@ -37,5 +37,6 @@ export class Consumer extends BaseModel implements ConsumerSchema {
 
   constructor(data: Partial<ConsumerSchema>) {
     super(data);
+    Object.assign(this, data);
   }
 }

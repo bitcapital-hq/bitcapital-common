@@ -58,6 +58,7 @@ export class User extends BaseModel implements UserSchema {
 
   constructor(data: Partial<UserSchema>) {
     super(data);
+    Object.assign(this, data);
 
     this.name = data.name || `${data.firstName} ${data.lastName}`;
     this.virtual =

@@ -41,6 +41,8 @@ export class Transaction extends BaseModel implements TransactionSchema {
 
   constructor(data: Partial<TransactionSchema>) {
     super(data);
+    Object.assign(this, data);
+    
     this.source = data.source && new Wallet(data.source);
     this.createdBy = data.createdBy && new User(data.createdBy);
     this.payments = data.payments && data.payments.map(payment => new Payment(payment));

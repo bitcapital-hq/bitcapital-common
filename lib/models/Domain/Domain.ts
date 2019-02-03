@@ -38,5 +38,6 @@ export class Domain extends BaseModel implements DomainSchema {
 
   constructor(data: Partial<DomainSchema>) {
     super(data);
+    Object.assign(this, data);
   }
 }
