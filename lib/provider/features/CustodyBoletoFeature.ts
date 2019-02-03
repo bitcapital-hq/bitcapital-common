@@ -21,4 +21,11 @@ export abstract class CustodyBoletoFeature extends BaseCustodyFeature {
   */
   public abstract async emit(amount: string, wallet: WalletSchema, extra?: any): Promise<BoletoSchema>;
 
+  /**
+   * Gets Boleto information based on its external id.
+   * 
+   * @param externalId The boleto external identification
+   */
+  public abstract async getById(externalId: string, extra?: any): Promise<BoletoSchema | undefined>;
+
 }

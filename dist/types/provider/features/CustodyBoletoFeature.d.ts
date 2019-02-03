@@ -17,4 +17,10 @@ export declare abstract class CustodyBoletoFeature extends BaseCustodyFeature {
     * @param wallet The wallet in which the amount was deposited into
     */
     abstract emit(amount: string, wallet: WalletSchema, extra?: any): Promise<BoletoSchema>;
+    /**
+     * Gets Boleto information based on its external id.
+     *
+     * @param externalId The boleto external identification
+     */
+    abstract getById(externalId: string, extra?: any): Promise<BoletoSchema | undefined>;
 }
