@@ -16,14 +16,17 @@ export class BaseModel {
   @IsOptional() updatedAt?: Date;
 
   constructor(data: any) {
-    Object.assign(this, data);
-    this.id = data.id;
+    if (data) {
+      Object.assign(this, data);
 
-    if (data.createdAt) {
-      this.createdAt = new Date(data.createdAt);
-    }
-    if (data.updatedAt) {
-      this.updatedAt = new Date(data.updatedAt);
+      this.id = data.id;
+
+      if (data.createdAt) {
+        this.createdAt = new Date(data.createdAt);
+      }
+      if (data.updatedAt) {
+        this.updatedAt = new Date(data.updatedAt);
+      }
     }
   }
 

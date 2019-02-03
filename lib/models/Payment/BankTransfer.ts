@@ -1,5 +1,5 @@
 import { BankTransferDestination, BankTransferDestinationSchema } from "./BankTransferDestination";
-import { IsNotEmpty } from "../../../node_modules/class-validator";
+import { IsNotEmpty } from "class-validator";
 
 export interface BankTransferSchema {
   destination: BankTransferDestinationSchema;

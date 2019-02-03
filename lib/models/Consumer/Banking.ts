@@ -1,4 +1,4 @@
-import { IsNotEmpty } from "../../../node_modules/class-validator";
+import { IsNotEmpty } from "class-validator";
 import { BaseModel, BaseModelSchema } from "../../base";
 import { Consumer, ConsumerSchema } from "./Consumer";
 

@@ -1,5 +1,5 @@
 import { BaseModel, BaseModelSchema } from "../../base";
-import { IsOptional, IsNotEmpty } from "../../../node_modules/class-validator";
+import { IsOptional, IsNotEmpty } from "class-validator";
 
 export interface BoletoSchema extends BaseModelSchema {
   conductorId?: number;
