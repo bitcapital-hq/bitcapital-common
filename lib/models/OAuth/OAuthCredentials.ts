@@ -21,8 +21,13 @@ export default class OAuthCredentials extends BaseModel {
 
   constructor(data: Partial<OAuthCredentialsSchema>) {
     super(data);
-    this.expiresAt = new Date(Date.now() + data.expires_in * 1000);
-    this.userId = data.user_id;
-    this.virtual = data.virtual || this.virtual;
+    this.accessToken = data['accessToken'] || data.access_token || this.accessToken;
+    this.refreshToken = data['refreshToken'] || data.refresh_token || this.refreshToken;
+    this.userId = data['userId'] || data.user_id || this.userId;
+    this.virtual = data.virtual || this.virtual || false;
+
+    if (data.expires_in) {
+      this.expiresAt = new Date(Date.now() + data.expires_in * 1000);
+    }
   }
 }
