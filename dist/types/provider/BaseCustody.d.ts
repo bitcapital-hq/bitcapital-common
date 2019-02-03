@@ -15,7 +15,7 @@ export default abstract class BaseCustody {
     abstract readonly type: CustodyProvider;
     abstract readonly features: BaseCustodyFeature[];
     constructor(options: BaseCustodyOptions);
-    feature(type: CustodyFeature): BaseCustodyFeature;
+    feature<Type>(type: CustodyFeature): Type;
     /**
      * Registers a new wallet in the provider for a specific User.
      *

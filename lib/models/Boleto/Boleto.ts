@@ -5,7 +5,7 @@ export interface BoletoSchema extends BaseModelSchema {
   conductorId?: number;
   documentNumber?: string;
   expiresAt: Date;
-  amount: number;
+  amount: string;
   beneficiaryName?: string;
   beneficiaryCode?: string;
   beneficiaryDocument?: string;
@@ -24,7 +24,7 @@ export class Boleto extends BaseModel implements BoletoSchema {
   @IsOptional() conductorId?: number = undefined;
   @IsOptional() documentNumber?: string = undefined;
   @IsNotEmpty() expiresAt: Date = undefined;
-  @IsNotEmpty() amount: number = undefined;
+  @IsNotEmpty() amount: string = undefined;
   @IsOptional() beneficiaryName?: string = undefined;
   @IsOptional() beneficiaryCode?: string = undefined;
   @IsOptional() beneficiaryDocument?: string = undefined;

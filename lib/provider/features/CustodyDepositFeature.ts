@@ -1,7 +1,7 @@
 import { PaymentSchema, Wallet } from "../../models";
 import BaseCustodyFeature, { CustodyFeature } from "../BaseCustodyFeature";
 
-export default abstract class CustodyDepositFeature extends BaseCustodyFeature {
+export abstract class CustodyDepositFeature extends BaseCustodyFeature {
   type = CustodyFeature.DEPOSIT;
 
   /**
@@ -10,7 +10,7 @@ export default abstract class CustodyDepositFeature extends BaseCustodyFeature {
    * 
    * @param wallet The wallet where the asset will be deposited.
    */
-  public abstract async info(wallet: Wallet): Promise<any>;
+  public abstract async info(wallet: Wallet, extra?: any): Promise<any>;
 
    /**
    * Register an asynchronous deposit in the custody wallet, 

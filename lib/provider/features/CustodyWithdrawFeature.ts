@@ -1,7 +1,7 @@
 import { PaymentSchema, Wallet } from "../../models";
 import BaseCustodyFeature, { CustodyFeature } from "../BaseCustodyFeature";
 
-export default abstract class CustodyWithdrawFeature extends BaseCustodyFeature {
+export abstract class CustodyWithdrawFeature extends BaseCustodyFeature {
   type = CustodyFeature.WITHDRAW;
 
   /**
@@ -10,7 +10,7 @@ export default abstract class CustodyWithdrawFeature extends BaseCustodyFeature 
    * 
    * @param wallet The wallet where the asset will be deposited.
    */
-  public abstract async info(wallet: Wallet): Promise<any>;
+  public abstract async info(wallet: Wallet, extra?: any): Promise<any>;
 
   /**
    * Performs a synchronous withdrawal in the custody wallet, may

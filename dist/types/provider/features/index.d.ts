@@ -1,5 +1,6 @@
-export { default as CustodyAuditFeature } from './CustodyAuditFeature';
-export { default as CustodyBlockFeature } from './CustodyBlockFeature';
-export { default as CustodyDepositFeature } from './CustodyDepositFeature';
-export { default as CustodyPaymentFeature } from './CustodyPaymentFeature';
-export { default as CustodyWithdrawFeature } from './CustodyWithdrawFeature';
+export { CustodyAuditFeature } from './CustodyAuditFeature';
+export { CustodyBlockFeature } from './CustodyBlockFeature';
+export { CustodyDepositFeature } from './CustodyDepositFeature';
+export { CustodyPaymentFeature } from './CustodyPaymentFeature';
+export { CustodyWithdrawFeature } from './CustodyWithdrawFeature';
+export { CustodyBoletoFeature } from './CustodyBoletoFeature';

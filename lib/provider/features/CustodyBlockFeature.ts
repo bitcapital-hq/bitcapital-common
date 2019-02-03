@@ -1,7 +1,7 @@
 import { Wallet } from "../../models";
 import BaseCustodyFeature, { CustodyFeature } from "../BaseCustodyFeature";
 
-export default abstract class CustodyBlockFeature extends BaseCustodyFeature {
+export abstract class CustodyBlockFeature extends BaseCustodyFeature {
   type = CustodyFeature.BLOCK;
 
   /**

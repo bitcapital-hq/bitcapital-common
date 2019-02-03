@@ -3,7 +3,7 @@ export interface BoletoSchema extends BaseModelSchema {
     conductorId?: number;
     documentNumber?: string;
     expiresAt: Date;
-    amount: number;
+    amount: string;
     beneficiaryName?: string;
     beneficiaryCode?: string;
     beneficiaryDocument?: string;
@@ -21,7 +21,7 @@ export declare class Boleto extends BaseModel implements BoletoSchema {
     conductorId?: number;
     documentNumber?: string;
     expiresAt: Date;
-    amount: number;
+    amount: string;
     beneficiaryName?: string;
     beneficiaryCode?: string;
     beneficiaryDocument?: string;

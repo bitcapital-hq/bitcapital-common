@@ -5,6 +5,7 @@ export enum CustodyFeature {
   BLOCK = 'block',
   AUDIT = 'audit',
   POSTBACK = 'postback',
+  BOLETO = 'boleto'
 }
 
 export default abstract class BaseCustodyFeature {

@@ -1,6 +1,6 @@
 import { PaymentSchema, Wallet } from "../../models";
 import BaseCustodyFeature, { CustodyFeature } from "../BaseCustodyFeature";
-export default abstract class CustodyAuditFeature extends BaseCustodyFeature {
+export declare abstract class CustodyAuditFeature extends BaseCustodyFeature {
     type: CustodyFeature;
     /**
      * @param wallet The wallet to get the balance from

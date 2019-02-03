@@ -1,6 +1,6 @@
 import { PaymentSchema, Wallet } from "../../models";
 import BaseCustodyFeature, { CustodyFeature } from "../BaseCustodyFeature";
-export default abstract class CustodyDepositFeature extends BaseCustodyFeature {
+export declare abstract class CustodyDepositFeature extends BaseCustodyFeature {
     type: CustodyFeature;
     /**
      * Gets information about depositing assets in the specified wallet. This
@@ -8,7 +8,7 @@ export default abstract class CustodyDepositFeature extends BaseCustodyFeature {
      *
      * @param wallet The wallet where the asset will be deposited.
      */
-    abstract info(wallet: Wallet): Promise<any>;
+    abstract info(wallet: Wallet, extra?: any): Promise<any>;
     /**
     * Register an asynchronous deposit in the custody wallet,
     * done from outside of the Bitcapital platform, such as a banking deposit.

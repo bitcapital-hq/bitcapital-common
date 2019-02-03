@@ -21,8 +21,14 @@ export default abstract class BaseCustody {
 
   }
 
-  public feature(type: CustodyFeature) {
-    return this.features.find(f => f.type === type);
+  public feature<Type>(type: CustodyFeature): Type {
+    const feature: any = this.features.find(f => f.type === type);
+
+    if (!feature) {
+      throw new Error(`Provider does not support the "${type}" feature, or has not registered its service`);
+    }
+
+    return feature as Type;
   }
 
   /**

@@ -1,6 +1,6 @@
 import { Wallet } from "../../models";
 import BaseCustodyFeature, { CustodyFeature } from "../BaseCustodyFeature";
-export default abstract class CustodyBlockFeature extends BaseCustodyFeature {
+export declare abstract class CustodyBlockFeature extends BaseCustodyFeature {
     type: CustodyFeature;
     /**
      * Blocks a wallet temporarily in the external provider.
