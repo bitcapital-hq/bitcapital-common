@@ -1,2 +1,2 @@
 export * from "./Card";
-export * from "./CardBlockRequest";
+export * from "./CardRequest";
