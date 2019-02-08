@@ -1,7 +1,5 @@
 export interface CardBaseRequestSchema {
-    userId?: string;
     cardId?: string;
-    additionalData?: any;
     password: string;
 }
 export interface CardUnblockRequestSchema extends CardBaseRequestSchema {
