@@ -6,6 +6,7 @@ export enum ConsumerStatus {
   /* Pending states */
   PENDING_DOCUMENTS = "pending_documents",
   PENDING_SELFIE = "pending_selfie",
+  PENDING_DELETION = "pending_deletion",
 
   /* Processing states */
   PROCESSING_DOCUMENTS = "processing_documents",

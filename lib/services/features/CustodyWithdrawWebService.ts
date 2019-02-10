@@ -1,5 +1,5 @@
 import { Http, HttpOptions } from "../../base";
-import { PaymentSchema, Wallet } from "../../models";
+import { PaymentSchema, WalletSchema } from "../../models";
 import { BaseCustodyOptions, CustodyWithdrawFeature } from "../../provider";
 
 export interface CustodyWithdrawWebServiceOptions extends HttpOptions, BaseCustodyOptions {
@@ -13,7 +13,7 @@ export default class CustodyWithdrawWebService extends CustodyWithdrawFeature {
     this.http = new Http(options);
   }
 
-  public async info(wallet: Wallet, extra?: any): Promise<PaymentSchema> {
+  public async info(wallet: WalletSchema, extra?: any): Promise<PaymentSchema> {
     const response = await this.http.get('/provider/withdraw', { wallet, extra });
 
     if (response.data) {
@@ -23,7 +23,7 @@ export default class CustodyWithdrawWebService extends CustodyWithdrawFeature {
     throw response;
   }
 
-  public async withdraw(amount: string, wallet: Wallet, extra?: any): Promise<PaymentSchema> {
+  public async withdraw(amount: string, wallet: WalletSchema, extra?: any): Promise<PaymentSchema> {
     const response = await this.http.post('/provider/withdraw', { amount, wallet, extra });
 
     if (response.data && response.data.id) {
@@ -33,7 +33,7 @@ export default class CustodyWithdrawWebService extends CustodyWithdrawFeature {
     throw response;
   }
 
-  public async onWithdraw(amount: string, wallet: Wallet, extra?: any): Promise<PaymentSchema> {
+  public async onWithdraw(amount: string, wallet: WalletSchema, extra?: any): Promise<PaymentSchema> {
     const response = await this.http.post('/provider/withdraw/postback', { amount, wallet, extra });
 
     if (response.data && response.data.id) {

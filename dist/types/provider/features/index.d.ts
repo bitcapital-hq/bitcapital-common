@@ -1,6 +1,6 @@
-export { CustodyAuditFeature } from './CustodyAuditFeature';
-export { CustodyBlockFeature } from './CustodyBlockFeature';
-export { CustodyDepositFeature } from './CustodyDepositFeature';
-export { CustodyPaymentFeature } from './CustodyPaymentFeature';
-export { CustodyWithdrawFeature } from './CustodyWithdrawFeature';
-export { CustodyBoletoFeature } from './CustodyBoletoFeature';
+export * from './CustodyAuditFeature';
+export * from './CustodyBlockFeature';
+export * from './CustodyDepositFeature';
+export * from './CustodyPaymentFeature';
+export * from './CustodyWithdrawFeature';
+export * from './CustodyBoletoFeature';
