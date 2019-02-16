@@ -5,7 +5,7 @@ export interface DomainSettingsSchema {
   logo?: string;
   primaryColor?: string;
   tintColor?: string;
-  locks: DomainSettingsLocks;
+  locks?: DomainSettingsLocks;
 }
 
 export class DomainSettings implements DomainSettingsSchema {
