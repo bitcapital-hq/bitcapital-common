@@ -10,8 +10,9 @@ export interface TransactionAdditionalData {
     assetId?: string;
     assetCode?: string;
     asset_id?: string;
-    wallet_id?: string;
     asset_code?: string;
+    wallet_id?: string;
+    card_id?: string;
     conductorType?: "boleto" | "teddoc" | "card" | "transaction_reversal";
 }
 export interface TransactionSchema extends BaseModelSchema {
