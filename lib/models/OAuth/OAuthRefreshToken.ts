@@ -11,7 +11,7 @@ export interface OAuthRefreshTokenSchema extends BaseModelSchema {
   accessToken: OAuthAccessToken;
 }
 
-export default class OAuthRefreshToken extends BaseModel implements OAuthRefreshTokenSchema {
+export class OAuthRefreshToken extends BaseModel implements OAuthRefreshTokenSchema {
   id: string;
   refreshToken: string;
   expires: Date;

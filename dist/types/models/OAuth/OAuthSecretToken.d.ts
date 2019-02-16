@@ -12,7 +12,7 @@ export interface OAuthSecretTokenSchema extends BaseModelSchema {
     scope: string[];
     resources: OAuthSecretTokenResource[];
 }
-export default class OAuthSecretToken extends BaseModel implements OAuthSecretTokenSchema {
+export declare class OAuthSecretToken extends BaseModel implements OAuthSecretTokenSchema {
     id: string;
     secretToken: string;
     expires: Date;

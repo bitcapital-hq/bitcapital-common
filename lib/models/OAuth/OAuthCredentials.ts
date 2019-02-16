@@ -10,7 +10,7 @@ export interface OAuthCredentialsSchema extends BaseModelSchema {
   scope: string[];
 }
 
-export default class OAuthCredentials extends BaseModel {
+export class OAuthCredentials extends BaseModel {
   virtual?: boolean = false;
   accessToken: string;
   refreshToken?: string;

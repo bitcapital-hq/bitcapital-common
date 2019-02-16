@@ -1,12 +1,7 @@
 import { OAuthClient, OAuthClientSchema } from ".";
 import { BaseModel, BaseModelSchema } from "../../base";
 import { User } from "../User";
-import OAuthRefreshToken from "./OAuthRefreshToken";
-
-export enum OAuthClientStatus {
-  ACTIVE = "active",
-  INACTIVE = "inactive"
-}
+import { OAuthRefreshToken } from "./OAuthRefreshToken";
 
 export interface UserAgentInformation {
   ip?: string;
@@ -27,7 +22,7 @@ export interface OAuthAccessTokenSchema extends BaseModelSchema {
   refreshToken?: OAuthRefreshToken;
 }
 
-export default class OAuthAccessToken extends BaseModel {
+export class OAuthAccessToken extends BaseModel {
   accessToken: string;
   tokenType?: string;
   client?: string | OAuthClient;
