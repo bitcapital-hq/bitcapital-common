@@ -12,7 +12,7 @@ export interface TransactionAdditionalData {
     asset_id?: string;
     wallet_id?: string;
     asset_code?: string;
-    conductorType?: "boleto" | "teddoc";
+    conductorType?: "boleto" | "teddoc" | "card" | "transaction_reversal";
 }
 export interface TransactionSchema extends BaseModelSchema {
     type: TransactionType;
