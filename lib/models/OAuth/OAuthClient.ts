@@ -5,17 +5,23 @@ export enum OAuthClientStatus {
   INACTIVE = "inactive"
 }
 
+export enum OAuthClientPlatform {
+  ROOT = "root",
+  API = "api",
+  WEB = "web"
+}
+
 export interface OAuthClientSchema extends BaseModelSchema {
   clientId: string;
   clientSecret?: string;
-  platform: string;
-  status: OAuthClientStatus;
+  platform?: OAuthClientPlatform;
+  status?: OAuthClientStatus;
 }
 
-export default class OAuthClient extends BaseModel implements OAuthClientSchema {
+export class OAuthClient extends BaseModel implements OAuthClientSchema {
   clientId: string;
   clientSecret?: string;
-  platform: string;
+  platform: OAuthClientPlatform;
   status: OAuthClientStatus;
 
   constructor(data: OAuthClientSchema) {

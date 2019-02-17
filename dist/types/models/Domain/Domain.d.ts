@@ -7,12 +7,12 @@ export declare enum DomainRole {
 }
 export interface DomainSchema extends BaseModelSchema {
     name: string;
-    role: DomainRole;
+    role?: DomainRole;
     test?: boolean;
     urls?: string[];
     postbackUrl?: string;
     users?: UserSchema[];
-    settings: DomainSettingsSchema;
+    settings?: DomainSettingsSchema;
 }
 export declare class Domain extends BaseModel implements DomainSchema {
     name: string;

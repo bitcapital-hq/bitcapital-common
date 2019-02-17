@@ -7,7 +7,7 @@ import { ConsumerStatus } from "./ConsumerStatus";
 import { Document, DocumentSchema } from "./Document";
 import { Phone, PhoneSchema } from "./Phone";
 export interface ConsumerSchema extends BaseModelSchema {
-    status: ConsumerStatus;
+    status?: ConsumerStatus;
     user?: UserSchema;
     userId?: string;
     taxId?: string;

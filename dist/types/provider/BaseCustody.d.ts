@@ -23,7 +23,7 @@ export default abstract class BaseCustody {
      * @param wallet The specific wallet to be registered in provider
      */
     abstract register(user: UserSchema, wallet: WalletSchema): Promise<{
-        id: string;
+        externalId: string;
     }>;
     /**
      * Updates the information of an existing user and wallet in the external provider.
@@ -32,7 +32,7 @@ export default abstract class BaseCustody {
      * @param wallet The wallet instance to be updated
      */
     abstract update(user: UserSchema, wallet: WalletSchema): Promise<{
-        id: string;
+        externalId: string;
     }>;
     /**
      * Unregisters a wallet from the provider for a specific User. This
@@ -42,6 +42,6 @@ export default abstract class BaseCustody {
      * @param wallet The specific wallet to be unregistered in provider
      */
     abstract unregister(user: UserSchema, wallet: WalletSchema, reason: UnregisterReason): Promise<{
-        id: string;
+        externalId: string;
     }>;
 }

@@ -1,20 +1,15 @@
 import { BaseModel, BaseModelSchema } from "../../base";
 import { User, UserSchema } from "../User";
-
-export enum CardStatus {
-  AVAIABLE = "available",
-  BLOCKED = "blocked",
-  CANCELLED = "cancelled"
-}
+import { CardStatus } from "./CardStatus";
 
 export interface CardSchema extends BaseModelSchema {
   user?: UserSchema;
-  status: string;
+  status: CardStatus;
 }
 
 export class Card extends BaseModel implements CardSchema {
   user?: User = undefined;
-  status: string = undefined;
+  status: CardStatus = undefined;
 
   constructor(data: Partial<CardSchema>) {
     super(data);

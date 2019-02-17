@@ -10,7 +10,7 @@ export interface OAuthCredentialsSchema extends BaseModelSchema {
   scope: string[];
 }
 
-export default class OAuthCredentials extends BaseModel {
+export class OAuthCredentials extends BaseModel {
   virtual?: boolean = false;
   accessToken: string;
   refreshToken?: string;
@@ -22,9 +22,9 @@ export default class OAuthCredentials extends BaseModel {
   constructor(data: Partial<OAuthCredentialsSchema>) {
     super(data);
     Object.assign(this, data);
-    this.accessToken = data['accessToken'] || data.access_token || this.accessToken;
-    this.refreshToken = data['refreshToken'] || data.refresh_token || this.refreshToken;
-    this.userId = data['userId'] || data.user_id || this.userId;
+    this.accessToken = data["accessToken"] || data.access_token || this.accessToken;
+    this.refreshToken = data["refreshToken"] || data.refresh_token || this.refreshToken;
+    this.userId = data["userId"] || data.user_id || this.userId;
     this.virtual = data.virtual || this.virtual || false;
 
     if (data.expires_in) {

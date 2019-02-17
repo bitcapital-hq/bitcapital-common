@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>bitcapital-common (v1.2.0)</title>
+	<title>bitcapital-common (v1.3.1)</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="assets/css/main.css">
@@ -22,7 +22,7 @@
 						<li class="state loading">Preparing search index...</li>
 						<li class="state failure">The search index is not available</li>
 					</ul>
-					<a href="index.html" class="title">bitcapital-common (v1.2.0)</a>
+					<a href="index.html" class="title">bitcapital-common (v1.3.1)</a>
 				</div>
 				<div class="table-cell" id="tsd-widgets">
 					<div id="tsd-filter">
@@ -56,7 +56,7 @@
 					<a href="globals.html">Globals</a>
 				</li>
 			</ul>
-			<h1> bitcapital-common (v1.2.0)</h1>
+			<h1> bitcapital-common (v1.3.1)</h1>
 		</div>
 	</div>
 </header>
@@ -73,6 +73,7 @@
 								<li class="tsd-kind-enum tsd-is-external"><a href="enums/addresstype.html" class="tsd-kind-icon">Address<wbr>Type</a></li>
 								<li class="tsd-kind-enum tsd-is-external"><a href="enums/assetsscopes.html" class="tsd-kind-icon">Assets<wbr>Scopes</a></li>
 								<li class="tsd-kind-enum tsd-is-external"><a href="enums/bankingtype.html" class="tsd-kind-icon">Banking<wbr>Type</a></li>
+								<li class="tsd-kind-enum tsd-is-external"><a href="enums/cardprovider.html" class="tsd-kind-icon">Card<wbr>Provider</a></li>
 								<li class="tsd-kind-enum tsd-is-external"><a href="enums/cardstatus.html" class="tsd-kind-icon">Card<wbr>Status</a></li>
 								<li class="tsd-kind-enum tsd-is-external"><a href="enums/consumerstatus.html" class="tsd-kind-icon">Consumer<wbr>Status</a></li>
 								<li class="tsd-kind-enum tsd-is-external"><a href="enums/custodyfeature.html" class="tsd-kind-icon">Custody<wbr>Feature</a></li>
@@ -82,6 +83,7 @@
 								<li class="tsd-kind-enum tsd-is-external"><a href="enums/documentverificationerror.html" class="tsd-kind-icon">Document<wbr>Verification<wbr>Error</a></li>
 								<li class="tsd-kind-enum tsd-is-external"><a href="enums/domainrole.html" class="tsd-kind-icon">Domain<wbr>Role</a></li>
 								<li class="tsd-kind-enum tsd-is-external"><a href="enums/domainsscopes.html" class="tsd-kind-icon">Domains<wbr>Scopes</a></li>
+								<li class="tsd-kind-enum tsd-is-external"><a href="enums/oauthclientplatform.html" class="tsd-kind-icon">OAuth<wbr>Client<wbr>Platform</a></li>
 								<li class="tsd-kind-enum tsd-is-external"><a href="enums/oauthclientstatus.html" class="tsd-kind-icon">OAuth<wbr>Client<wbr>Status</a></li>
 								<li class="tsd-kind-enum tsd-is-external"><a href="enums/paymenttype.html" class="tsd-kind-icon">Payment<wbr>Type</a></li>
 								<li class="tsd-kind-enum tsd-is-external"><a href="enums/paymentsscopes.html" class="tsd-kind-icon">Payments<wbr>Scopes</a></li>
@@ -225,6 +227,7 @@
 						<section class="tsd-index-section tsd-is-external">
 							<h3>Type aliases</h3>
 							<ul class="tsd-index-list">
+								<li class="tsd-kind-type-alias tsd-is-external"><a href="globals.html#boletopaymentextra" class="tsd-kind-icon">Boleto<wbr>Payment<wbr>Extra</a></li>
 								<li class="tsd-kind-type-alias tsd-is-external"><a href="globals.html#httpclient" class="tsd-kind-icon">Http<wbr>Client</a></li>
 								<li class="tsd-kind-type-alias tsd-is-external"><a href="globals.html#httprequestoptions" class="tsd-kind-icon">Http<wbr>Request<wbr>Options</a></li>
 							</ul>
@@ -247,12 +250,22 @@
 			<section class="tsd-panel-group tsd-member-group tsd-is-external">
 				<h2>Type aliases</h2>
 				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-is-external">
+					<a name="boletopaymentextra" class="tsd-anchor"></a>
+					<h3>Boleto<wbr>Payment<wbr>Extra</h3>
+					<div class="tsd-signature tsd-kind-icon">Boleto<wbr>Payment<wbr>Extra<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">any</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/bitcapital-hq/bitcapital-common/blob/a97f2e0/lib/provider/features/CustodyBoletoFeature.ts#L4">provider/features/CustodyBoletoFeature.ts:4</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-is-external">
 					<a name="httpclient" class="tsd-anchor"></a>
 					<h3>Http<wbr>Client</h3>
 					<div class="tsd-signature tsd-kind-icon">Http<wbr>Client<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">AxiosInstance</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/bitcapital-hq/bitcapital-common/blob/ce888d0/lib/base/http/Http.ts#L5">base/http/Http.ts:5</a></li>
+							<li>Defined in <a href="https://github.com/bitcapital-hq/bitcapital-common/blob/a97f2e0/lib/base/http/Http.ts#L5">base/http/Http.ts:5</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -262,7 +275,7 @@
 					<div class="tsd-signature tsd-kind-icon">Http<wbr>Request<wbr>Options<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">AxiosRequestConfig</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/bitcapital-hq/bitcapital-common/blob/ce888d0/lib/base/http/Http.ts#L6">base/http/Http.ts:6</a></li>
+							<li>Defined in <a href="https://github.com/bitcapital-hq/bitcapital-common/blob/a97f2e0/lib/base/http/Http.ts#L6">base/http/Http.ts:6</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -275,7 +288,7 @@
 					<div class="tsd-signature tsd-kind-icon">DEFAULT_<wbr>LIMIT<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">25</span><span class="tsd-signature-symbol"> =&nbsp;25</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/bitcapital-hq/bitcapital-common/blob/ce888d0/lib/utils/Pagination.ts#L1">utils/Pagination.ts:1</a></li>
+							<li>Defined in <a href="https://github.com/bitcapital-hq/bitcapital-common/blob/a97f2e0/lib/utils/Pagination.ts#L1">utils/Pagination.ts:1</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -288,7 +301,7 @@
 					<div class="tsd-signature tsd-kind-icon">scopes<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/bitcapital-hq/bitcapital-common/blob/ce888d0/lib/models/OAuth/scopes/index.ts#L8">models/OAuth/scopes/index.ts:8</a></li>
+							<li>Defined in <a href="https://github.com/bitcapital-hq/bitcapital-common/blob/a97f2e0/lib/models/OAuth/scopes/index.ts#L8">models/OAuth/scopes/index.ts:8</a></li>
 						</ul>
 					</aside>
 					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal tsd-is-external">
@@ -297,7 +310,7 @@
 						<div class="tsd-signature tsd-kind-icon">assets<span class="tsd-signature-symbol">:</span> <a href="enums/assetsscopes.html" class="tsd-signature-type">AssetsScopes</a><span class="tsd-signature-symbol"> =&nbsp;AssetsScopes</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/bitcapital-hq/bitcapital-common/blob/ce888d0/lib/models/OAuth/scopes/index.ts#L9">models/OAuth/scopes/index.ts:9</a></li>
+								<li>Defined in <a href="https://github.com/bitcapital-hq/bitcapital-common/blob/a97f2e0/lib/models/OAuth/scopes/index.ts#L9">models/OAuth/scopes/index.ts:9</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -307,7 +320,7 @@
 						<div class="tsd-signature tsd-kind-icon">domains<span class="tsd-signature-symbol">:</span> <a href="enums/domainsscopes.html" class="tsd-signature-type">DomainsScopes</a><span class="tsd-signature-symbol"> =&nbsp;DomainsScopes</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/bitcapital-hq/bitcapital-common/blob/ce888d0/lib/models/OAuth/scopes/index.ts#L10">models/OAuth/scopes/index.ts:10</a></li>
+								<li>Defined in <a href="https://github.com/bitcapital-hq/bitcapital-common/blob/a97f2e0/lib/models/OAuth/scopes/index.ts#L10">models/OAuth/scopes/index.ts:10</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -317,7 +330,7 @@
 						<div class="tsd-signature tsd-kind-icon">payments<span class="tsd-signature-symbol">:</span> <a href="enums/paymentsscopes.html" class="tsd-signature-type">PaymentsScopes</a><span class="tsd-signature-symbol"> =&nbsp;PaymentsScopes</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/bitcapital-hq/bitcapital-common/blob/ce888d0/lib/models/OAuth/scopes/index.ts#L12">models/OAuth/scopes/index.ts:12</a></li>
+								<li>Defined in <a href="https://github.com/bitcapital-hq/bitcapital-common/blob/a97f2e0/lib/models/OAuth/scopes/index.ts#L12">models/OAuth/scopes/index.ts:12</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -327,7 +340,7 @@
 						<div class="tsd-signature tsd-kind-icon">transactions<span class="tsd-signature-symbol">:</span> <a href="enums/transactionsscopes.html" class="tsd-signature-type">TransactionsScopes</a><span class="tsd-signature-symbol"> =&nbsp;TransactionsScopes</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/bitcapital-hq/bitcapital-common/blob/ce888d0/lib/models/OAuth/scopes/index.ts#L13">models/OAuth/scopes/index.ts:13</a></li>
+								<li>Defined in <a href="https://github.com/bitcapital-hq/bitcapital-common/blob/a97f2e0/lib/models/OAuth/scopes/index.ts#L13">models/OAuth/scopes/index.ts:13</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -337,7 +350,7 @@
 						<div class="tsd-signature tsd-kind-icon">users<span class="tsd-signature-symbol">:</span> <a href="enums/usersscopes.html" class="tsd-signature-type">UsersScopes</a><span class="tsd-signature-symbol"> =&nbsp;UsersScopes</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/bitcapital-hq/bitcapital-common/blob/ce888d0/lib/models/OAuth/scopes/index.ts#L11">models/OAuth/scopes/index.ts:11</a></li>
+								<li>Defined in <a href="https://github.com/bitcapital-hq/bitcapital-common/blob/a97f2e0/lib/models/OAuth/scopes/index.ts#L11">models/OAuth/scopes/index.ts:11</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -347,7 +360,7 @@
 						<div class="tsd-signature tsd-kind-icon">wallets<span class="tsd-signature-symbol">:</span> <a href="enums/walletsscopes.html" class="tsd-signature-type">WalletsScopes</a><span class="tsd-signature-symbol"> =&nbsp;WalletsScopes</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/bitcapital-hq/bitcapital-common/blob/ce888d0/lib/models/OAuth/scopes/index.ts#L14">models/OAuth/scopes/index.ts:14</a></li>
+								<li>Defined in <a href="https://github.com/bitcapital-hq/bitcapital-common/blob/a97f2e0/lib/models/OAuth/scopes/index.ts#L14">models/OAuth/scopes/index.ts:14</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -372,6 +385,9 @@
 					</li>
 					<li class=" tsd-kind-enum tsd-is-external">
 						<a href="enums/bankingtype.html" class="tsd-kind-icon">Banking<wbr>Type</a>
+					</li>
+					<li class=" tsd-kind-enum tsd-is-external">
+						<a href="enums/cardprovider.html" class="tsd-kind-icon">Card<wbr>Provider</a>
 					</li>
 					<li class=" tsd-kind-enum tsd-is-external">
 						<a href="enums/cardstatus.html" class="tsd-kind-icon">Card<wbr>Status</a>
@@ -399,6 +415,9 @@
 					</li>
 					<li class=" tsd-kind-enum tsd-is-external">
 						<a href="enums/domainsscopes.html" class="tsd-kind-icon">Domains<wbr>Scopes</a>
+					</li>
+					<li class=" tsd-kind-enum tsd-is-external">
+						<a href="enums/oauthclientplatform.html" class="tsd-kind-icon">OAuth<wbr>Client<wbr>Platform</a>
 					</li>
 					<li class=" tsd-kind-enum tsd-is-external">
 						<a href="enums/oauthclientstatus.html" class="tsd-kind-icon">OAuth<wbr>Client<wbr>Status</a>
@@ -783,6 +802,9 @@
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
 						<a href="interfaces/withdrawalrequestschema.html" class="tsd-kind-icon">Withdrawal<wbr>Request<wbr>Schema</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-is-external">
+						<a href="globals.html#boletopaymentextra" class="tsd-kind-icon">Boleto<wbr>Payment<wbr>Extra</a>
 					</li>
 					<li class=" tsd-kind-type-alias tsd-is-external">
 						<a href="globals.html#httpclient" class="tsd-kind-icon">Http<wbr>Client</a>
