@@ -16,6 +16,7 @@ export interface TransactionAdditionalData {
   asset_code?: string;
   wallet_id?: string;
   card_id?: string;
+  externalTransactionCreatedAt?: Date;
   conductorType?: "boleto" | "teddoc" | "card" | "transaction_reversal";
 }
 
