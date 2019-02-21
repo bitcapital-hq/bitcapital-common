@@ -48,7 +48,7 @@ export abstract class CustodyCardFeature extends BaseCustodyFeature {
    * @param cardId     The card identification
    * @param payload    The data required to perform the operation
    */
-  public abstract async activate(cardId: string, payload: CardBaseRequestSchema): Promise<[boolean, string]>;
+  public abstract async activate(cardId: string, payload: CardBaseRequestSchema): Promise<boolean>;
 
   /**
    * Blocks a card temporarily in the external provider.
@@ -56,7 +56,7 @@ export abstract class CustodyCardFeature extends BaseCustodyFeature {
    * @param cardId     The card identification
    * @param payload    The data required to perform the operation
    */
-  public abstract async block(cardId: string, payload: CardBlockRequestSchema): Promise<[boolean, string]>;
+  public abstract async block(cardId: string, payload: CardBlockRequestSchema): Promise<boolean>;
 
   /**
    * Unblocks a previously blocked card in the external provider.
@@ -64,5 +64,5 @@ export abstract class CustodyCardFeature extends BaseCustodyFeature {
    * @param cardId     The card identification
    * @param payload    The data required to perform the operation
    */
-  public abstract async unblock(cardId: string, payload: CardUnblockRequestSchema): Promise<[boolean, string]>;
+  public abstract async unblock(cardId: string, payload: CardUnblockRequestSchema): Promise<boolean>;
 }

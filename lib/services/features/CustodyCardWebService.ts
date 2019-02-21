@@ -54,18 +54,27 @@ export default class CustodyCardWebService extends CustodyCardFeature {
     return response.data;
   }
 
-  public async activate(cardId: string, payload: CardBaseRequestSchema): Promise<[boolean, string]> {
+  public async activate(cardId: string, payload: CardBaseRequestSchema): Promise<boolean> {
     const response = await this.http.post(`/provider/cards/${cardId}/activate`, payload);
-    return response.status === 200 ? [true, "SUCCESS"] : [false, response.data.message];
+
+    if (response.status !== 200) throw response;
+
+    return true;
   }
 
-  public async block(cardId: string, payload: CardBlockRequestSchema): Promise<[boolean, string]> {
+  public async block(cardId: string, payload: CardBlockRequestSchema): Promise<boolean> {
     const response = await this.http.post(`/provider/cards/${cardId}/block`, payload);
-    return response.status === 200 ? [true, "SUCCESS"] : [false, response.data.message];
+
+    if (response.status !== 200) throw response;
+
+    return true;
   }
 
-  public async unblock(cardId: string, payload: CardUnblockRequestSchema): Promise<[boolean, string]> {
+  public async unblock(cardId: string, payload: CardUnblockRequestSchema): Promise<boolean> {
     const response = await this.http.post(`/provider/cards/${cardId}/unblock`, payload);
-    return response.status === 200 ? [true, "SUCCESS"] : [false, response.data.message];
+
+    if (response.status !== 200) throw response;
+
+    return true;
   }
 }

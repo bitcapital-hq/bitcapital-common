@@ -11,7 +11,7 @@ export default class CustodyCardWebService extends CustodyCardFeature {
     getById(cardId: string, extra?: any): Promise<CardSchema | undefined>;
     emitPhysical(payload: EmitPhysicalCardRequestSchema): Promise<CardSchema>;
     emitVirtual(payload: EmitVirtualCardRequestSchema): Promise<CardSchema>;
-    activate(cardId: string, payload: CardBaseRequestSchema): Promise<[boolean, string]>;
-    block(cardId: string, payload: CardBlockRequestSchema): Promise<[boolean, string]>;
-    unblock(cardId: string, payload: CardUnblockRequestSchema): Promise<[boolean, string]>;
+    activate(cardId: string, payload: CardBaseRequestSchema): Promise<boolean>;
+    block(cardId: string, payload: CardBlockRequestSchema): Promise<boolean>;
+    unblock(cardId: string, payload: CardUnblockRequestSchema): Promise<boolean>;
 }

@@ -35,19 +35,19 @@ export declare abstract class CustodyCardFeature extends BaseCustodyFeature {
      * @param cardId     The card identification
      * @param payload    The data required to perform the operation
      */
-    abstract activate(cardId: string, payload: CardBaseRequestSchema): Promise<[boolean, string]>;
+    abstract activate(cardId: string, payload: CardBaseRequestSchema): Promise<boolean>;
     /**
      * Blocks a card temporarily in the external provider.
      *
      * @param cardId     The card identification
      * @param payload    The data required to perform the operation
      */
-    abstract block(cardId: string, payload: CardBlockRequestSchema): Promise<[boolean, string]>;
+    abstract block(cardId: string, payload: CardBlockRequestSchema): Promise<boolean>;
     /**
      * Unblocks a previously blocked card in the external provider.
      *
      * @param cardId     The card identification
      * @param payload    The data required to perform the operation
      */
-    abstract unblock(cardId: string, payload: CardUnblockRequestSchema): Promise<[boolean, string]>;
+    abstract unblock(cardId: string, payload: CardUnblockRequestSchema): Promise<boolean>;
 }
