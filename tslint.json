@@ -9,7 +9,8 @@
       true,
       "allow-null-union",
       "allow-undefined-union",
-      "allow-string"
+      "allow-string",
+      "allow-number"
     ],
     "max-line-length": [
       true,
