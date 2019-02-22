@@ -20,5 +20,5 @@ export enum ConsumerStatus {
   /* Blocked state */
   SUSPENDED = "suspended",
   BLOCKED = "blocked",
-  DELETED = "deleted",
+  DELETED = "deleted"
 }
