@@ -8,7 +8,7 @@ export enum OAuthClientStatus {
 export enum OAuthClientPlatform {
   ROOT = "root",
   API = "api",
-  WEB = "web",
+  WEB = "web"
 }
 
 export interface OAuthClientSchema extends BaseModelSchema {

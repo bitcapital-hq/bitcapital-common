@@ -60,10 +60,10 @@ export class User extends BaseModel implements UserSchema {
     super(data);
     Object.assign(this, data);
 
-    if(!this.name && data.firstName) {
+    if (!this.name && data.firstName) {
       this.name = `${data.firstName} ${data.lastName || ``}`;
-    } else if(!this.name) {
-      this.name = '';
+    } else if (!this.name) {
+      this.name = "";
     }
 
     this.virtual =

@@ -4,9 +4,12 @@ import { Transaction, TransactionSchema } from "../Transaction";
 import { Wallet, WalletSchema } from "../Wallet";
 
 export enum PaymentType {
+  BOLETO = "boleto",
+  CARD = "card",
   DEPOSIT = "deposit",
   WITHDRAWAL = "withdrawal",
-  TRANSFER = "transfer"
+  TRANSFER = "transfer",
+  TRANSACTION_REVERSAL = "transaction_reversal"
 }
 
 export interface PaymentSchema extends BaseModelSchema {
