@@ -5,3 +5,4 @@ export * from "./CardBlockRequest";
 export * from "./CardBaseRequest";
 export * from "./EmitPhysicalCardRequest";
 export * from "./EmitVirtualCardRequest";
+export * from "./CardCancellationRequest";

@@ -5,7 +5,8 @@ import {
   CardBaseRequestSchema,
   EmitPhysicalCardRequestSchema,
   CardBlockRequestSchema,
-  CardUnblockRequestSchema
+  CardUnblockRequestSchema,
+  CardCancellationRequestSchema
 } from "../../models";
 
 export abstract class CustodyCardFeature extends BaseCustodyFeature {
@@ -65,4 +66,12 @@ export abstract class CustodyCardFeature extends BaseCustodyFeature {
    * @param payload    The data required to perform the operation
    */
   public abstract async unblock(cardId: string, payload: CardUnblockRequestSchema): Promise<boolean>;
+
+  /**
+   * Cancel the card in the external provider.
+   *
+   * @param cardId     The card identification
+   * @param payload    The data required to perform the operation
+   */
+  public abstract async cancel(cardId: string, payload: CardCancellationRequestSchema): Promise<boolean>;
 }

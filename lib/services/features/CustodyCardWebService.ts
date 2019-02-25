@@ -7,7 +7,8 @@ import {
   EmitVirtualCardRequestSchema,
   CardBlockRequestSchema,
   CardUnblockRequestSchema,
-  CardBaseRequestSchema
+  CardBaseRequestSchema,
+  CardCancellationRequestSchema
 } from "../../models";
 
 export interface CustodyCardWebServiceOptions extends HttpOptions, BaseCustodyOptions {}
@@ -72,6 +73,14 @@ export default class CustodyCardWebService extends CustodyCardFeature {
 
   public async unblock(cardId: string, payload: CardUnblockRequestSchema): Promise<boolean> {
     const response = await this.http.post(`/provider/cards/${cardId}/unblock`, payload);
+
+    if (response.status !== 200) throw response;
+
+    return true;
+  }
+
+  public async cancel(cardId: string, payload: CardCancellationRequestSchema): Promise<boolean> {
+    const response = await this.http.post(`/provider/cards/${cardId}/cancel`, payload);
 
     if (response.status !== 200) throw response;
 

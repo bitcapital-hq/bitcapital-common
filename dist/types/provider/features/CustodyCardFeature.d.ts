@@ -1,5 +1,5 @@
 import BaseCustodyFeature, { CustodyFeature } from "../BaseCustodyFeature";
-import { CardSchema, EmitVirtualCardRequestSchema, CardBaseRequestSchema, EmitPhysicalCardRequestSchema, CardBlockRequestSchema, CardUnblockRequestSchema } from "../../models";
+import { CardSchema, EmitVirtualCardRequestSchema, CardBaseRequestSchema, EmitPhysicalCardRequestSchema, CardBlockRequestSchema, CardUnblockRequestSchema, CardCancellationRequestSchema } from "../../models";
 export declare abstract class CustodyCardFeature extends BaseCustodyFeature {
     type: CustodyFeature;
     /**
@@ -50,4 +50,11 @@ export declare abstract class CustodyCardFeature extends BaseCustodyFeature {
      * @param payload    The data required to perform the operation
      */
     abstract unblock(cardId: string, payload: CardUnblockRequestSchema): Promise<boolean>;
+    /**
+     * Cancel the card in the external provider.
+     *
+     * @param cardId     The card identification
+     * @param payload    The data required to perform the operation
+     */
+    abstract cancel(cardId: string, payload: CardCancellationRequestSchema): Promise<boolean>;
 }

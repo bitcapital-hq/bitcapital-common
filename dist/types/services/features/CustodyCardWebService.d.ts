@@ -1,6 +1,6 @@
 import { Http, HttpOptions } from "../../base";
 import { BaseCustodyOptions, CustodyCardFeature } from "../../provider";
-import { PaymentSchema, EmitPhysicalCardRequestSchema, CardSchema, EmitVirtualCardRequestSchema, CardBlockRequestSchema, CardUnblockRequestSchema, CardBaseRequestSchema } from "../../models";
+import { PaymentSchema, EmitPhysicalCardRequestSchema, CardSchema, EmitVirtualCardRequestSchema, CardBlockRequestSchema, CardUnblockRequestSchema, CardBaseRequestSchema, CardCancellationRequestSchema } from "../../models";
 export interface CustodyCardWebServiceOptions extends HttpOptions, BaseCustodyOptions {
 }
 export default class CustodyCardWebService extends CustodyCardFeature {
@@ -14,4 +14,5 @@ export default class CustodyCardWebService extends CustodyCardFeature {
     activate(cardId: string, payload: CardBaseRequestSchema): Promise<boolean>;
     block(cardId: string, payload: CardBlockRequestSchema): Promise<boolean>;
     unblock(cardId: string, payload: CardUnblockRequestSchema): Promise<boolean>;
+    cancel(cardId: string, payload: CardCancellationRequestSchema): Promise<boolean>;
 }
