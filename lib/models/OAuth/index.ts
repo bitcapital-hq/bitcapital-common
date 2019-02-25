@@ -4,4 +4,3 @@ export * from "./OAuthCredentials";
 export * from "./OAuthRefreshToken";
 export * from "./OAuthSecretToken";
 export * from "./scopes";
-

@@ -1,9 +1,8 @@
 import { Http, HttpOptions } from "../../base";
-import { PaymentSchema } from "../../models";
+import { TransactionSchema } from "../../models";
 import { BaseCustodyOptions, CustodyPaymentFeature } from "../../provider";
 
-export interface CustodyPaymentWebServiceOptions extends HttpOptions, BaseCustodyOptions {
-}
+export interface CustodyPaymentWebServiceOptions extends HttpOptions, BaseCustodyOptions {}
 
 export default class CustodyPaymentWebService extends CustodyPaymentFeature {
   protected http: Http;
@@ -13,8 +12,8 @@ export default class CustodyPaymentWebService extends CustodyPaymentFeature {
     this.http = new Http(options);
   }
 
-  public async payment(schema: PaymentSchema): Promise<PaymentSchema> {
-    const response = await this.http.post('/provider/payment', {...schema});
+  public async payment(schema: TransactionSchema): Promise<TransactionSchema> {
+    const response = await this.http.post("/provider/payment", { ...schema });
 
     if (response.data && response.data.length) {
       return response.data;
@@ -22,5 +21,4 @@ export default class CustodyPaymentWebService extends CustodyPaymentFeature {
 
     throw response;
   }
-
 }
