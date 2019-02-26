@@ -1,4 +1,4 @@
-import { IsBase64, IsDate, IsEnum, IsNotEmpty, IsOptional, IsUUID, MinDate } from "class-validator";
+import { IsBase64, IsDate, IsEnum, IsNotEmpty, IsOptional, MinDate } from "class-validator";
 import { BaseModel, BaseModelSchema } from "../../../base";
 import { Consumer, ConsumerSchema } from "../Consumer";
 import { DocumentState, DocumentStateSchema } from "./DocumentState";
@@ -7,7 +7,6 @@ import { DocumentType } from "./DocumentType";
 
 export interface DocumentSchema extends BaseModelSchema {
   consumer?: ConsumerSchema;
-  consumerId?: string;
   status?: DocumentStatus;
   type: DocumentType;
   number?: string;
@@ -20,7 +19,6 @@ export interface DocumentSchema extends BaseModelSchema {
 
 export class Document extends BaseModel implements DocumentSchema {
   @IsOptional() consumer?: Consumer = undefined;
-  @IsUUID() @IsOptional() consumerId?: string = undefined;
 
   @IsNotEmpty()
   @IsEnum(DocumentType)
@@ -49,13 +47,14 @@ export class Document extends BaseModel implements DocumentSchema {
   @MinDate(new Date()) // Don't allow expired documents
   expiresAt?: Date = undefined;
 
-  @IsOptional()
-  states?: DocumentState[] = undefined;
+  @IsOptional() states?: DocumentState[] = undefined;
 
   constructor(data: Partial<DocumentSchema> = {}) {
     super(data);
     Object.assign(this, data);
+
     this.expiresAt = data.verifiedAt && new Date(data.verifiedAt);
     this.consumer = data.consumer && new Consumer(data.consumer);
+    this.states = data.states && data.states.map(state => new DocumentState(state));
   }
 }

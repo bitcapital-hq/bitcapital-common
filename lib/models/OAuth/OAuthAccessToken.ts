@@ -33,15 +33,17 @@ export class OAuthAccessToken extends BaseModel {
 
   constructor(data: OAuthAccessTokenSchema) {
     super(data);
+
     Object.assign(this, data);
+
     this.userAgent = data.userAgent || {};
-    this.expires = data.expires ? new Date(data.expires) : undefined;
+    this.expires = data.expires && new Date(data.expires);
 
     if (data.client) {
-      this.client = typeof data.client === typeof "a" ? data.client : (new OAuthClient(data.client as any) as any);
+      this.client = typeof data.client === "string" ? data.client : new OAuthClient(data.client);
     }
     if (data.user) {
-      this.user = typeof data.user === typeof "a" ? data.user : new User(data.user as User);
+      this.user = typeof data.user === "string" ? data.user : new User(data.user);
     }
   }
 }

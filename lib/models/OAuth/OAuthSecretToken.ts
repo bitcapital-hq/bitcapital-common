@@ -1,5 +1,5 @@
 import { BaseModelSchema, BaseModel } from "../../base";
-import { User } from "../User";
+import { User, UserSchema } from "../User";
 
 export interface OAuthSecretTokenResource {
   entity: "wallet";
@@ -9,8 +9,8 @@ export interface OAuthSecretTokenResource {
 export interface OAuthSecretTokenSchema extends BaseModelSchema {
   id: string;
   secretToken: string;
-  expires: Date;
-  user: User;
+  expires: Date | string;
+  user: UserSchema;
   scope: string[];
   resources: OAuthSecretTokenResource[];
 }
@@ -25,6 +25,10 @@ export class OAuthSecretToken extends BaseModel implements OAuthSecretTokenSchem
 
   constructor(data: Partial<OAuthSecretTokenSchema>) {
     super(data);
+
     Object.assign(this, data);
+
+    this.expires = data.expires && new Date(data.expires);
+    this.user = data.user && new User(data.user);
   }
 }

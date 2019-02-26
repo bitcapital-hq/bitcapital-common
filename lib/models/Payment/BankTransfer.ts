@@ -14,5 +14,7 @@ export class BankTransfer implements BankTransferSchema {
 
   constructor(data: Partial<BankTransferSchema>) {
     Object.assign(this, data);
+
+    this.destination = data.destination && new BankTransferDestination(data.destination);
   }
 }

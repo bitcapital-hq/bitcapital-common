@@ -21,7 +21,9 @@ export class OAuthCredentials extends BaseModel {
 
   constructor(data: Partial<OAuthCredentialsSchema>) {
     super(data);
+
     Object.assign(this, data);
+
     this.accessToken = data["accessToken"] || data.access_token || this.accessToken;
     this.refreshToken = data["refreshToken"] || data.refresh_token || this.refreshToken;
     this.userId = data["userId"] || data.user_id || this.userId;
