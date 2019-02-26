@@ -5,7 +5,7 @@ export interface BoletoPaymentResponseSchema extends BaseModelSchema {
     status: string;
     description: string;
     barcode: string;
-    expiresAt: Date;
+    expiresAt: Date | string;
     recipientName: string;
     discount: number;
     taxAmount: number;

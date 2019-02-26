@@ -4,7 +4,6 @@ import { ConsumerStatus } from "./ConsumerStatus";
 export interface ConsumerStateSchema extends BaseModelSchema {
     status: ConsumerStatus;
     consumer?: ConsumerSchema;
-    consumerId?: string;
 }
 export declare class ConsumerState extends BaseModel implements ConsumerStateSchema {
     status: ConsumerStatus;

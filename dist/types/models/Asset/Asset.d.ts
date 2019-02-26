@@ -11,8 +11,8 @@ export interface AssetSchema extends BaseModelSchema {
     provider?: CustodyProvider;
 }
 export declare class Asset extends BaseModel implements AssetSchema {
-    code: string;
     name?: string;
+    code: string;
     issuer?: Wallet;
     wallets?: Wallet[];
     payments?: Payment[];
