@@ -16,7 +16,7 @@ export default class CustodyDepositWebService extends CustodyDepositFeature {
     const response = await this.http.get("/provider/deposit", { wallet, extra });
 
     if (response.data) {
-      return response.data;
+      return new Payment(response.data);
     }
 
     throw response;
@@ -26,7 +26,7 @@ export default class CustodyDepositWebService extends CustodyDepositFeature {
     const response = await this.http.post("/provider/deposit/postback", { amount, wallet, extra });
 
     if (response.data && response.data.id) {
-      return response.data;
+      return new Payment(response.data);
     }
 
     throw response;

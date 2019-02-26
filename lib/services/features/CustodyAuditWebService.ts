@@ -1,5 +1,5 @@
 import { Http, HttpOptions } from "../../base";
-import { WalletSchema, Payment } from "../../models";
+import { WalletSchema, Payment, PaymentSchema } from "../../models";
 import { BaseCustodyOptions, CustodyAuditFeature } from "../../provider";
 
 export interface CustodyAuditWebServiceOptions extends HttpOptions, BaseCustodyOptions {}
@@ -26,7 +26,7 @@ export default class CustodyAuditWebService extends CustodyAuditFeature {
     const response = await this.http.post("/provider/audit/history", { wallet });
 
     if (response.data && response.data.length) {
-      return response.data;
+      return response.data.map((payment: PaymentSchema) => new Payment(payment));
     }
 
     throw response;

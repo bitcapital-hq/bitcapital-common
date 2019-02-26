@@ -16,7 +16,7 @@ export default class CustodyWithdrawWebService extends CustodyWithdrawFeature {
     const response = await this.http.get("/provider/withdraw", { wallet, extra });
 
     if (response.data) {
-      return response.data;
+      return new Payment(response.data);
     }
 
     throw response;
@@ -26,7 +26,7 @@ export default class CustodyWithdrawWebService extends CustodyWithdrawFeature {
     const response = await this.http.post("/provider/withdraw", { amount, wallet, extra });
 
     if (response.data && response.data.id) {
-      return response.data;
+      return new Payment(response.data);
     }
 
     throw response;
@@ -36,7 +36,7 @@ export default class CustodyWithdrawWebService extends CustodyWithdrawFeature {
     const response = await this.http.post("/provider/withdraw/postback", { amount, wallet, extra });
 
     if (response.data && response.data.id) {
-      return response.data;
+      return new Payment(response.data);
     }
 
     throw response;

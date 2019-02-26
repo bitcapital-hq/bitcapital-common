@@ -16,7 +16,7 @@ export default class CustodyPaymentWebService extends CustodyPaymentFeature {
     const response = await this.http.post("/provider/payment", { ...schema });
 
     if (response.data && response.data.length) {
-      return response.data;
+      return new Transaction(response.data);
     }
 
     throw response;
