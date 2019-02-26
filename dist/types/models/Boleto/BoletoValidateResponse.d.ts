@@ -2,7 +2,7 @@ import { BaseModel, BaseModelSchema } from "../../base";
 export interface BoletoInfoSchema {
     description: string;
     amount: number;
-    expiresAt: Date;
+    expiresAt: Date | string;
     hasExpirationDate: boolean;
     barcodeNumber: string;
 }
@@ -42,7 +42,7 @@ export interface PaymentAmountDetailsSchema {
     fineAmount: number;
     totalAmount: number;
     paymentAmountUpdated: number;
-    calculationDate: Date;
+    calculationDate: Date | string;
 }
 export declare class PaymentAmountDetails implements PaymentAmountDetailsSchema {
     interestAmount: number;
@@ -57,13 +57,13 @@ export interface PaymentInfoSchema {
     contractId: string;
     idNumber: string;
     traders: TradersInfo;
-    expiresAt: Date;
+    expiresAt: Date | string;
     totalAmount: number;
-    amountDetails: PaymentAmountDetails;
-    acceptPartialAmount: PartialAmountDetails;
+    amountDetails: PaymentAmountDetailsSchema;
+    acceptPartialAmount: PartialAmountDetailsSchema;
     barcode: string;
     digitableLine: string;
-    paymentDeadline: Date;
+    paymentDeadline: Date | string;
     validDate: boolean;
     nextBusinessDay: string;
 }
@@ -84,8 +84,8 @@ export declare class PaymentInfo implements PaymentInfoSchema {
 }
 export interface BoletoValidateResponseSchema extends BaseModelSchema {
     paid: boolean;
-    boletoInfo: BoletoInfo;
-    paymentInfo: PaymentInfo;
+    boletoInfo: BoletoInfoSchema;
+    paymentInfo: PaymentInfoSchema;
 }
 export declare class BoletoValidateResponse extends BaseModel implements BoletoValidateResponseSchema {
     paid: boolean;

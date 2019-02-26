@@ -11,17 +11,17 @@ export interface UserSchema extends BaseModelSchema {
     name?: string;
     firstName: string;
     lastName: string;
-    email?: string;
+    email: string;
     role?: UserRole;
     status?: UserStatus;
     password?: string;
     credentials?: OAuthCredentials;
     domain?: DomainSchema;
     consumer?: ConsumerSchema;
-    virtual?: boolean;
     product?: ProductSchema;
     wallets?: WalletSchema[];
     cards?: CardSchema[];
+    virtual?: boolean;
 }
 export declare class User extends BaseModel implements UserSchema {
     name?: string;

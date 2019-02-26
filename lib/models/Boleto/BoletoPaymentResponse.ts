@@ -7,7 +7,7 @@ export interface BoletoPaymentResponseSchema extends BaseModelSchema {
   status: string;
   description: string;
   barcode: string;
-  expiresAt: Date;
+  expiresAt: Date | string;
   recipientName: string;
   discount: number;
   taxAmount: number;
@@ -28,6 +28,9 @@ export class BoletoPaymentResponse extends BaseModel implements BoletoPaymentRes
 
   constructor(data: Partial<BoletoPaymentResponse>) {
     super(data);
+
     Object.assign(this, data);
+
+    this.expiresAt = data.expiresAt && new Date(data.expiresAt);
   }
 }

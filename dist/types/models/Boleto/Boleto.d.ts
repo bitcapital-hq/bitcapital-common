@@ -2,7 +2,7 @@ import { BaseModel, BaseModelSchema } from "../../base";
 export interface BoletoSchema extends BaseModelSchema {
     conductorId?: number;
     documentNumber?: string;
-    expiresAt: Date;
+    expiresAt: Date | string;
     amount: string;
     beneficiaryName?: string;
     beneficiaryCode?: string;

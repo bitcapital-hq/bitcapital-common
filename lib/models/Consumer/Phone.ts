@@ -1,4 +1,4 @@
-import { IsDate, IsNotEmpty, IsNumberString, IsOptional, IsUUID, MaxDate } from "class-validator";
+import { IsDate, IsNotEmpty, IsNumberString, IsOptional, MaxDate } from "class-validator";
 import { BaseModel, BaseModelSchema } from "../../base";
 import { Consumer, ConsumerSchema } from "./Consumer";
 
@@ -11,7 +11,6 @@ export enum PhoneType {
 export interface PhoneSchema extends BaseModelSchema {
   type?: PhoneType;
   consumer?: ConsumerSchema;
-  consumerId?: string;
   code: string;
   number: string;
   extension?: string;
@@ -22,8 +21,6 @@ export class Phone extends BaseModel implements PhoneSchema {
   @IsOptional() type?: PhoneType = PhoneType.MOBILE;
 
   @IsOptional() consumer?: Consumer = undefined;
-
-  @IsUUID() consumerId?: string = undefined;
 
   @IsNotEmpty()
   @IsNumberString()
@@ -42,7 +39,10 @@ export class Phone extends BaseModel implements PhoneSchema {
 
   constructor(data: Partial<PhoneSchema>) {
     super(data);
+
     Object.assign(this, data);
+
     this.verifiedAt = data.verifiedAt instanceof Date ? data.verifiedAt : new Date(data.verifiedAt);
+    this.consumer = data.consumer && new Consumer(data.consumer);
   }
 }
