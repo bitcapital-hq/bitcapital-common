@@ -1,5 +1,5 @@
 import { Http, HttpOptions } from "../base";
-import { User, Wallet } from "../models";
+import { UserSchema, WalletSchema } from "../models";
 import { BaseCustody, BaseCustodyOptions, UnregisterReason } from "../provider";
 export interface CustodyProviderWebServiceOptions extends HttpOptions, BaseCustodyOptions {
 }
@@ -7,13 +7,13 @@ export default abstract class CustodyProviderWebService extends BaseCustody {
     readonly options: CustodyProviderWebServiceOptions;
     protected http: Http;
     constructor(options: CustodyProviderWebServiceOptions);
-    register(user: User, wallet: Wallet): Promise<{
+    register(user: UserSchema, wallet: WalletSchema): Promise<{
         externalId: string;
     }>;
-    update(user: User, wallet: Wallet): Promise<{
+    update(user: UserSchema, wallet: WalletSchema): Promise<{
         externalId: string;
     }>;
-    unregister(user: User, wallet: Wallet, reason: UnregisterReason): Promise<{
+    unregister(user: UserSchema, wallet: WalletSchema, reason: UnregisterReason): Promise<{
         externalId: string;
     }>;
 }

@@ -1,4 +1,4 @@
-import { UserSchema, WalletSchema } from "../models";
+import { Wallet, User } from "../models";
 import BaseCustodyFeature, { CustodyFeature } from "./BaseCustodyFeature";
 import { CustodyProvider } from "./CustodyProvider";
 export declare enum UnregisterReason {
@@ -22,7 +22,7 @@ export default abstract class BaseCustody {
      * @param user The user instance to be registered in provider
      * @param wallet The specific wallet to be registered in provider
      */
-    abstract register(user: UserSchema, wallet: WalletSchema): Promise<{
+    abstract register(user: User, wallet: Wallet): Promise<{
         externalId: string;
     }>;
     /**
@@ -31,7 +31,7 @@ export default abstract class BaseCustody {
      * @param user The user instance to be updated
      * @param wallet The wallet instance to be updated
      */
-    abstract update(user: UserSchema, wallet: WalletSchema): Promise<{
+    abstract update(user: User, wallet: Wallet): Promise<{
         externalId: string;
     }>;
     /**
@@ -41,7 +41,7 @@ export default abstract class BaseCustody {
      * @param user The user instance to be unregistered in provider
      * @param wallet The specific wallet to be unregistered in provider
      */
-    abstract unregister(user: UserSchema, wallet: WalletSchema, reason: UnregisterReason): Promise<{
+    abstract unregister(user: User, wallet: Wallet, reason: UnregisterReason): Promise<{
         externalId: string;
     }>;
 }
