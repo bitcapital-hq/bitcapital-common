@@ -1,5 +1,5 @@
 import { Http, HttpOptions } from "../../base";
-import { BoletoSchema, PaymentSchema, Wallet } from "../../models";
+import { WalletSchema, Payment, Boleto } from "../../models";
 import { BaseCustodyOptions, CustodyBoletoFeature, BoletoPaymentExtra } from "../../provider";
 
 export interface CustodyBoletoWebServiceOptions extends HttpOptions, BaseCustodyOptions {}
@@ -12,7 +12,7 @@ export default class CustodyBoletoWebService extends CustodyBoletoFeature {
     this.http = new Http(options);
   }
 
-  public async info(wallet: Wallet, extra?: any): Promise<PaymentSchema> {
+  public async info(wallet: WalletSchema, extra?: any): Promise<Payment> {
     const response = await this.http.get("/provider/boleto/info", { wallet, ...extra });
 
     if (response.data) {
@@ -22,7 +22,7 @@ export default class CustodyBoletoWebService extends CustodyBoletoFeature {
     throw response;
   }
 
-  public async emit(amount: string, wallet: Wallet, extra?: any): Promise<BoletoSchema> {
+  public async emit(amount: string, wallet: WalletSchema, extra?: any): Promise<Boleto> {
     const response = await this.http.post("/provider/boleto/emit", { amount, wallet, extra });
 
     if (response.data && response.data.id) {
@@ -32,7 +32,7 @@ export default class CustodyBoletoWebService extends CustodyBoletoFeature {
     throw response;
   }
 
-  public async getById(externalId: string, extra?: any): Promise<BoletoSchema | undefined> {
+  public async getById(externalId: string, extra?: any): Promise<Boleto | undefined> {
     const response = await this.http.get(`/provider/boleto/${externalId}`, { ...extra });
 
     if (response.data && response.data.id) {
@@ -52,7 +52,7 @@ export default class CustodyBoletoWebService extends CustodyBoletoFeature {
     throw response;
   }
 
-  public async pay(barCode: string, wallet: Wallet, extra?: BoletoPaymentExtra): Promise<PaymentSchema> {
+  public async pay(barCode: string, wallet: WalletSchema, extra?: BoletoPaymentExtra): Promise<Payment> {
     const response = await this.http.post(`/provider/boleto/pay`, { barCode, wallet, ...extra });
 
     if (response.data && response.data.id) {
