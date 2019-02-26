@@ -24,7 +24,7 @@ export interface UserSchema extends BaseModelSchema {
     cards?: CardSchema[];
 }
 export declare class User extends BaseModel implements UserSchema {
-    name: string;
+    name?: string;
     firstName: string;
     lastName: string;
     email: string;

@@ -1,6 +1,7 @@
-export interface CardBlockRequestSchema {
-    password: string;
-    description?: string;
+import { CardBaseRequestSchema } from "./CardBaseRequest";
+export interface CardUnblockRequestSchema extends CardBaseRequestSchema {
 }
-export interface CardUnblockRequestSchema extends CardBlockRequestSchema {
+export interface CardBlockRequestSchema extends CardBaseRequestSchema {
+    /** The reason for the card blocking  */
+    comment: string;
 }

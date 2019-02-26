@@ -27,7 +27,7 @@ export interface UserSchema extends BaseModelSchema {
 }
 
 export class User extends BaseModel implements UserSchema {
-  @IsOptional() name: string = undefined;
+  @IsOptional() name?: string = undefined;
 
   @IsNotEmpty() firstName: string = undefined;
 

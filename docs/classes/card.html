@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Card | bitcapital-common (v1.3.1)</title>
+	<title>Card | bitcapital-common (v1.4.0)</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -22,7 +22,7 @@
 						<li class="state loading">Preparing search index...</li>
 						<li class="state failure">The search index is not available</li>
 					</ul>
-					<a href="../index.html" class="title">bitcapital-common (v1.3.1)</a>
+					<a href="../index.html" class="title">bitcapital-common (v1.4.0)</a>
 				</div>
 				<div class="table-cell" id="tsd-widgets">
 					<div id="tsd-filter">
@@ -102,7 +102,9 @@
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-external"><a href="card.html#id" class="tsd-kind-icon">id</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-external"><a href="card.html#status" class="tsd-kind-icon">status</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-external"><a href="card.html#updatedat" class="tsd-kind-icon">updated<wbr>At</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-external"><a href="card.html#user" class="tsd-kind-icon">user</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-external"><a href="card.html#userid" class="tsd-kind-icon">user<wbr>Id</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-external"><a href="card.html#virtual" class="tsd-kind-icon">virtual</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-external"><a href="card.html#walletid" class="tsd-kind-icon">wallet<wbr>Id</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section tsd-is-inherited tsd-is-external">
@@ -127,7 +129,7 @@
 							<aside class="tsd-sources">
 								<p>Overrides <a href="basemodel.html">BaseModel</a>.<a href="basemodel.html#constructor">constructor</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/bitcapital-hq/bitcapital-common/blob/a97f2e0/lib/models/Card/Card.ts#L12">models/Card/Card.ts:12</a></li>
+									<li>Defined in models/Card/Card.ts:16</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -151,7 +153,7 @@
 						<p>Implementation of <a href="../interfaces/cardschema.html">CardSchema</a>.<a href="../interfaces/cardschema.html#createdat">createdAt</a></p>
 						<p>Inherited from <a href="basemodel.html">BaseModel</a>.<a href="basemodel.html#createdat">createdAt</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/bitcapital-hq/bitcapital-common/blob/a97f2e0/lib/base/BaseModel.ts#L14">base/BaseModel.ts:14</a></li>
+							<li>Defined in base/BaseModel.ts:14</li>
 						</ul>
 					</aside>
 				</section>
@@ -163,7 +165,7 @@
 						<p>Implementation of <a href="../interfaces/cardschema.html">CardSchema</a>.<a href="../interfaces/cardschema.html#id">id</a></p>
 						<p>Inherited from <a href="basemodel.html">BaseModel</a>.<a href="basemodel.html#id">id</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/bitcapital-hq/bitcapital-common/blob/a97f2e0/lib/base/BaseModel.ts#L12">base/BaseModel.ts:12</a></li>
+							<li>Defined in base/BaseModel.ts:12</li>
 						</ul>
 					</aside>
 				</section>
@@ -174,7 +176,7 @@
 					<aside class="tsd-sources">
 						<p>Implementation of <a href="../interfaces/cardschema.html">CardSchema</a>.<a href="../interfaces/cardschema.html#status">status</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/bitcapital-hq/bitcapital-common/blob/a97f2e0/lib/models/Card/Card.ts#L12">models/Card/Card.ts:12</a></li>
+							<li>Defined in models/Card/Card.ts:16</li>
 						</ul>
 					</aside>
 				</section>
@@ -186,18 +188,40 @@
 						<p>Implementation of <a href="../interfaces/cardschema.html">CardSchema</a>.<a href="../interfaces/cardschema.html#updatedat">updatedAt</a></p>
 						<p>Inherited from <a href="basemodel.html">BaseModel</a>.<a href="basemodel.html#updatedat">updatedAt</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/bitcapital-hq/bitcapital-common/blob/a97f2e0/lib/base/BaseModel.ts#L16">base/BaseModel.ts:16</a></li>
+							<li>Defined in base/BaseModel.ts:16</li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-external">
-					<a name="user" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> user</h3>
-					<div class="tsd-signature tsd-kind-icon">user<span class="tsd-signature-symbol">:</span> <a href="user.html" class="tsd-signature-type">User</a><span class="tsd-signature-symbol"> =&nbsp;undefined</span></div>
+					<a name="userid" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> user<wbr>Id</h3>
+					<div class="tsd-signature tsd-kind-icon">user<wbr>Id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;undefined</span></div>
 					<aside class="tsd-sources">
-						<p>Implementation of <a href="../interfaces/cardschema.html">CardSchema</a>.<a href="../interfaces/cardschema.html#user">user</a></p>
+						<p>Implementation of <a href="../interfaces/cardschema.html">CardSchema</a>.<a href="../interfaces/cardschema.html#userid">userId</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/bitcapital-hq/bitcapital-common/blob/a97f2e0/lib/models/Card/Card.ts#L11">models/Card/Card.ts:11</a></li>
+							<li>Defined in models/Card/Card.ts:13</li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-external">
+					<a name="virtual" class="tsd-anchor"></a>
+					<h3>virtual</h3>
+					<div class="tsd-signature tsd-kind-icon">virtual<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> =&nbsp;undefined</span></div>
+					<aside class="tsd-sources">
+						<p>Implementation of <a href="../interfaces/cardschema.html">CardSchema</a>.<a href="../interfaces/cardschema.html#virtual">virtual</a></p>
+						<ul>
+							<li>Defined in models/Card/Card.ts:15</li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-external">
+					<a name="walletid" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> wallet<wbr>Id</h3>
+					<div class="tsd-signature tsd-kind-icon">wallet<wbr>Id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;undefined</span></div>
+					<aside class="tsd-sources">
+						<p>Implementation of <a href="../interfaces/cardschema.html">CardSchema</a>.<a href="../interfaces/cardschema.html#walletid">walletId</a></p>
+						<ul>
+							<li>Defined in models/Card/Card.ts:14</li>
 						</ul>
 					</aside>
 				</section>
@@ -215,7 +239,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="basemodel.html">BaseModel</a>.<a href="basemodel.html#isvalid">isValid</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/bitcapital-hq/bitcapital-common/blob/a97f2e0/lib/base/BaseModel.ts#L34">base/BaseModel.ts:34</a></li>
+									<li>Defined in base/BaseModel.ts:34</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -266,7 +290,13 @@
 								<a href="card.html#updatedat" class="tsd-kind-icon">updated<wbr>At</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-external">
-								<a href="card.html#user" class="tsd-kind-icon">user</a>
+								<a href="card.html#userid" class="tsd-kind-icon">user<wbr>Id</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-external">
+								<a href="card.html#virtual" class="tsd-kind-icon">virtual</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-external">
+								<a href="card.html#walletid" class="tsd-kind-icon">wallet<wbr>Id</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-external">
 								<a href="card.html#isvalid" class="tsd-kind-icon">is<wbr>Valid</a>

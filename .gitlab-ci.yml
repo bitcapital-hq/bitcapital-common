@@ -1,6 +1,7 @@
 stages:
   - dependencies
   - build
+  - audit
   - publish
 
 cache:
@@ -34,6 +35,17 @@ build-tsc:
     - dependencies-install
   script:
     - yarn build
+
+test:
+  stage: audit
+  image: node:10-alpine
+  dependencies:
+    - dependencies-install
+  script:
+    - yarn -s test
+  artifacts:
+    reports:
+      junit: junit.xml
 
 publish-github:
   stage: publish

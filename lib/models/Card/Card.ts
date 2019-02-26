@@ -1,14 +1,18 @@
 import { BaseModel, BaseModelSchema } from "../../base";
-import { User, UserSchema } from "../User";
 import { CardStatus } from "./CardStatus";
+import { IsOptional } from "class-validator";
 
 export interface CardSchema extends BaseModelSchema {
-  user?: UserSchema;
+  userId?: string;
+  walletId?: string;
+  virtual: boolean;
   status: CardStatus;
 }
 
 export class Card extends BaseModel implements CardSchema {
-  user?: User = undefined;
+  @IsOptional() userId?: string = undefined;
+  @IsOptional() walletId?: string = undefined;
+  virtual: boolean = undefined;
   status: CardStatus = undefined;
 
   constructor(data: Partial<CardSchema>) {
