@@ -1,4 +1,4 @@
-import { UserSchema, WalletSchema } from "../models";
+import { Wallet, User } from "../models";
 import BaseCustodyFeature, { CustodyFeature } from "./BaseCustodyFeature";
 import { CustodyProvider } from "./CustodyProvider";
 
@@ -34,7 +34,7 @@ export default abstract class BaseCustody {
    * @param user The user instance to be registered in provider
    * @param wallet The specific wallet to be registered in provider
    */
-  public abstract async register(user: UserSchema, wallet: WalletSchema): Promise<{ externalId: string }>;
+  public abstract async register(user: User, wallet: Wallet): Promise<{ externalId: string }>;
 
   /**
    * Updates the information of an existing user and wallet in the external provider.
@@ -42,7 +42,7 @@ export default abstract class BaseCustody {
    * @param user The user instance to be updated
    * @param wallet The wallet instance to be updated
    */
-  public abstract async update(user: UserSchema, wallet: WalletSchema): Promise<{ externalId: string }>;
+  public abstract async update(user: User, wallet: Wallet): Promise<{ externalId: string }>;
 
   /**
    * Unregisters a wallet from the provider for a specific User. This
@@ -52,8 +52,8 @@ export default abstract class BaseCustody {
    * @param wallet The specific wallet to be unregistered in provider
    */
   public abstract async unregister(
-    user: UserSchema,
-    wallet: WalletSchema,
+    user: User,
+    wallet: Wallet,
     reason: UnregisterReason
   ): Promise<{ externalId: string }>;
 }
