@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>PaymentType | bitcapital-common (v1.3.1)</title>
+	<title>PaymentType | bitcapital-common (v1.4.0)</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -22,7 +22,7 @@
 						<li class="state loading">Preparing search index...</li>
 						<li class="state failure">The search index is not available</li>
 					</ul>
-					<a href="../index.html" class="title">bitcapital-common (v1.3.1)</a>
+					<a href="../index.html" class="title">bitcapital-common (v1.4.0)</a>
 				</div>
 				<div class="table-cell" id="tsd-widgets">
 					<div id="tsd-filter">
@@ -73,7 +73,10 @@
 						<section class="tsd-index-section tsd-is-external">
 							<h3>Enumeration members</h3>
 							<ul class="tsd-index-list">
+								<li class="tsd-kind-enum-member tsd-parent-kind-enum tsd-is-external"><a href="paymenttype.html#boleto" class="tsd-kind-icon">BOLETO</a></li>
+								<li class="tsd-kind-enum-member tsd-parent-kind-enum tsd-is-external"><a href="paymenttype.html#card" class="tsd-kind-icon">CARD</a></li>
 								<li class="tsd-kind-enum-member tsd-parent-kind-enum tsd-is-external"><a href="paymenttype.html#deposit" class="tsd-kind-icon">DEPOSIT</a></li>
+								<li class="tsd-kind-enum-member tsd-parent-kind-enum tsd-is-external"><a href="paymenttype.html#transaction_reversal" class="tsd-kind-icon">TRANSACTION_<wbr>REVERSAL</a></li>
 								<li class="tsd-kind-enum-member tsd-parent-kind-enum tsd-is-external"><a href="paymenttype.html#transfer" class="tsd-kind-icon">TRANSFER</a></li>
 								<li class="tsd-kind-enum-member tsd-parent-kind-enum tsd-is-external"><a href="paymenttype.html#withdrawal" class="tsd-kind-icon">WITHDRAWAL</a></li>
 							</ul>
@@ -84,12 +87,42 @@
 			<section class="tsd-panel-group tsd-member-group tsd-is-external">
 				<h2>Enumeration members</h2>
 				<section class="tsd-panel tsd-member tsd-kind-enum-member tsd-parent-kind-enum tsd-is-external">
+					<a name="boleto" class="tsd-anchor"></a>
+					<h3>BOLETO</h3>
+					<div class="tsd-signature tsd-kind-icon">BOLETO<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> =&nbsp;&quot;boleto&quot;</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in models/Payment/Payment.ts:7</li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-enum-member tsd-parent-kind-enum tsd-is-external">
+					<a name="card" class="tsd-anchor"></a>
+					<h3>CARD</h3>
+					<div class="tsd-signature tsd-kind-icon">CARD<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> =&nbsp;&quot;card&quot;</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in models/Payment/Payment.ts:8</li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-enum-member tsd-parent-kind-enum tsd-is-external">
 					<a name="deposit" class="tsd-anchor"></a>
 					<h3>DEPOSIT</h3>
 					<div class="tsd-signature tsd-kind-icon">DEPOSIT<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> =&nbsp;&quot;deposit&quot;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/bitcapital-hq/bitcapital-common/blob/a97f2e0/lib/models/Payment/Payment.ts#L7">models/Payment/Payment.ts:7</a></li>
+							<li>Defined in models/Payment/Payment.ts:9</li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-enum-member tsd-parent-kind-enum tsd-is-external">
+					<a name="transaction_reversal" class="tsd-anchor"></a>
+					<h3>TRANSACTION_<wbr>REVERSAL</h3>
+					<div class="tsd-signature tsd-kind-icon">TRANSACTION_<wbr>REVERSAL<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> =&nbsp;&quot;transaction_reversal&quot;</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in models/Payment/Payment.ts:12</li>
 						</ul>
 					</aside>
 				</section>
@@ -99,7 +132,7 @@
 					<div class="tsd-signature tsd-kind-icon">TRANSFER<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> =&nbsp;&quot;transfer&quot;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/bitcapital-hq/bitcapital-common/blob/a97f2e0/lib/models/Payment/Payment.ts#L9">models/Payment/Payment.ts:9</a></li>
+							<li>Defined in models/Payment/Payment.ts:11</li>
 						</ul>
 					</aside>
 				</section>
@@ -109,7 +142,7 @@
 					<div class="tsd-signature tsd-kind-icon">WITHDRAWAL<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> =&nbsp;&quot;withdrawal&quot;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/bitcapital-hq/bitcapital-common/blob/a97f2e0/lib/models/Payment/Payment.ts#L8">models/Payment/Payment.ts:8</a></li>
+							<li>Defined in models/Payment/Payment.ts:10</li>
 						</ul>
 					</aside>
 				</section>
@@ -131,7 +164,16 @@
 						<a href="paymenttype.html" class="tsd-kind-icon">Payment<wbr>Type</a>
 						<ul>
 							<li class=" tsd-kind-enum-member tsd-parent-kind-enum tsd-is-external">
+								<a href="paymenttype.html#boleto" class="tsd-kind-icon">BOLETO</a>
+							</li>
+							<li class=" tsd-kind-enum-member tsd-parent-kind-enum tsd-is-external">
+								<a href="paymenttype.html#card" class="tsd-kind-icon">CARD</a>
+							</li>
+							<li class=" tsd-kind-enum-member tsd-parent-kind-enum tsd-is-external">
 								<a href="paymenttype.html#deposit" class="tsd-kind-icon">DEPOSIT</a>
+							</li>
+							<li class=" tsd-kind-enum-member tsd-parent-kind-enum tsd-is-external">
+								<a href="paymenttype.html#transaction_reversal" class="tsd-kind-icon">TRANSACTION_<wbr>REVERSAL</a>
 							</li>
 							<li class=" tsd-kind-enum-member tsd-parent-kind-enum tsd-is-external">
 								<a href="paymenttype.html#transfer" class="tsd-kind-icon">TRANSFER</a>
