@@ -9,7 +9,7 @@ export default class CustodyBoletoWebService extends CustodyBoletoFeature {
     constructor(options: CustodyBoletoWebServiceOptions);
     info(wallet: WalletSchema, extra?: any): Promise<Payment>;
     emit(amount: string, wallet: WalletSchema, extra?: any): Promise<Boleto>;
-    getById(externalId: string, extra?: any): Promise<Boleto | undefined>;
+    getById(externalId: string, extra?: any): Promise<Boleto>;
     validate(barCode: string, extra?: BoletoPaymentExtra): Promise<any>;
     pay(barCode: string, wallet: WalletSchema, extra?: BoletoPaymentExtra): Promise<Payment>;
 }
