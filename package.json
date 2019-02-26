@@ -15,8 +15,7 @@
     "lint": "tslint --project tsconfig.json",
     "docs": "./scripts/docs.sh",
     "start": "$(cd docs/ && serve -p ${PORT:-3030})",
-    "precommit": "lint-staged",
-    "prepush": "yarn -s test"
+    "precommit": "lint-staged"
   },
   "lint-staged": {
     "!(dist/)*.ts": [

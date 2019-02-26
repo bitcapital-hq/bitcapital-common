@@ -7,7 +7,6 @@ export declare enum AddressType {
 export interface AddressSchema extends BaseModelSchema {
     type?: AddressType;
     consumer?: ConsumerSchema;
-    consumerId?: string;
     country: string;
     city: string;
     code: string;
@@ -19,7 +18,6 @@ export interface AddressSchema extends BaseModelSchema {
 }
 export declare class Address extends BaseModel implements AddressSchema {
     consumer?: Consumer;
-    consumerId?: string;
     type?: AddressType;
     reference?: string;
     country: string;

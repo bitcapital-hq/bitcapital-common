@@ -43,6 +43,7 @@ export class Transaction extends BaseModel implements TransactionSchema {
 
   constructor(data: Partial<TransactionSchema>) {
     super(data);
+
     Object.assign(this, data);
 
     this.source = data.source && new Wallet(data.source);

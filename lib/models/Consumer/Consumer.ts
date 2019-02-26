@@ -13,11 +13,11 @@ export interface ConsumerSchema extends BaseModelSchema {
   user?: UserSchema;
   userId?: string;
   taxId?: string;
+  addresses?: AddressSchema[];
+  bankings?: BankingSchema[];
   documents?: DocumentSchema[];
   phones?: PhoneSchema[];
-  addresses?: AddressSchema[];
   states?: ConsumerStateSchema[];
-  bankings?: BankingSchema[];
 }
 
 export class Consumer extends BaseModel implements ConsumerSchema {
@@ -30,13 +30,21 @@ export class Consumer extends BaseModel implements ConsumerSchema {
   status: ConsumerStatus = undefined;
 
   states?: ConsumerState[] = undefined;
-  documents?: Document[] = undefined;
-  phones?: Phone[] = undefined;
   addresses?: Address[] = undefined;
   bankings?: Banking[] = undefined;
+  documents?: Document[] = undefined;
+  phones?: Phone[] = undefined;
 
   constructor(data: Partial<ConsumerSchema>) {
     super(data);
+
     Object.assign(this, data);
+
+    this.user = data.user && new User(data.user);
+    this.states = data.states && data.states.map(state => new ConsumerState(state));
+    this.addresses = data.addresses && data.addresses.map(address => new Address(address));
+    this.bankings = data.bankings && data.bankings.map(banking => new Banking(banking));
+    this.documents = data.documents && data.documents.map(document => new Document(document));
+    this.phones = data.phones && data.phones.map(phone => new Phone(phone));
   }
 }

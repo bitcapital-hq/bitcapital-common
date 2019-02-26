@@ -10,7 +10,7 @@ export declare abstract class CustodyCardFeature extends BaseCustodyFeature {
      */
     abstract info(cardId: string, extra?: any): Promise<any>;
     /**
-     * Gets Card information based on its external id.
+     * Gets CardSchema information based on its external id.
      *
      * @param cardId  The card identification
      */

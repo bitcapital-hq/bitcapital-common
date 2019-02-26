@@ -13,10 +13,11 @@ export class DomainSettings implements DomainSettingsSchema {
   primaryColor?: string;
   tintColor?: string;
 
-  @ValidateNested() locks: DomainSettingsLocks = undefined;
+  @ValidateNested() locks?: DomainSettingsLocks = undefined;
 
   constructor(data: Partial<DomainSettings> = {}) {
     Object.assign(this, data);
+
     this.locks = data.locks && new DomainSettingsLocks(data.locks);
   }
 }
