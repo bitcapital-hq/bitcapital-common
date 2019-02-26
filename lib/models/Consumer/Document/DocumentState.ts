@@ -16,7 +16,9 @@ export class DocumentState extends BaseModel implements DocumentStateSchema {
 
   constructor(data: Partial<DocumentStateSchema> = {}) {
     super(data);
+
     Object.assign(this, data);
+
     this.document = data.document && new Document(data.document);
   }
 }

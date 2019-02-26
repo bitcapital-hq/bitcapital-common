@@ -1,6 +1,6 @@
 {
   "name": "bitcapital-common",
-  "version": "1.4.0",
+  "version": "1.5.0",
   "main": "./dist/index.js",
   "author": "Luis Brito <luis@nxtep.io>",
   "license": "UNLICENSED",
@@ -15,8 +15,7 @@
     "lint": "tslint --project tsconfig.json",
     "docs": "./scripts/docs.sh",
     "start": "$(cd docs/ && serve -p ${PORT:-3030})",
-    "precommit": "lint-staged",
-    "prepush": "yarn -s test"
+    "precommit": "lint-staged"
   },
   "lint-staged": {
     "!(dist/)*.ts": [

@@ -8,7 +8,6 @@ export declare enum PhoneType {
 export interface PhoneSchema extends BaseModelSchema {
     type?: PhoneType;
     consumer?: ConsumerSchema;
-    consumerId?: string;
     code: string;
     number: string;
     extension?: string;
@@ -17,7 +16,6 @@ export interface PhoneSchema extends BaseModelSchema {
 export declare class Phone extends BaseModel implements PhoneSchema {
     type?: PhoneType;
     consumer?: Consumer;
-    consumerId?: string;
     code: string;
     number: string;
     extension?: string;

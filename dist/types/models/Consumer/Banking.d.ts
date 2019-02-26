@@ -6,7 +6,6 @@ export declare enum BankingType {
 }
 export interface BankingSchema extends BaseModelSchema {
     consumer?: ConsumerSchema;
-    consumerId?: string;
     type: BankingType;
     bank: number;
     agency: number;
@@ -22,6 +21,5 @@ export declare class Banking extends BaseModel implements BankingSchema {
     account: number;
     accountDigit: string;
     consumer: Consumer;
-    consumerId: string;
     constructor(data: Partial<BankingSchema>);
 }

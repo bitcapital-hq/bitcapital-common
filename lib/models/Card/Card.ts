@@ -17,6 +17,7 @@ export class Card extends BaseModel implements CardSchema {
 
   constructor(data: Partial<CardSchema>) {
     super(data);
+
     Object.assign(this, data);
   }
 }

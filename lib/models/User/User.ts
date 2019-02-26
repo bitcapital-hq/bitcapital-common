@@ -13,17 +13,17 @@ export interface UserSchema extends BaseModelSchema {
   name?: string;
   firstName: string;
   lastName: string;
-  email?: string;
+  email: string;
   role?: UserRole;
   status?: UserStatus;
   password?: string;
   credentials?: OAuthCredentials;
   domain?: DomainSchema;
   consumer?: ConsumerSchema;
-  virtual?: boolean;
   product?: ProductSchema;
   wallets?: WalletSchema[];
   cards?: CardSchema[];
+  virtual?: boolean;
 }
 
 export class User extends BaseModel implements UserSchema {
@@ -58,6 +58,7 @@ export class User extends BaseModel implements UserSchema {
 
   constructor(data: Partial<UserSchema>) {
     super(data);
+
     Object.assign(this, data);
 
     if (!this.name && data.firstName) {
@@ -75,5 +76,11 @@ export class User extends BaseModel implements UserSchema {
         ? data.credentials
         : new OAuthCredentials(data.credentials)
       : undefined;
+
+    this.domain = data.domain && new Domain(data.domain);
+    this.consumer = data.consumer && new Consumer(data.consumer);
+    this.product = data.product && new Product(data.product);
+    this.wallets = data.wallets && data.wallets.map(wallet => new Wallet(wallet));
+    this.cards = data.cards && data.cards.map(card => new Card(card));
   }
 }

@@ -4,7 +4,7 @@ import { BaseModel, BaseModelSchema } from "../../base";
 export interface BoletoInfoSchema {
   description: string;
   amount: number;
-  expiresAt: Date;
+  expiresAt: Date | string;
   hasExpirationDate: boolean;
   barcodeNumber: string;
 }
@@ -18,6 +18,8 @@ export class BoletoInfo implements BoletoInfoSchema {
 
   constructor(data: Partial<BoletoInfoSchema>) {
     Object.assign(this, data);
+
+    this.expiresAt = data.expiresAt && data.expiresAt instanceof Date ? data.expiresAt : new Date(data.expiresAt);
   }
 }
 
@@ -59,7 +61,7 @@ export interface PaymentAmountDetailsSchema {
   fineAmount: number;
   totalAmount: number;
   paymentAmountUpdated: number;
-  calculationDate: Date;
+  calculationDate: Date | string;
 }
 
 export class PaymentAmountDetails implements PaymentAmountDetailsSchema {
@@ -72,6 +74,11 @@ export class PaymentAmountDetails implements PaymentAmountDetailsSchema {
 
   constructor(data: Partial<PaymentAmountDetailsSchema>) {
     Object.assign(this, data);
+
+    this.calculationDate =
+      data.calculationDate && data.calculationDate instanceof Date
+        ? data.calculationDate
+        : new Date(data.calculationDate);
   }
 }
 
@@ -79,13 +86,13 @@ export interface PaymentInfoSchema {
   contractId: string;
   idNumber: string;
   traders: TradersInfo;
-  expiresAt: Date;
+  expiresAt: Date | string;
   totalAmount: number;
-  amountDetails: PaymentAmountDetails;
-  acceptPartialAmount: PartialAmountDetails;
+  amountDetails: PaymentAmountDetailsSchema;
+  acceptPartialAmount: PartialAmountDetailsSchema;
   barcode: string;
   digitableLine: string;
-  paymentDeadline: Date;
+  paymentDeadline: Date | string;
   validDate: boolean;
   nextBusinessDay: string;
 }
@@ -106,13 +113,28 @@ export class PaymentInfo implements PaymentInfoSchema {
 
   constructor(data: Partial<PaymentInfoSchema>) {
     Object.assign(this, data);
+
+    this.expiresAt = data.expiresAt && data.expiresAt instanceof Date ? data.expiresAt : new Date(data.expiresAt);
+    this.paymentDeadline =
+      data.paymentDeadline && data.paymentDeadline instanceof Date
+        ? data.paymentDeadline
+        : new Date(data.paymentDeadline);
+    this.traders = data.traders && data.traders instanceof TradersInfo ? data.traders : new TradersInfo(data.traders);
+    this.amountDetails =
+      data.amountDetails && data.amountDetails instanceof PaymentAmountDetails
+        ? data.amountDetails
+        : new PaymentAmountDetails(data.amountDetails);
+    this.acceptPartialAmount =
+      data.acceptPartialAmount && data.acceptPartialAmount instanceof PaymentAmountDetails
+        ? data.acceptPartialAmount
+        : new PartialAmountDetails(data.acceptPartialAmount);
   }
 }
 
 export interface BoletoValidateResponseSchema extends BaseModelSchema {
   paid: boolean;
-  boletoInfo: BoletoInfo;
-  paymentInfo: PaymentInfo;
+  boletoInfo: BoletoInfoSchema;
+  paymentInfo: PaymentInfoSchema;
 }
 
 export class BoletoValidateResponse extends BaseModel implements BoletoValidateResponseSchema {
@@ -122,6 +144,10 @@ export class BoletoValidateResponse extends BaseModel implements BoletoValidateR
 
   constructor(data: Partial<BoletoValidateResponseSchema>) {
     super(data);
+
     Object.assign(this, data);
+
+    this.boletoInfo = data.boletoInfo && new BoletoInfo(data.boletoInfo);
+    this.paymentInfo = data.paymentInfo && new PaymentInfo(data.paymentInfo);
   }
 }

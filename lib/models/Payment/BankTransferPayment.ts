@@ -1,7 +1,7 @@
 import { IsNotEmpty, IsOptional } from "class-validator";
 import { BaseModel, BaseModelSchema } from "../../base";
 import { Wallet, WalletSchema } from "../Wallet";
-import { BankTransfer } from "./BankTransfer";
+import { BankTransfer, BankTransferSchema } from "./BankTransfer";
 
 export interface BankTransferPaymentSchema extends BaseModelSchema {
   type: string;
@@ -9,7 +9,7 @@ export interface BankTransferPaymentSchema extends BaseModelSchema {
   transactionCode?: string;
   source: WalletSchema | string;
   amount: string;
-  bankTransfer: BankTransfer;
+  bankTransfer: BankTransferSchema;
 }
 
 export class BankTransferPayment extends BaseModel implements BankTransferPaymentSchema {
@@ -22,6 +22,11 @@ export class BankTransferPayment extends BaseModel implements BankTransferPaymen
 
   constructor(data: Partial<BankTransferPaymentSchema>) {
     super(data);
+
     Object.assign(this, data);
+
+    if (data.source) {
+      this.source = typeof data.source === "string" ? data.source : new Wallet(data.source);
+    }
   }
 }
