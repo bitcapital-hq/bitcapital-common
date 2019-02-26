@@ -25,5 +25,5 @@
     "./tests/setup.ts",
     "./tests/__mock__"
   ],
-  "reporters": ["jest-silent-reporter"]
+  "reporters": ["jest-silent-reporter", "jest-junit"]
 }
