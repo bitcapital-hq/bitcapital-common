@@ -1,4 +1,4 @@
-import { IsEnum, IsNotEmpty, IsUUID } from "class-validator";
+import { IsEnum, IsNotEmpty } from "class-validator";
 import { BaseModel, BaseModelSchema } from "../../base";
 import { User, UserSchema } from "../User";
 import { Address, AddressSchema } from "./Address";
@@ -11,7 +11,6 @@ import { Phone, PhoneSchema } from "./Phone";
 export interface ConsumerSchema extends BaseModelSchema {
   status?: ConsumerStatus;
   user?: UserSchema;
-  userId?: string;
   taxId?: string;
   addresses?: AddressSchema[];
   bankings?: BankingSchema[];
@@ -23,7 +22,6 @@ export interface ConsumerSchema extends BaseModelSchema {
 export class Consumer extends BaseModel implements ConsumerSchema {
   user?: User = undefined;
   taxId?: string = undefined;
-  @IsUUID() userId?: string = undefined;
 
   @IsNotEmpty()
   @IsEnum(ConsumerStatus)

@@ -26,7 +26,7 @@ export class BoletoPaymentResponse extends BaseModel implements BoletoPaymentRes
   @IsNotEmpty() taxAmount: number = undefined;
   @IsNotEmpty() amount: number = undefined;
 
-  constructor(data: Partial<BoletoPaymentResponse>) {
+  constructor(data: Partial<BoletoPaymentResponseSchema>) {
     super(data);
 
     Object.assign(this, data);

@@ -30,7 +30,7 @@ export class Address extends BaseModel implements AddressSchema {
   @IsNotEmpty() city: string = undefined;
   @IsNotEmpty() code: string = undefined;
   @IsNotEmpty() street: string = undefined;
-  @IsNotEmpty() complement?: string = undefined;
+  @IsOptional() complement?: string = undefined;
   @IsNotEmpty() number: string = undefined;
 
   constructor(data: Partial<AddressSchema>) {

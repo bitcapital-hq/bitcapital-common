@@ -18,6 +18,7 @@ export declare class Domain extends BaseModel implements DomainSchema {
     name: string;
     role: DomainRole;
     urls?: string[];
+    postbackUrl?: string;
     users?: User[] | null;
     settings?: DomainSettings;
     test?: boolean;
