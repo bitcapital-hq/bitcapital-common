@@ -28,6 +28,7 @@ export class Domain extends BaseModel implements DomainSchema {
   @IsFQDN({}, { each: true })
   urls?: string[] = undefined;
 
+  postbackUrl?: string;
   users?: User[] | null = undefined;
   settings?: DomainSettings = undefined;
   test?: boolean = undefined;

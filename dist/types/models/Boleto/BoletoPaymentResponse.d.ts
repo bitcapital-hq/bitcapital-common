@@ -22,5 +22,5 @@ export declare class BoletoPaymentResponse extends BaseModel implements BoletoPa
     discount: number;
     taxAmount: number;
     amount: number;
-    constructor(data: Partial<BoletoPaymentResponse>);
+    constructor(data: Partial<BoletoPaymentResponseSchema>);
 }
