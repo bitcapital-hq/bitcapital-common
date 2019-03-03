@@ -6,9 +6,11 @@ import { BaseModelSchema, BaseModel } from "../../base";
 import { AssetSchema, Asset } from "../Asset";
 import { TransactionSchema, Transaction } from "../Transaction";
 import { PaymentSchema, Payment } from "../Payment";
+import { WalletState, WalletStateSchema } from "./WalletState";
 export { StellarWalletData, BankingWalletData, WalletBalance };
 export interface WalletSchema extends BaseModelSchema {
     status?: WalletStatus;
+    states?: WalletStateSchema[];
     stellar?: StellarWalletData;
     user?: UserSchema;
     additionalData?: any;
@@ -20,6 +22,7 @@ export interface WalletSchema extends BaseModelSchema {
 }
 export declare class Wallet extends BaseModel implements WalletSchema {
     status?: WalletStatus;
+    states?: WalletState[];
     stellar?: StellarWalletData;
     user?: User;
     additionalData?: any;

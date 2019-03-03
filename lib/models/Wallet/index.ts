@@ -1,3 +1,4 @@
-export { Wallet, WalletSchema, WalletBalance } from "./Wallet";
-export { StellarWalletData, BankingWalletData } from "./WalletData";
-export { WalletStatus } from "./WalletStatus";
+export * from "./Wallet";
+export * from "./WalletData";
+export * from "./WalletStatus";
+export * from "./WalletState";

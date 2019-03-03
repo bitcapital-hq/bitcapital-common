@@ -8,6 +8,7 @@ import { UserRole } from "./UserRole";
 import { UserStatus } from "./UserStatus";
 import { Product, ProductSchema } from "../Domain/Product";
 import { CardSchema, Card } from "../Card";
+import { UserState, UserStateSchema } from "./UserState";
 
 export interface UserSchema extends BaseModelSchema {
   name?: string;
@@ -16,6 +17,7 @@ export interface UserSchema extends BaseModelSchema {
   email: string;
   role?: UserRole;
   status?: UserStatus;
+  states?: UserStateSchema[];
   password?: string;
   credentials?: OAuthCredentials;
   domain?: DomainSchema;
@@ -49,6 +51,7 @@ export class User extends BaseModel implements UserSchema {
 
   @IsOptional() password?: string = undefined;
 
+  states?: UserState[];
   consumer?: Consumer = undefined;
   wallets?: Wallet[] = undefined;
   product?: Product = undefined;
@@ -77,6 +80,7 @@ export class User extends BaseModel implements UserSchema {
         : new OAuthCredentials(data.credentials)
       : undefined;
 
+    this.states = data.states && data.states.map(state => new UserState(state));
     this.domain = data.domain && new Domain(data.domain);
     this.consumer = data.consumer && new Consumer(data.consumer);
     this.product = data.product && new Product(data.product);
