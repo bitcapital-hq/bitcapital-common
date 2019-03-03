@@ -1,5 +1,5 @@
 import { Http, HttpOptions } from "../../base";
-import { Payment, WalletSchema } from "../../models";
+import { Payment, WalletSchema, PaymentSchema } from "../../models";
 import { BaseCustodyOptions, CustodyDepositFeature } from "../../provider";
 
 export interface CustodyDepositWebServiceOptions extends HttpOptions, BaseCustodyOptions {}
@@ -22,8 +22,8 @@ export default class CustodyDepositWebService extends CustodyDepositFeature {
     throw response;
   }
 
-  public async onDeposit(amount: string, wallet: WalletSchema, extra?: any): Promise<Payment> {
-    const response = await this.http.post("/provider/deposit/postback", { amount, wallet, extra });
+  public async onDeposit(payment: PaymentSchema, extra?: any): Promise<Payment> {
+    const response = await this.http.post("/provider/deposit/postback", { payment, extra });
 
     if (response.data && response.data.id) {
       return new Payment(response.data);

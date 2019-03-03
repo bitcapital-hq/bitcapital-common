@@ -16,5 +16,5 @@ export declare abstract class CustodyDepositFeature extends BaseCustodyFeature {
      * @param amount The amount that was deposited
      * @param wallet The wallet in which the amount was deposited into
      */
-    abstract onDeposit(amount: string, wallet: WalletSchema, extra?: any): Promise<PaymentSchema>;
+    abstract onDeposit(payment: PaymentSchema, extra?: any): Promise<PaymentSchema>;
 }

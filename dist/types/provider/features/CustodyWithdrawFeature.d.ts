@@ -16,7 +16,7 @@ export declare abstract class CustodyWithdrawFeature extends BaseCustodyFeature 
      * @param amount The amount to be withdrawed
      * @param wallet The wallet to be withdrawed from
      */
-    abstract withdraw?(amount: string, wallet: WalletSchema, extra?: any): Promise<PaymentSchema>;
+    abstract withdraw?(payment: PaymentSchema, extra?: any): Promise<PaymentSchema>;
     /**
      * Register an asynchronous withdraw in the custody wallet,
      * done from outside of the Bitcapital platform, such as a banking withdraw.
@@ -24,5 +24,5 @@ export declare abstract class CustodyWithdrawFeature extends BaseCustodyFeature 
      * @param amount The amount that was withdrawed
      * @param wallet The wallet in which the amount was withdrawed from
      */
-    abstract onWithdraw(amount: string, wallet: WalletSchema): Promise<PaymentSchema>;
+    abstract onWithdraw(payment: PaymentSchema): Promise<PaymentSchema>;
 }

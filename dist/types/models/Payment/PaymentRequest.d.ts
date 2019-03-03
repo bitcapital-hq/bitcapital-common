@@ -5,7 +5,7 @@ export interface WithdrawalRequestSchema {
 }
 export interface PaymentRequestSchema {
     source: string;
-    asset?: string;
+    assetId?: string;
     recipients: {
         amount: string;
         destination: string;

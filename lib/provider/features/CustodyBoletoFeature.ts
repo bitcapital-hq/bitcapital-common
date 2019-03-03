@@ -1,4 +1,4 @@
-import { BoletoSchema, PaymentSchema, WalletSchema } from "../../models";
+import { BoletoSchema, WalletSchema, PaymentSchema } from "../../models";
 import BaseCustodyFeature, { CustodyFeature } from "../BaseCustodyFeature";
 
 export type BoletoPaymentExtra =
@@ -52,5 +52,9 @@ export abstract class CustodyBoletoFeature extends BaseCustodyFeature {
    * @param wallet The wallet to be the source of the payment
    * @param extra The extra information for the boleto payment
    */
-  public abstract async pay(barcode: string, wallet: WalletSchema, extra?: BoletoPaymentExtra): Promise<PaymentSchema>;
+  public abstract async pay(
+    barcode: string,
+    payment: PaymentSchema,
+    extra?: BoletoPaymentExtra
+  ): Promise<PaymentSchema>;
 }

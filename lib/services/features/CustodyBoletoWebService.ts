@@ -1,5 +1,5 @@
 import { Http, HttpOptions } from "../../base";
-import { WalletSchema, Payment, Boleto } from "../../models";
+import { WalletSchema, Payment, Boleto, PaymentSchema } from "../../models";
 import { BaseCustodyOptions, CustodyBoletoFeature, BoletoPaymentExtra } from "../../provider";
 
 export interface CustodyBoletoWebServiceOptions extends HttpOptions, BaseCustodyOptions {}
@@ -52,8 +52,8 @@ export default class CustodyBoletoWebService extends CustodyBoletoFeature {
     throw response;
   }
 
-  public async pay(barCode: string, wallet: WalletSchema, extra?: BoletoPaymentExtra): Promise<Payment> {
-    const response = await this.http.post(`/provider/boleto/pay`, { barCode, wallet, ...extra });
+  public async pay(barCode: string, payment: PaymentSchema, extra?: BoletoPaymentExtra): Promise<PaymentSchema> {
+    const response = await this.http.post(`/provider/boleto/pay`, { barCode, payment, ...extra });
 
     if (response.data && response.data.id) {
       return new Payment(response.data);

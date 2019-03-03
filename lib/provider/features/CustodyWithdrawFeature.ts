@@ -19,7 +19,7 @@ export abstract class CustodyWithdrawFeature extends BaseCustodyFeature {
    * @param amount The amount to be withdrawed
    * @param wallet The wallet to be withdrawed from
    */
-  public abstract async withdraw?(amount: string, wallet: WalletSchema, extra?: any): Promise<PaymentSchema>;
+  public abstract async withdraw?(payment: PaymentSchema, extra?: any): Promise<PaymentSchema>;
 
   /**
    * Register an asynchronous withdraw in the custody wallet,
@@ -28,5 +28,5 @@ export abstract class CustodyWithdrawFeature extends BaseCustodyFeature {
    * @param amount The amount that was withdrawed
    * @param wallet The wallet in which the amount was withdrawed from
    */
-  public abstract async onWithdraw(amount: string, wallet: WalletSchema): Promise<PaymentSchema>;
+  public abstract async onWithdraw(payment: PaymentSchema): Promise<PaymentSchema>;
 }

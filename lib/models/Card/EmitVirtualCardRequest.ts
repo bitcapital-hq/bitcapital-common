@@ -1,5 +1,5 @@
 export interface EmitVirtualCardRequestSchema {
-  userId: string;
+  walletId: string;
   cardId: string;
   expirationDate: Date;
 }
