@@ -15,7 +15,7 @@ export default abstract class CustodyProviderWebService extends BaseCustody {
   public async register(user: UserSchema, wallet: WalletSchema): Promise<{ externalId: string }> {
     const response = await this.http.post("/provider/register", { user, wallet });
 
-    if (response.data && response.data.id) {
+    if (response.data && response.data) {
       return response.data;
     }
 
@@ -25,7 +25,7 @@ export default abstract class CustodyProviderWebService extends BaseCustody {
   public async update(user: UserSchema, wallet: WalletSchema): Promise<{ externalId: string }> {
     const response = await this.http.post("/provider/update", { user, wallet });
 
-    if (response.data && response.data.id) {
+    if (response.data) {
       return response.data;
     }
 
@@ -39,7 +39,7 @@ export default abstract class CustodyProviderWebService extends BaseCustody {
   ): Promise<{ externalId: string }> {
     const response = await this.http.post("/provider/unregister", { user, wallet, reason });
 
-    if (response.data && response.data.id) {
+    if (response.data) {
       return response.data;
     }
 
