@@ -9,7 +9,6 @@ export enum BankingType {
 
 export interface BankingSchema extends BaseModelSchema {
   consumer?: ConsumerSchema;
-  consumerId?: string;
   type: BankingType;
   bank: number;
   agency: number;
@@ -27,10 +26,12 @@ export class Banking extends BaseModel implements BankingSchema {
   @IsNotEmpty() accountDigit: string = undefined;
 
   consumer: Consumer = undefined;
-  consumerId: string = undefined;
 
   constructor(data: Partial<BankingSchema>) {
     super(data);
+
     Object.assign(this, data);
+
+    this.consumer = data.consumer && new Consumer(data.consumer);
   }
 }

@@ -7,21 +7,23 @@ import { UserRole } from "./UserRole";
 import { UserStatus } from "./UserStatus";
 import { Product, ProductSchema } from "../Domain/Product";
 import { CardSchema, Card } from "../Card";
+import { UserState, UserStateSchema } from "./UserState";
 export interface UserSchema extends BaseModelSchema {
     name?: string;
     firstName: string;
     lastName: string;
-    email?: string;
+    email: string;
     role?: UserRole;
     status?: UserStatus;
+    states?: UserStateSchema[];
     password?: string;
     credentials?: OAuthCredentials;
     domain?: DomainSchema;
     consumer?: ConsumerSchema;
-    virtual?: boolean;
     product?: ProductSchema;
     wallets?: WalletSchema[];
     cards?: CardSchema[];
+    virtual?: boolean;
 }
 export declare class User extends BaseModel implements UserSchema {
     name?: string;
@@ -32,6 +34,7 @@ export declare class User extends BaseModel implements UserSchema {
     status?: UserStatus;
     domain?: Domain;
     password?: string;
+    states?: UserState[];
     consumer?: Consumer;
     wallets?: Wallet[];
     product?: Product;

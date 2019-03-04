@@ -5,7 +5,7 @@ export interface BoletoPaymentResponseSchema extends BaseModelSchema {
     status: string;
     description: string;
     barcode: string;
-    expiresAt: Date;
+    expiresAt: Date | string;
     recipientName: string;
     discount: number;
     taxAmount: number;
@@ -22,5 +22,5 @@ export declare class BoletoPaymentResponse extends BaseModel implements BoletoPa
     discount: number;
     taxAmount: number;
     amount: number;
-    constructor(data: Partial<BoletoPaymentResponse>);
+    constructor(data: Partial<BoletoPaymentResponseSchema>);
 }

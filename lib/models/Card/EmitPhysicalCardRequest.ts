@@ -1,5 +1,5 @@
 export interface EmitPhysicalCardRequestSchema {
-  userId: string;
+  walletId: string;
   cardId: string;
   plasticId: number;
 }

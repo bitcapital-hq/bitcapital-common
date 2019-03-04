@@ -30,6 +30,7 @@ export class Payment extends BaseModel implements PaymentSchema {
 
   constructor(data: Partial<PaymentSchema> = {}) {
     super(data);
+
     Object.assign(this, data);
 
     this.transaction = data.transaction && new Transaction(data.transaction);

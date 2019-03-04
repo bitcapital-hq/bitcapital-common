@@ -3,15 +3,16 @@ import { WalletBalance } from "./WalletBalance";
 import { BankingWalletData, StellarWalletData } from "./WalletData";
 import { WalletStatus } from "./WalletStatus";
 import { BaseModelSchema, BaseModel } from "../../base";
-import { AssetSchema } from "../Asset";
-import { TransactionSchema } from "../Transaction";
-import { PaymentSchema } from "../Payment";
+import { AssetSchema, Asset } from "../Asset";
+import { TransactionSchema, Transaction } from "../Transaction";
+import { PaymentSchema, Payment } from "../Payment";
+import { WalletState, WalletStateSchema } from "./WalletState";
 export { StellarWalletData, BankingWalletData, WalletBalance };
 export interface WalletSchema extends BaseModelSchema {
     status?: WalletStatus;
+    states?: WalletStateSchema[];
     stellar?: StellarWalletData;
     user?: UserSchema;
-    userId?: string;
     additionalData?: any;
     balances?: WalletBalance[];
     issuedAssets?: AssetSchema[];
@@ -21,14 +22,14 @@ export interface WalletSchema extends BaseModelSchema {
 }
 export declare class Wallet extends BaseModel implements WalletSchema {
     status?: WalletStatus;
+    states?: WalletState[];
     stellar?: StellarWalletData;
     user?: User;
-    userId?: string;
     additionalData?: any;
     balances?: WalletBalance[];
-    issuedAssets?: AssetSchema[];
-    assets?: AssetSchema[];
-    transactions?: TransactionSchema[];
-    received?: PaymentSchema[];
+    issuedAssets?: Asset[];
+    assets?: Asset[];
+    transactions?: Transaction[];
+    received?: Payment[];
     constructor(data: Partial<WalletSchema>);
 }

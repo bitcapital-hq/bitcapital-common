@@ -15,6 +15,7 @@ export class TransactionState extends BaseModel implements TransactionStateSchem
 
   constructor(data: Partial<TransactionStateSchema> = {}) {
     super(data);
+
     this.transaction = data.transaction && new Transaction(data.transaction);
   }
 }

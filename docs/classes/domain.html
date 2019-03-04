@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Domain | bitcapital-common (v1.4.0)</title>
+	<title>Domain | bitcapital-common (v1.5.0)</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -22,7 +22,7 @@
 						<li class="state loading">Preparing search index...</li>
 						<li class="state failure">The search index is not available</li>
 					</ul>
-					<a href="../index.html" class="title">bitcapital-common (v1.4.0)</a>
+					<a href="../index.html" class="title">bitcapital-common (v1.5.0)</a>
 				</div>
 				<div class="table-cell" id="tsd-widgets">
 					<div id="tsd-filter">
@@ -101,9 +101,9 @@
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-external"><a href="domain.html#createdat" class="tsd-kind-icon">created<wbr>At</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-external"><a href="domain.html#id" class="tsd-kind-icon">id</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-external"><a href="domain.html#name" class="tsd-kind-icon">name</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-external"><a href="domain.html#postbackurl" class="tsd-kind-icon">postback<wbr>Url</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-external"><a href="domain.html#role" class="tsd-kind-icon">role</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-external"><a href="domain.html#settings" class="tsd-kind-icon">settings</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-external"><a href="domain.html#slug" class="tsd-kind-icon">slug</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-external"><a href="domain.html#test" class="tsd-kind-icon">test</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-external"><a href="domain.html#updatedat" class="tsd-kind-icon">updated<wbr>At</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-external"><a href="domain.html#urls" class="tsd-kind-icon">urls</a></li>
@@ -132,7 +132,7 @@
 							<aside class="tsd-sources">
 								<p>Overrides <a href="basemodel.html">BaseModel</a>.<a href="basemodel.html#constructor">constructor</a></p>
 								<ul>
-									<li>Defined in models/Domain/Domain.ts:37</li>
+									<li>Defined in models/Domain/Domain.ts:34</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -184,6 +184,17 @@
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-external">
+					<a name="postbackurl" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> postback<wbr>Url</h3>
+					<div class="tsd-signature tsd-kind-icon">postback<wbr>Url<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<p>Implementation of <a href="../interfaces/domainschema.html">DomainSchema</a>.<a href="../interfaces/domainschema.html#postbackurl">postbackUrl</a></p>
+						<ul>
+							<li>Defined in models/Domain/Domain.ts:31</li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-external">
 					<a name="role" class="tsd-anchor"></a>
 					<h3>role</h3>
 					<div class="tsd-signature tsd-kind-icon">role<span class="tsd-signature-symbol">:</span> <a href="../enums/domainrole.html" class="tsd-signature-type">DomainRole</a><span class="tsd-signature-symbol"> =&nbsp;undefined</span></div>
@@ -196,22 +207,12 @@
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-external">
 					<a name="settings" class="tsd-anchor"></a>
-					<h3>settings</h3>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> settings</h3>
 					<div class="tsd-signature tsd-kind-icon">settings<span class="tsd-signature-symbol">:</span> <a href="domainsettings.html" class="tsd-signature-type">DomainSettings</a><span class="tsd-signature-symbol"> =&nbsp;undefined</span></div>
 					<aside class="tsd-sources">
 						<p>Implementation of <a href="../interfaces/domainschema.html">DomainSchema</a>.<a href="../interfaces/domainschema.html#settings">settings</a></p>
 						<ul>
-							<li>Defined in models/Domain/Domain.ts:36</li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-external">
-					<a name="slug" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> slug</h3>
-					<div class="tsd-signature tsd-kind-icon">slug<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;undefined</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in models/Domain/Domain.ts:30</li>
+							<li>Defined in models/Domain/Domain.ts:33</li>
 						</ul>
 					</aside>
 				</section>
@@ -222,7 +223,7 @@
 					<aside class="tsd-sources">
 						<p>Implementation of <a href="../interfaces/domainschema.html">DomainSchema</a>.<a href="../interfaces/domainschema.html#test">test</a></p>
 						<ul>
-							<li>Defined in models/Domain/Domain.ts:37</li>
+							<li>Defined in models/Domain/Domain.ts:34</li>
 						</ul>
 					</aside>
 				</section>
@@ -245,18 +246,18 @@
 					<aside class="tsd-sources">
 						<p>Implementation of <a href="../interfaces/domainschema.html">DomainSchema</a>.<a href="../interfaces/domainschema.html#urls">urls</a></p>
 						<ul>
-							<li>Defined in models/Domain/Domain.ts:33</li>
+							<li>Defined in models/Domain/Domain.ts:29</li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-external">
 					<a name="users" class="tsd-anchor"></a>
-					<h3>users</h3>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> users</h3>
 					<div class="tsd-signature tsd-kind-icon">users<span class="tsd-signature-symbol">:</span> <a href="user.html" class="tsd-signature-type">User</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> =&nbsp;undefined</span></div>
 					<aside class="tsd-sources">
 						<p>Implementation of <a href="../interfaces/domainschema.html">DomainSchema</a>.<a href="../interfaces/domainschema.html#users">users</a></p>
 						<ul>
-							<li>Defined in models/Domain/Domain.ts:35</li>
+							<li>Defined in models/Domain/Domain.ts:32</li>
 						</ul>
 					</aside>
 				</section>
@@ -322,13 +323,13 @@
 								<a href="domain.html#name" class="tsd-kind-icon">name</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-external">
+								<a href="domain.html#postbackurl" class="tsd-kind-icon">postback<wbr>Url</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-external">
 								<a href="domain.html#role" class="tsd-kind-icon">role</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-external">
 								<a href="domain.html#settings" class="tsd-kind-icon">settings</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-external">
-								<a href="domain.html#slug" class="tsd-kind-icon">slug</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-external">
 								<a href="domain.html#test" class="tsd-kind-icon">test</a>

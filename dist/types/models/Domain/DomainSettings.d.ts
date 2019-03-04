@@ -9,6 +9,6 @@ export declare class DomainSettings implements DomainSettingsSchema {
     logo?: string;
     primaryColor?: string;
     tintColor?: string;
-    locks: DomainSettingsLocks;
+    locks?: DomainSettingsLocks;
     constructor(data?: Partial<DomainSettings>);
 }

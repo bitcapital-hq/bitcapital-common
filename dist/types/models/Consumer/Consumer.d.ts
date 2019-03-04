@@ -9,23 +9,21 @@ import { Phone, PhoneSchema } from "./Phone";
 export interface ConsumerSchema extends BaseModelSchema {
     status?: ConsumerStatus;
     user?: UserSchema;
-    userId?: string;
     taxId?: string;
+    addresses?: AddressSchema[];
+    bankings?: BankingSchema[];
     documents?: DocumentSchema[];
     phones?: PhoneSchema[];
-    addresses?: AddressSchema[];
     states?: ConsumerStateSchema[];
-    bankings?: BankingSchema[];
 }
 export declare class Consumer extends BaseModel implements ConsumerSchema {
     user?: User;
     taxId?: string;
-    userId?: string;
     status: ConsumerStatus;
     states?: ConsumerState[];
-    documents?: Document[];
-    phones?: Phone[];
     addresses?: Address[];
     bankings?: Banking[];
+    documents?: Document[];
+    phones?: Phone[];
     constructor(data: Partial<ConsumerSchema>);
 }

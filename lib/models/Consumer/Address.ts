@@ -1,4 +1,4 @@
-import { IsNotEmpty, IsUUID, IsOptional } from "class-validator";
+import { IsNotEmpty, IsOptional } from "class-validator";
 import { BaseModelSchema, BaseModel } from "../../base";
 import { Consumer, ConsumerSchema } from "./Consumer";
 
@@ -10,7 +10,6 @@ export enum AddressType {
 export interface AddressSchema extends BaseModelSchema {
   type?: AddressType;
   consumer?: ConsumerSchema;
-  consumerId?: string;
   country: string;
   city: string;
   code: string;
@@ -23,7 +22,6 @@ export interface AddressSchema extends BaseModelSchema {
 
 export class Address extends BaseModel implements AddressSchema {
   @IsOptional() consumer?: Consumer = undefined;
-  @IsUUID() @IsOptional() consumerId?: string = undefined;
 
   type?: AddressType = AddressType.HOME;
   @IsOptional() reference?: string;
@@ -32,11 +30,14 @@ export class Address extends BaseModel implements AddressSchema {
   @IsNotEmpty() city: string = undefined;
   @IsNotEmpty() code: string = undefined;
   @IsNotEmpty() street: string = undefined;
-  @IsNotEmpty() complement?: string = undefined;
+  @IsOptional() complement?: string = undefined;
   @IsNotEmpty() number: string = undefined;
 
   constructor(data: Partial<AddressSchema>) {
     super(data);
+
     Object.assign(this, data);
+
+    this.consumer = data.consumer && new Consumer(data.consumer);
   }
 }

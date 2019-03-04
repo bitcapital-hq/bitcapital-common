@@ -16,6 +16,9 @@ export class Product extends BaseModel implements ProductSchema {
 
   constructor(data: Partial<ProductSchema>) {
     super(data);
+
     Object.assign(this, data);
+
+    this.domain = data.domain && new Domain(data.domain);
   }
 }

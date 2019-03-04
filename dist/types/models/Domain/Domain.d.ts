@@ -7,7 +7,7 @@ export declare enum DomainRole {
 }
 export interface DomainSchema extends BaseModelSchema {
     name: string;
-    role?: DomainRole;
+    role: DomainRole;
     test?: boolean;
     urls?: string[];
     postbackUrl?: string;
@@ -17,10 +17,10 @@ export interface DomainSchema extends BaseModelSchema {
 export declare class Domain extends BaseModel implements DomainSchema {
     name: string;
     role: DomainRole;
-    slug?: string;
     urls?: string[];
-    users: User[] | null;
-    settings: DomainSettings;
+    postbackUrl?: string;
+    users?: User[] | null;
+    settings?: DomainSettings;
     test?: boolean;
     constructor(data: Partial<DomainSchema>);
 }

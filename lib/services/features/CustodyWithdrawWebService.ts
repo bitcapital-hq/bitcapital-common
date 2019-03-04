@@ -1,5 +1,5 @@
 import { Http, HttpOptions } from "../../base";
-import { PaymentSchema, WalletSchema } from "../../models";
+import { WalletSchema, Payment, PaymentSchema } from "../../models";
 import { BaseCustodyOptions, CustodyWithdrawFeature } from "../../provider";
 
 export interface CustodyWithdrawWebServiceOptions extends HttpOptions, BaseCustodyOptions {}
@@ -12,31 +12,31 @@ export default class CustodyWithdrawWebService extends CustodyWithdrawFeature {
     this.http = new Http(options);
   }
 
-  public async info(wallet: WalletSchema, extra?: any): Promise<PaymentSchema> {
+  public async info(wallet: WalletSchema, extra?: any): Promise<Payment> {
     const response = await this.http.get("/provider/withdraw", { wallet, extra });
 
     if (response.data) {
-      return response.data;
+      return new Payment(response.data);
     }
 
     throw response;
   }
 
-  public async withdraw(amount: string, wallet: WalletSchema, extra?: any): Promise<PaymentSchema> {
-    const response = await this.http.post("/provider/withdraw", { amount, wallet, extra });
+  public async withdraw(payment: PaymentSchema, extra?: any): Promise<Payment> {
+    const response = await this.http.post("/provider/withdraw", { payment, extra });
 
     if (response.data && response.data.id) {
-      return response.data;
+      return new Payment(response.data);
     }
 
     throw response;
   }
 
-  public async onWithdraw(amount: string, wallet: WalletSchema, extra?: any): Promise<PaymentSchema> {
-    const response = await this.http.post("/provider/withdraw/postback", { amount, wallet, extra });
+  public async onWithdraw(payment: PaymentSchema, extra?: any): Promise<Payment> {
+    const response = await this.http.post("/provider/withdraw/postback", { payment, extra });
 
     if (response.data && response.data.id) {
-      return response.data;
+      return new Payment(response.data);
     }
 
     throw response;

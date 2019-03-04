@@ -1,13 +1,13 @@
 import { BaseModel, BaseModelSchema } from "../../base";
 import { Wallet, WalletSchema } from "../Wallet";
-import { BankTransfer } from "./BankTransfer";
+import { BankTransfer, BankTransferSchema } from "./BankTransfer";
 export interface BankTransferPaymentSchema extends BaseModelSchema {
     type: string;
     bitcapitalCoreId: string;
     transactionCode?: string;
     source: WalletSchema | string;
     amount: string;
-    bankTransfer: BankTransfer;
+    bankTransfer: BankTransferSchema;
 }
 export declare class BankTransferPayment extends BaseModel implements BankTransferPaymentSchema {
     source: Wallet | string;

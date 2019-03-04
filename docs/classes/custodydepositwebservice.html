@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>CustodyDepositWebService | bitcapital-common (v1.4.0)</title>
+	<title>CustodyDepositWebService | bitcapital-common (v1.5.0)</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -22,7 +22,7 @@
 						<li class="state loading">Preparing search index...</li>
 						<li class="state failure">The search index is not available</li>
 					</ul>
-					<a href="../index.html" class="title">bitcapital-common (v1.4.0)</a>
+					<a href="../index.html" class="title">bitcapital-common (v1.5.0)</a>
 				</div>
 				<div class="table-cell" id="tsd-widgets">
 					<div id="tsd-filter">
@@ -119,7 +119,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in services/features/CustodyDepositWebService.ts:9</li>
+									<li>Defined in services/features/CustodyDepositWebService.ts:8</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -141,7 +141,7 @@
 					<div class="tsd-signature tsd-kind-icon">http<span class="tsd-signature-symbol">:</span> <a href="http.html" class="tsd-signature-type">Http</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in services/features/CustodyDepositWebService.ts:9</li>
+							<li>Defined in services/features/CustodyDepositWebService.ts:8</li>
 						</ul>
 					</aside>
 				</section>
@@ -151,7 +151,7 @@
 					<div class="tsd-signature tsd-kind-icon">options<span class="tsd-signature-symbol">:</span> <a href="../interfaces/custodydepositwebserviceoptions.html" class="tsd-signature-type">CustodyDepositWebServiceOptions</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in services/features/CustodyDepositWebService.ts:11</li>
+							<li>Defined in services/features/CustodyDepositWebService.ts:10</li>
 						</ul>
 					</aside>
 				</section>
@@ -174,26 +174,26 @@
 					<a name="info" class="tsd-anchor"></a>
 					<h3>info</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-external">
-						<li class="tsd-signature tsd-kind-icon">info<span class="tsd-signature-symbol">(</span>wallet<span class="tsd-signature-symbol">: </span><a href="wallet.html" class="tsd-signature-type">Wallet</a>, extra<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/paymentschema.html" class="tsd-signature-type">PaymentSchema</a><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">info<span class="tsd-signature-symbol">(</span>wallet<span class="tsd-signature-symbol">: </span><a href="../interfaces/walletschema.html" class="tsd-signature-type">WalletSchema</a>, extra<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="payment.html" class="tsd-signature-type">Payment</a><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<p>Overrides <a href="custodydepositfeature.html">CustodyDepositFeature</a>.<a href="custodydepositfeature.html#info">info</a></p>
 								<ul>
-									<li>Defined in services/features/CustodyDepositWebService.ts:16</li>
+									<li>Defined in services/features/CustodyDepositWebService.ts:15</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>wallet: <a href="wallet.html" class="tsd-signature-type">Wallet</a></h5>
+									<h5>wallet: <a href="../interfaces/walletschema.html" class="tsd-signature-type">WalletSchema</a></h5>
 								</li>
 								<li>
 									<h5><span class="tsd-flag ts-flagOptional">Optional</span> extra: <span class="tsd-signature-type">any</span></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/paymentschema.html" class="tsd-signature-type">PaymentSchema</a><span class="tsd-signature-symbol">&gt;</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="payment.html" class="tsd-signature-type">Payment</a><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -201,29 +201,26 @@
 					<a name="ondeposit" class="tsd-anchor"></a>
 					<h3>on<wbr>Deposit</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-external">
-						<li class="tsd-signature tsd-kind-icon">on<wbr>Deposit<span class="tsd-signature-symbol">(</span>amount<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, wallet<span class="tsd-signature-symbol">: </span><a href="wallet.html" class="tsd-signature-type">Wallet</a>, extra<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/paymentschema.html" class="tsd-signature-type">PaymentSchema</a><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">on<wbr>Deposit<span class="tsd-signature-symbol">(</span>payment<span class="tsd-signature-symbol">: </span><a href="../interfaces/paymentschema.html" class="tsd-signature-type">PaymentSchema</a>, extra<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="payment.html" class="tsd-signature-type">Payment</a><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<p>Overrides <a href="custodydepositfeature.html">CustodyDepositFeature</a>.<a href="custodydepositfeature.html#ondeposit">onDeposit</a></p>
 								<ul>
-									<li>Defined in services/features/CustodyDepositWebService.ts:26</li>
+									<li>Defined in services/features/CustodyDepositWebService.ts:25</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>amount: <span class="tsd-signature-type">string</span></h5>
-								</li>
-								<li>
-									<h5>wallet: <a href="wallet.html" class="tsd-signature-type">Wallet</a></h5>
+									<h5>payment: <a href="../interfaces/paymentschema.html" class="tsd-signature-type">PaymentSchema</a></h5>
 								</li>
 								<li>
 									<h5><span class="tsd-flag ts-flagOptional">Optional</span> extra: <span class="tsd-signature-type">any</span></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/paymentschema.html" class="tsd-signature-type">PaymentSchema</a><span class="tsd-signature-symbol">&gt;</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="payment.html" class="tsd-signature-type">Payment</a><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
 				</section>

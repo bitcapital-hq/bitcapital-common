@@ -4,7 +4,7 @@ import { IsOptional, IsNotEmpty } from "class-validator";
 export interface BoletoSchema extends BaseModelSchema {
   conductorId?: number;
   documentNumber?: string;
-  expiresAt: Date;
+  expiresAt: Date | string;
   amount: string;
   beneficiaryName?: string;
   beneficiaryCode?: string;
@@ -40,6 +40,9 @@ export class Boleto extends BaseModel implements BoletoSchema {
 
   constructor(data: Partial<BoletoSchema>) {
     super(data);
+
     Object.assign(this, data);
+
+    this.expiresAt = data.expiresAt && new Date(data.expiresAt);
   }
 }

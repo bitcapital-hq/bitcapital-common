@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>CustodyBoletoFeature | bitcapital-common (v1.4.0)</title>
+	<title>CustodyBoletoFeature | bitcapital-common (v1.5.0)</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -22,7 +22,7 @@
 						<li class="state loading">Preparing search index...</li>
 						<li class="state failure">The search index is not available</li>
 					</ul>
-					<a href="../index.html" class="title">bitcapital-common (v1.4.0)</a>
+					<a href="../index.html" class="title">bitcapital-common (v1.5.0)</a>
 				</div>
 				<div class="table-cell" id="tsd-widgets">
 					<div id="tsd-filter">
@@ -237,7 +237,7 @@
 					<a name="pay" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagAbstract">Abstract</span> pay</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-external">
-						<li class="tsd-signature tsd-kind-icon">pay<span class="tsd-signature-symbol">(</span>barcode<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, wallet<span class="tsd-signature-symbol">: </span><a href="../interfaces/walletschema.html" class="tsd-signature-type">WalletSchema</a>, extra<span class="tsd-signature-symbol">?: </span><a href="../globals.html#boletopaymentextra" class="tsd-signature-type">BoletoPaymentExtra</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/paymentschema.html" class="tsd-signature-type">PaymentSchema</a><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">pay<span class="tsd-signature-symbol">(</span>barcode<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, payment<span class="tsd-signature-symbol">: </span><a href="../interfaces/paymentschema.html" class="tsd-signature-type">PaymentSchema</a>, extra<span class="tsd-signature-symbol">?: </span><a href="../globals.html#boletopaymentextra" class="tsd-signature-type">BoletoPaymentExtra</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/paymentschema.html" class="tsd-signature-type">PaymentSchema</a><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
@@ -260,10 +260,7 @@
 									</div>
 								</li>
 								<li>
-									<h5>wallet: <a href="../interfaces/walletschema.html" class="tsd-signature-type">WalletSchema</a></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>The wallet to be the source of the payment</p>
-									</div>
+									<h5>payment: <a href="../interfaces/paymentschema.html" class="tsd-signature-type">PaymentSchema</a></h5>
 								</li>
 								<li>
 									<h5><span class="tsd-flag ts-flagOptional">Optional</span> extra: <a href="../globals.html#boletopaymentextra" class="tsd-signature-type">BoletoPaymentExtra</a></h5>

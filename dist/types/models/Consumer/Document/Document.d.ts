@@ -5,7 +5,6 @@ import { DocumentStatus } from "./DocumentStatus";
 import { DocumentType } from "./DocumentType";
 export interface DocumentSchema extends BaseModelSchema {
     consumer?: ConsumerSchema;
-    consumerId?: string;
     status?: DocumentStatus;
     type: DocumentType;
     number?: string;
@@ -17,7 +16,6 @@ export interface DocumentSchema extends BaseModelSchema {
 }
 export declare class Document extends BaseModel implements DocumentSchema {
     consumer?: Consumer;
-    consumerId?: string;
     type: DocumentType;
     status: DocumentStatus;
     number?: string;
