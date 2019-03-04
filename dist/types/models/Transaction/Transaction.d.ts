@@ -4,6 +4,7 @@ import { User, UserSchema } from "../User";
 import { Wallet, WalletSchema } from "../Wallet";
 import { TransactionState, TransactionStateSchema } from "./TransactionState";
 import { TransactionType } from "./TransactionType";
+import { TransactionStatus } from "./TransactionStatus";
 export { TransactionType };
 export interface TransactionAdditionalData {
     hash?: string;
@@ -20,6 +21,7 @@ export interface TransactionSchema extends BaseModelSchema {
     type: TransactionType;
     source: WalletSchema;
     payments?: PaymentSchema[];
+    status?: TransactionStatus;
     states?: TransactionStateSchema[];
     createdBy?: UserSchema;
     additionalData?: TransactionAdditionalData;
@@ -29,6 +31,7 @@ export declare class Transaction extends BaseModel implements TransactionSchema 
     source: Wallet;
     createdBy?: User;
     payments?: Payment[];
+    status?: TransactionStatus;
     states?: TransactionState[];
     additionalData?: TransactionAdditionalData;
     constructor(data: Partial<TransactionSchema>);
