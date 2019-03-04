@@ -9,7 +9,8 @@ export enum PaymentType {
   DEPOSIT = "deposit",
   WITHDRAWAL = "withdrawal",
   TRANSFER = "transfer",
-  TRANSACTION_REVERSAL = "transaction_reversal"
+  TRANSACTION_REVERSAL = "transaction_reversal",
+  SERVICE_FEE = "service_fee"
 }
 
 export interface PaymentSchema extends BaseModelSchema {
