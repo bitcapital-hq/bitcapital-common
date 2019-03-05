@@ -15,7 +15,7 @@ export interface ObservableOptions {
 /**
  * A simple Observable pattern utility.
  */
-export default class Observable {
+export class Observable {
   listeners: Observer[];
   options: ObservableOptions;
 

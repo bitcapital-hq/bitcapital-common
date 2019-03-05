@@ -12,7 +12,7 @@ export interface RequestSigningOptions {
   timestamp?: string;
 }
 
-export default class RequestUtil {
+export class RequestUtil {
   /**
    * Generates headers for request signing.
    */

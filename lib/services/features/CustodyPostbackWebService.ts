@@ -1,14 +1,16 @@
 import { Http, HttpOptions } from "../../base";
 import { BaseCustodyOptions, CustodyPostbackFeature } from "../../provider";
 
-export interface CustodyPostbackWebServiceOptions extends HttpOptions, BaseCustodyOptions {}
+export interface CustodyPostbackWebServiceOptions extends HttpOptions, BaseCustodyOptions {
+  http?: Http;
+}
 
 export default class CustodyPostbackWebService extends CustodyPostbackFeature {
-  protected http: Http;
+  public http: Http;
 
   constructor(public readonly options: CustodyPostbackWebServiceOptions) {
     super();
-    this.http = new Http(options);
+    this.http = options.http || new Http(options);
   }
 
   public async onPostback(data: any): Promise<void> {

@@ -2,14 +2,16 @@ import { Http, HttpOptions } from "../../base";
 import { WalletSchema, Payment, PaymentSchema } from "../../models";
 import { BaseCustodyOptions, CustodyAuditFeature } from "../../provider";
 
-export interface CustodyAuditWebServiceOptions extends HttpOptions, BaseCustodyOptions {}
+export interface CustodyAuditWebServiceOptions extends HttpOptions, BaseCustodyOptions {
+  http?: Http;
+}
 
 export default class CustodyAuditWebService extends CustodyAuditFeature {
-  protected http: Http;
+  public http: Http;
 
   constructor(public readonly options: CustodyAuditWebServiceOptions) {
     super();
-    this.http = new Http(options);
+    this.http = options.http || new Http(options);
   }
 
   public async balance(wallet: WalletSchema): Promise<[{ balance: string }]> {

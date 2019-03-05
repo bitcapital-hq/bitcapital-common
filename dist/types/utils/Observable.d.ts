@@ -13,7 +13,7 @@ export interface ObservableOptions {
 /**
  * A simple Observable pattern utility.
  */
-export default class Observable {
+export declare class Observable {
     listeners: Observer[];
     options: ObservableOptions;
     protected static NOTIFICATION_TIMEOUT: number;

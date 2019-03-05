@@ -49,7 +49,7 @@ export class Transaction extends BaseModel implements TransactionSchema {
 
     Object.assign(this, data);
 
-    this.source = data.source && new Wallet(data.source);
+    this.source = data.source ? new Wallet(data.source) : undefined;
     this.createdBy = data.createdBy && new User(data.createdBy);
     this.payments = data.payments && data.payments.map(payment => new Payment(payment));
     this.states = data.states && data.states.map(state => new TransactionState(state));

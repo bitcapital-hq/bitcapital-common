@@ -2,10 +2,11 @@ import { Http, HttpOptions } from "../../base";
 import { BaseCustodyOptions, CustodyCardFeature } from "../../provider";
 import { EmitPhysicalCardRequestSchema, EmitVirtualCardRequestSchema, CardBlockRequestSchema, CardUnblockRequestSchema, CardBaseRequestSchema, CardCancellationRequestSchema, Payment, Card } from "../../models";
 export interface CustodyCardWebServiceOptions extends HttpOptions, BaseCustodyOptions {
+    http?: Http;
 }
 export default class CustodyCardWebService extends CustodyCardFeature {
     readonly options: CustodyCardWebServiceOptions;
-    protected http: Http;
+    http: Http;
     constructor(options: CustodyCardWebServiceOptions);
     info(cardId: string, extra?: any): Promise<Payment>;
     getById(cardId: string, extra?: any): Promise<Card | undefined>;

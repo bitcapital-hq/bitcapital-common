@@ -11,14 +11,15 @@ import {
   Card
 } from "../../models";
 
-export interface CustodyCardWebServiceOptions extends HttpOptions, BaseCustodyOptions {}
-
+export interface CustodyCardWebServiceOptions extends HttpOptions, BaseCustodyOptions {
+  http?: Http;
+}
 export default class CustodyCardWebService extends CustodyCardFeature {
-  protected http: Http;
+  public http: Http;
 
   constructor(public readonly options: CustodyCardWebServiceOptions) {
     super();
-    this.http = new Http(options);
+    this.http = options.http || new Http(options);
   }
 
   public async info(cardId: string, extra?: any): Promise<Payment> {
