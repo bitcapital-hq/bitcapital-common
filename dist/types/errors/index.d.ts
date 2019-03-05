@@ -1,1 +1,1 @@
-export * from './CustodyProviderError';
+export * from "./CustodyProviderError";
