@@ -23,7 +23,7 @@ export default abstract class BaseCustody {
      * @param wallet The specific wallet to be registered in provider
      * @param externalId The ID of the existing user in the provider
      */
-    abstract register(user: User, wallet: Wallet, externalId?: string): Promise<{
+    abstract register(user: User, wallet: Wallet, externalId?: any): Promise<{
         externalId: string;
     }>;
     /**

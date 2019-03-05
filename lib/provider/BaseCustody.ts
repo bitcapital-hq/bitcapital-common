@@ -35,7 +35,7 @@ export default abstract class BaseCustody {
    * @param wallet The specific wallet to be registered in provider
    * @param externalId The ID of the existing user in the provider
    */
-  public abstract async register(user: User, wallet: Wallet, externalId?: string): Promise<{ externalId: string }>;
+  public abstract async register(user: User, wallet: Wallet, externalId?: any): Promise<{ externalId: string }>;
 
   /**
    * Updates the information of an existing user and wallet in the external provider.
