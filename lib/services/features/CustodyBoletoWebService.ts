@@ -47,7 +47,7 @@ export default class CustodyBoletoWebService extends CustodyBoletoFeature {
   public async validate(barCode: string, extra?: BoletoPaymentExtra): Promise<any> {
     const response = await this.http.get(`/provider/boleto/validate`, { barCode, ...extra });
 
-    if (response.data && response.data.id) {
+    if (response.data) {
       return response.data;
     }
 
