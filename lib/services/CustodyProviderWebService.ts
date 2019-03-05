@@ -25,8 +25,8 @@ export default abstract class CustodyProviderWebService extends BaseCustody {
     return feature as Type;
   }
 
-  public async register(user: UserSchema, wallet: WalletSchema): Promise<{ externalId: string }> {
-    const response = await this.http.post("/provider/register", { user, wallet });
+  public async register(user: UserSchema, wallet: WalletSchema, externalId?: string): Promise<{ externalId: string }> {
+    const response = await this.http.post("/provider/register", { user, wallet, externalId });
 
     if (response.data && response.data) {
       return response.data;
