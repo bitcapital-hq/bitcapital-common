@@ -22,7 +22,7 @@ export class CustodyProviderError extends BaseError {
     // Call super for base error construction
     super(msg, {
       provider: type,
-      status: exception["response"]["status"],
+      status: exception["response"] ? exception["response"]["status"] : undefined,
       url: exception["config"]["url"]
     });
 

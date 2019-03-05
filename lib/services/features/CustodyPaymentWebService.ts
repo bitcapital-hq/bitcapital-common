@@ -17,7 +17,7 @@ export default class CustodyPaymentWebService extends CustodyPaymentFeature {
   public async payment(schema: TransactionSchema): Promise<Transaction> {
     const response = await this.http.post("/provider/payment", { ...schema });
 
-    if (response.data && response.data.length) {
+    if (response && response.data) {
       return new Transaction(response.data);
     }
 

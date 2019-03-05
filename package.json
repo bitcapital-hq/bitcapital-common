@@ -26,6 +26,7 @@
   },
   "dependencies": {
     "@types/crypto-js": "^3.1.43",
+    "async": "^2.6.2",
     "axios": "^0.17.1",
     "buffer": "^5.0.8",
     "class-validator": "^0.9.1",

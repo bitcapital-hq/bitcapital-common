@@ -35,25 +35,31 @@ export default class CustodyCardWebService extends CustodyCardFeature {
   public async getById(cardId: string, extra?: any): Promise<Card | undefined> {
     const response = await this.http.get(`/provider/cards/${cardId}`, { ...extra });
 
-    if (!response.data || !response.data.id) throw response;
+    if (response.data) {
+      return response.data;
+    }
 
-    return response.data;
+    throw response;
   }
 
   public async emitPhysical(payload: EmitPhysicalCardRequestSchema): Promise<Card> {
     const response = await this.http.post(`/provider/cards/emitPhysical`, payload);
 
-    if (!response.data || !response.data.id) throw response;
+    if (response.data) {
+      return response.data;
+    }
 
-    return response.data;
+    throw response;
   }
 
   public async emitVirtual(payload: EmitVirtualCardRequestSchema): Promise<Card> {
     const response = await this.http.post(`/provider/cards/emitVirtual`, payload);
 
-    if (!response.data || !response.data.id) throw response;
+    if (response.data) {
+      return response.data;
+    }
 
-    return response.data;
+    throw response;
   }
 
   public async activate(cardId: string, payload: CardBaseRequestSchema): Promise<boolean> {
