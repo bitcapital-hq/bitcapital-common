@@ -1,6 +1,20 @@
 import { Http, HttpOptions } from "../base";
 import { UserSchema, WalletSchema } from "../models";
-import { BaseCustody, BaseCustodyOptions, UnregisterReason, CustodyFeature } from "../provider";
+import {
+  BaseCustody,
+  BaseCustodyOptions,
+  UnregisterReason,
+  CustodyFeature,
+  BaseCustodyFeature,
+  CustodyAuditFeature,
+  CustodyBlockFeature,
+  CustodyBoletoFeature,
+  CustodyCardFeature,
+  CustodyDepositFeature,
+  CustodyPaymentFeature,
+  CustodyPostbackFeature,
+  CustodyWithdrawFeature
+} from "../provider";
 import { CustodyProviderErrorInterceptor } from "./interceptors/CustodyProviderErrorInterceptor";
 
 export interface CustodyProviderWebServiceOptions extends HttpOptions, BaseCustodyOptions {}
@@ -14,7 +28,16 @@ export default abstract class CustodyProviderWebService extends BaseCustody {
     this.http.interceptor(new CustodyProviderErrorInterceptor(this));
   }
 
-  public feature<Type>(type: CustodyFeature): Type {
+  public feature(type: CustodyFeature.AUDIT): CustodyAuditFeature;
+  public feature(type: CustodyFeature.BLOCK): CustodyBlockFeature;
+  public feature(type: CustodyFeature.BOLETO): CustodyBoletoFeature;
+  public feature(type: CustodyFeature.CARD): CustodyCardFeature;
+  public feature(type: CustodyFeature.DEPOSIT): CustodyDepositFeature;
+  public feature(type: CustodyFeature.PAYMENT): CustodyPaymentFeature;
+  public feature(type: CustodyFeature.POSTBACK): CustodyPostbackFeature;
+  public feature(type: CustodyFeature.WITHDRAW): CustodyWithdrawFeature;
+  public feature(type: CustodyFeature): BaseCustodyFeature;
+  public feature(type: CustodyFeature): BaseCustodyFeature {
     const feature = super.feature(type);
 
     if (feature["http"] && (!feature["options"] || !feature["options"]["http"])) {
@@ -22,7 +45,7 @@ export default abstract class CustodyProviderWebService extends BaseCustody {
       feature["http"] = this.http;
     }
 
-    return feature as Type;
+    return feature;
   }
 
   public async register(user: UserSchema, wallet: WalletSchema, externalId?: any): Promise<{ externalId: string }> {
