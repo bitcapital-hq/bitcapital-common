@@ -6,3 +6,4 @@ export * from "./Phone";
 export * from "./ConsumerStatus";
 export * from "./ConsumerState";
 export * from "./CompanyData";
+export * from "./AccountType";
