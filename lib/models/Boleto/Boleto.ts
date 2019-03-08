@@ -2,7 +2,6 @@ import { BaseModel, BaseModelSchema } from "../../base";
 import { IsOptional, IsNotEmpty } from "class-validator";
 
 export interface BoletoSchema extends BaseModelSchema {
-  conductorId?: number;
   documentNumber?: string;
   expiresAt: Date | string;
   amount: string;
@@ -13,15 +12,12 @@ export interface BoletoSchema extends BaseModelSchema {
   agency?: string;
   agreementNumber?: string;
   agreementNumberDigit?: string;
-  conductorNumber?: string;
-  conductorNumberDigit?: string;
   barCode?: string;
   digitableLine?: string;
   isRegistered?: boolean;
 }
 
 export class Boleto extends BaseModel implements BoletoSchema {
-  @IsOptional() conductorId?: number = undefined;
   @IsOptional() documentNumber?: string = undefined;
   @IsNotEmpty() expiresAt: Date = undefined;
   @IsNotEmpty() amount: string = undefined;
@@ -32,8 +28,6 @@ export class Boleto extends BaseModel implements BoletoSchema {
   @IsOptional() agency?: string = undefined;
   @IsOptional() agreementNumber?: string = undefined;
   @IsOptional() agreementNumberDigit?: string = undefined;
-  @IsOptional() conductorNumber?: string = undefined;
-  @IsOptional() conductorNumberDigit?: string = undefined;
   @IsOptional() barCode?: string = undefined;
   @IsOptional() digitableLine?: string = undefined;
   @IsOptional() isRegistered?: boolean = false;
