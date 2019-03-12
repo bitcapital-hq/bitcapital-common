@@ -12,6 +12,8 @@ export interface ConsumerSchema extends BaseModelSchema {
     status?: ConsumerStatus;
     user?: UserSchema;
     taxId?: string;
+    type: AccountType;
+    companyData?: CompanyData;
     addresses?: AddressSchema[];
     bankings?: BankingSchema[];
     documents?: DocumentSchema[];
