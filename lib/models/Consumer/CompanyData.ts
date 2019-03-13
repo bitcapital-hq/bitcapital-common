@@ -1,4 +1,4 @@
-import { Phone } from "./Phone";
+import { PhoneSchema } from "./Phone";
 
 export interface CompanyData {
   tradeName: string;
@@ -25,5 +25,5 @@ export interface CompanyPartner {
   identityDocEmissionDate?: string;
   identityDocEmissionEntity?: string;
   identityDocState?: string;
-  phones: Phone[];
+  phones: PhoneSchema[];
 }
