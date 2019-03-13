@@ -9,9 +9,11 @@ import { Document, DocumentSchema } from "./Document";
 import { Phone, PhoneSchema } from "./Phone";
 
 export interface ConsumerSchema extends BaseModelSchema {
-  status?: ConsumerStatus;
   user?: UserSchema;
   taxId?: string;
+  status: ConsumerStatus;
+  motherName: string;
+  birthday: Date;
   addresses?: AddressSchema[];
   bankings?: BankingSchema[];
   documents?: DocumentSchema[];
@@ -27,6 +29,8 @@ export class Consumer extends BaseModel implements ConsumerSchema {
   @IsEnum(ConsumerStatus)
   status: ConsumerStatus = undefined;
 
+  motherName: string;
+  birthday: Date;
   states?: ConsumerState[] = undefined;
   addresses?: Address[] = undefined;
   bankings?: Banking[] = undefined;
@@ -38,6 +42,7 @@ export class Consumer extends BaseModel implements ConsumerSchema {
 
     Object.assign(this, data);
 
+    this.birthday = data.birthday && new Date(data.birthday);
     this.user = data.user && new User(data.user);
     this.states = data.states && data.states.map(state => new ConsumerState(state));
     this.addresses = data.addresses && data.addresses.map(address => new Address(address));
