@@ -3,7 +3,6 @@ export enum CustodyFeature {
   BLOCK = "block",
   BOLETO = "boleto",
   CARD = "card",
-  COMPANY = "company",
   DEPOSIT = "deposit",
   PAYMENT = "payment",
   POSTBACK = "postback",
