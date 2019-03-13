@@ -13,7 +13,7 @@ export interface EconomicActivity {
 export interface CompanyPartner {
     name: string;
     gender: string;
-    birthDate: string;
+    birthDate: Date;
     birthCountry: string;
     taxId: string;
     email: string;
