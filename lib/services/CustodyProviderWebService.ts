@@ -13,7 +13,8 @@ import {
   CustodyDepositFeature,
   CustodyPaymentFeature,
   CustodyPostbackFeature,
-  CustodyWithdrawFeature
+  CustodyWithdrawFeature,
+  CustodyPhoneChargeFeature
 } from "../provider";
 import { CustodyProviderErrorInterceptor } from "./interceptors/CustodyProviderErrorInterceptor";
 
@@ -36,6 +37,7 @@ export default abstract class CustodyProviderWebService extends BaseCustody {
   public feature(type: CustodyFeature.PAYMENT): CustodyPaymentFeature;
   public feature(type: CustodyFeature.POSTBACK): CustodyPostbackFeature;
   public feature(type: CustodyFeature.WITHDRAW): CustodyWithdrawFeature;
+  public feature(type: CustodyFeature.PHONE_CHARGE): CustodyPhoneChargeFeature;
   public feature(type: CustodyFeature): BaseCustodyFeature;
   public feature(type: CustodyFeature): BaseCustodyFeature {
     const feature = super.feature(type);

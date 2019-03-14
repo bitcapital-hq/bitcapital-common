@@ -1,7 +1,7 @@
 import { UserSchema, WalletSchema } from "../models";
 import BaseCustodyFeature, { CustodyFeature } from "./BaseCustodyFeature";
 import { CustodyProvider } from "./CustodyProvider";
-import { CustodyAuditFeature, CustodyBlockFeature, CustodyBoletoFeature, CustodyCardFeature, CustodyDepositFeature, CustodyPaymentFeature, CustodyPostbackFeature, CustodyWithdrawFeature } from "./features";
+import { CustodyAuditFeature, CustodyBlockFeature, CustodyBoletoFeature, CustodyCardFeature, CustodyDepositFeature, CustodyPaymentFeature, CustodyPostbackFeature, CustodyWithdrawFeature, CustodyPhoneChargeFeature } from "./features";
 export declare enum UnregisterReason {
     USER_CANCELLATION = "user-cancelation",
     MEDIATOR_CANCELLATION = "mediator-cancelation",
@@ -24,6 +24,7 @@ export default abstract class BaseCustody {
     feature(type: CustodyFeature.PAYMENT): CustodyPaymentFeature;
     feature(type: CustodyFeature.POSTBACK): CustodyPostbackFeature;
     feature(type: CustodyFeature.WITHDRAW): CustodyWithdrawFeature;
+    feature(type: CustodyFeature.PHONE_CHARGE): CustodyPhoneChargeFeature;
     feature(type: CustodyFeature): BaseCustodyFeature;
     /**
      * Registers a new wallet in the provider for a specific User.
