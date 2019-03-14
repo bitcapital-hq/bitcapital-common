@@ -32,7 +32,7 @@ export class Domain extends BaseModel implements DomainSchema {
 
   postbackUrl?: string;
   users?: User[] | null = undefined;
-  products: Product[] = undefined;
+  products?: Product[] = undefined;
   settings?: DomainSettings = undefined;
   test?: boolean = undefined;
 

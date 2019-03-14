@@ -22,7 +22,7 @@ export declare class Domain extends BaseModel implements DomainSchema {
     urls?: string[];
     postbackUrl?: string;
     users?: User[] | null;
-    products: Product[];
+    products?: Product[];
     settings?: DomainSettings;
     test?: boolean;
     constructor(data: Partial<DomainSchema>);

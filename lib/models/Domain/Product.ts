@@ -20,5 +20,6 @@ export class Product extends BaseModel implements ProductSchema {
     Object.assign(this, data);
 
     this.domain = data.domain && new Domain(data.domain);
+    this.wallets = data.wallets && data.wallets.map(wallet => new Wallet(wallet));
   }
 }
