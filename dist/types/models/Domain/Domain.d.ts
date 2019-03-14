@@ -1,6 +1,7 @@
 import { BaseModel, BaseModelSchema } from "../../base";
 import { User, UserSchema } from "../User";
 import { DomainSettingsSchema, DomainSettings } from "./DomainSettings";
+import { Product, ProductSchema } from "./Product";
 export declare enum DomainRole {
     ROOT = "root",
     COMMON = "common"
@@ -12,6 +13,7 @@ export interface DomainSchema extends BaseModelSchema {
     urls?: string[];
     postbackUrl?: string;
     users?: UserSchema[];
+    products?: ProductSchema[];
     settings?: DomainSettingsSchema;
 }
 export declare class Domain extends BaseModel implements DomainSchema {
@@ -20,6 +22,7 @@ export declare class Domain extends BaseModel implements DomainSchema {
     urls?: string[];
     postbackUrl?: string;
     users?: User[] | null;
+    products: Product[];
     settings?: DomainSettings;
     test?: boolean;
     constructor(data: Partial<DomainSchema>);
