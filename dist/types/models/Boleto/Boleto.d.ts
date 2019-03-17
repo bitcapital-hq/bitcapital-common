@@ -1,6 +1,5 @@
 import { BaseModel, BaseModelSchema } from "../../base";
 export interface BoletoSchema extends BaseModelSchema {
-    conductorId?: number;
     documentNumber?: string;
     expiresAt: Date | string;
     amount: string;
@@ -11,14 +10,11 @@ export interface BoletoSchema extends BaseModelSchema {
     agency?: string;
     agreementNumber?: string;
     agreementNumberDigit?: string;
-    conductorNumber?: string;
-    conductorNumberDigit?: string;
     barCode?: string;
     digitableLine?: string;
     isRegistered?: boolean;
 }
 export declare class Boleto extends BaseModel implements BoletoSchema {
-    conductorId?: number;
     documentNumber?: string;
     expiresAt: Date;
     amount: string;
@@ -29,8 +25,6 @@ export declare class Boleto extends BaseModel implements BoletoSchema {
     agency?: string;
     agreementNumber?: string;
     agreementNumberDigit?: string;
-    conductorNumber?: string;
-    conductorNumberDigit?: string;
     barCode?: string;
     digitableLine?: string;
     isRegistered?: boolean;

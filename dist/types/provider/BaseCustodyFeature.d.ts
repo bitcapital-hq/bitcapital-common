@@ -1,12 +1,12 @@
 export declare enum CustodyFeature {
-    DEPOSIT = "deposit",
-    WITHDRAW = "withdraw",
-    PAYMENT = "payment",
-    BLOCK = "block",
     AUDIT = "audit",
-    POSTBACK = "postback",
+    BLOCK = "block",
     BOLETO = "boleto",
-    CARD = "card"
+    CARD = "card",
+    DEPOSIT = "deposit",
+    PAYMENT = "payment",
+    POSTBACK = "postback",
+    WITHDRAW = "withdraw"
 }
 export default abstract class BaseCustodyFeature {
     abstract readonly type: CustodyFeature;
