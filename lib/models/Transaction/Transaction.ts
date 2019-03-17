@@ -1,11 +1,11 @@
 import { IsEnum, IsNotEmpty } from "class-validator";
 import { BaseModel, BaseModelSchema } from "../../base";
+import { OAuthAccessToken, OAuthAccessTokenSchema } from "../OAuth";
 import { Payment, PaymentSchema } from "../Payment";
-import { User, UserSchema } from "../User";
 import { Wallet, WalletSchema } from "../Wallet";
 import { TransactionState, TransactionStateSchema } from "./TransactionState";
-import { TransactionType } from "./TransactionType";
 import { TransactionStatus } from "./TransactionStatus";
+import { TransactionType } from "./TransactionType";
 
 export { TransactionType };
 
@@ -27,7 +27,7 @@ export interface TransactionSchema extends BaseModelSchema {
   payments?: PaymentSchema[];
   status?: TransactionStatus;
   states?: TransactionStateSchema[];
-  createdBy?: UserSchema;
+  createdBy?: OAuthAccessTokenSchema;
   additionalData?: TransactionAdditionalData;
 }
 
@@ -38,7 +38,7 @@ export class Transaction extends BaseModel implements TransactionSchema {
 
   @IsNotEmpty() source: Wallet = undefined;
 
-  createdBy?: User = undefined;
+  createdBy?: OAuthAccessToken = undefined;
   payments?: Payment[] = undefined;
   status?: TransactionStatus = undefined;
   states?: TransactionState[] = undefined;
@@ -50,7 +50,7 @@ export class Transaction extends BaseModel implements TransactionSchema {
     Object.assign(this, data);
 
     this.source = data.source ? new Wallet(data.source) : undefined;
-    this.createdBy = data.createdBy && new User(data.createdBy);
+    this.createdBy = data.createdBy && new OAuthAccessToken(data.createdBy);
     this.payments = data.payments && data.payments.map(payment => new Payment(payment));
     this.states = data.states && data.states.map(state => new TransactionState(state));
   }
