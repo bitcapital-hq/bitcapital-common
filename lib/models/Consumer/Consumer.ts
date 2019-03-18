@@ -1,4 +1,4 @@
-import { IsEnum, IsNotEmpty } from "class-validator";
+import { IsEnum, IsNotEmpty, IsOptional } from "class-validator";
 import { BaseModel, BaseModelSchema } from "../../base";
 import { User, UserSchema } from "../User";
 import { Address, AddressSchema } from "./Address";
@@ -7,10 +7,14 @@ import { ConsumerState, ConsumerStateSchema } from "./ConsumerState";
 import { ConsumerStatus } from "./ConsumerStatus";
 import { Document, DocumentSchema } from "./Document";
 import { Phone, PhoneSchema } from "./Phone";
+import { AccountType } from "./AccountType";
+import { CompanyData } from "./CompanyData";
 
 export interface ConsumerSchema extends BaseModelSchema {
   user?: UserSchema;
   taxId?: string;
+  type: AccountType;
+  companyData?: CompanyData;
   status: ConsumerStatus;
   motherName?: string;
   birthday: Date;
@@ -24,6 +28,12 @@ export interface ConsumerSchema extends BaseModelSchema {
 export class Consumer extends BaseModel implements ConsumerSchema {
   user?: User = undefined;
   taxId?: string = undefined;
+
+  @IsNotEmpty()
+  @IsEnum(AccountType)
+  type: AccountType = undefined;
+
+  @IsOptional() companyData?: CompanyData = undefined;
 
   @IsNotEmpty()
   @IsEnum(ConsumerStatus)
