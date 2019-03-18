@@ -12,7 +12,7 @@ export interface ConsumerSchema extends BaseModelSchema {
   user?: UserSchema;
   taxId?: string;
   status: ConsumerStatus;
-  motherName: string;
+  motherName?: string;
   birthday: Date;
   addresses?: AddressSchema[];
   bankings?: BankingSchema[];
@@ -29,7 +29,7 @@ export class Consumer extends BaseModel implements ConsumerSchema {
   @IsEnum(ConsumerStatus)
   status: ConsumerStatus = undefined;
 
-  motherName: string;
+  motherName?: string;
   birthday: Date;
   states?: ConsumerState[] = undefined;
   addresses?: Address[] = undefined;

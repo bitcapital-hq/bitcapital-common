@@ -10,7 +10,7 @@ export interface ConsumerSchema extends BaseModelSchema {
     user?: UserSchema;
     taxId?: string;
     status: ConsumerStatus;
-    motherName: string;
+    motherName?: string;
     birthday: Date;
     addresses?: AddressSchema[];
     bankings?: BankingSchema[];
@@ -22,7 +22,7 @@ export declare class Consumer extends BaseModel implements ConsumerSchema {
     user?: User;
     taxId?: string;
     status: ConsumerStatus;
-    motherName: string;
+    motherName?: string;
     birthday: Date;
     states?: ConsumerState[];
     addresses?: Address[];
