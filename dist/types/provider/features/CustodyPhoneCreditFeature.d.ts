@@ -4,7 +4,7 @@ export interface MobileCreditProvider {
     name: string;
     code: string;
 }
-export declare abstract class CustodyPhoneChargeFeature extends BaseCustodyFeature {
+export declare abstract class CustodyPhoneCreditFeature extends BaseCustodyFeature {
     type: CustodyFeature;
     abstract getMobileCreditProviders(): Promise<MobileCreditProvider[]>;
 }

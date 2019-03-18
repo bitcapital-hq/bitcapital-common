@@ -7,7 +7,7 @@ export declare enum CustodyFeature {
     PAYMENT = "payment",
     POSTBACK = "postback",
     WITHDRAW = "withdraw",
-    PHONE_CHARGE = "phone_charge"
+    PHONE_CREDITS = "phone_credits"
 }
 export default abstract class BaseCustodyFeature {
     abstract readonly type: CustodyFeature;

@@ -6,4 +6,4 @@ export * from "./CustodyWithdrawFeature";
 export * from "./CustodyBoletoFeature";
 export * from "./CustodyCardFeature";
 export * from "./CustodyPostbackFeature";
-export * from "./CustodyPhoneChargeFeature";
+export * from "./CustodyPhoneCreditFeature";
