@@ -11,11 +11,13 @@ import { AccountType } from "./AccountType";
 import { CompanyData } from "./CompanyData";
 
 export interface ConsumerSchema extends BaseModelSchema {
-  status?: ConsumerStatus;
   user?: UserSchema;
   taxId?: string;
   type: AccountType;
   companyData?: CompanyData;
+  status: ConsumerStatus;
+  motherName?: string;
+  birthday: Date;
   addresses?: AddressSchema[];
   bankings?: BankingSchema[];
   documents?: DocumentSchema[];
@@ -37,6 +39,8 @@ export class Consumer extends BaseModel implements ConsumerSchema {
   @IsEnum(ConsumerStatus)
   status: ConsumerStatus = undefined;
 
+  motherName?: string;
+  birthday: Date;
   states?: ConsumerState[] = undefined;
   addresses?: Address[] = undefined;
   bankings?: Banking[] = undefined;
@@ -48,6 +52,7 @@ export class Consumer extends BaseModel implements ConsumerSchema {
 
     Object.assign(this, data);
 
+    this.birthday = data.birthday && new Date(data.birthday);
     this.user = data.user && new User(data.user);
     this.states = data.states && data.states.map(state => new ConsumerState(state));
     this.addresses = data.addresses && data.addresses.map(address => new Address(address));

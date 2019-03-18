@@ -3,7 +3,6 @@ import { BoletoSchema, Boleto } from "../../../lib";
 
 export const TEST_BOLETO: BoletoSchema = {
   id: uuid(),
-  conductorId: 123456789,
   documentNumber: "123456789",
   createdAt: new Date(),
   updatedAt: new Date(),
@@ -18,15 +17,12 @@ export const TEST_BOLETO: BoletoSchema = {
   agency: "1234",
   agreementNumber: "123456789",
   agreementNumberDigit: "9",
-  conductorNumber: "123456789",
-  conductorNumberDigit: "9",
   isRegistered: false
 };
 
 describe("lib.models.Boleto", () => {
   it("should instantiate properly", async () => {
     const boleto = new Boleto({ ...TEST_BOLETO });
-
     expect(await boleto.isValid()).toBe(true);
   });
 });

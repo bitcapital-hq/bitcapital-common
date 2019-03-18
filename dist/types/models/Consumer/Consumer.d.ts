@@ -9,11 +9,13 @@ import { Phone, PhoneSchema } from "./Phone";
 import { AccountType } from "./AccountType";
 import { CompanyData } from "./CompanyData";
 export interface ConsumerSchema extends BaseModelSchema {
-    status?: ConsumerStatus;
     user?: UserSchema;
     taxId?: string;
     type: AccountType;
     companyData?: CompanyData;
+    status: ConsumerStatus;
+    motherName?: string;
+    birthday: Date;
     addresses?: AddressSchema[];
     bankings?: BankingSchema[];
     documents?: DocumentSchema[];
@@ -26,6 +28,8 @@ export declare class Consumer extends BaseModel implements ConsumerSchema {
     type: AccountType;
     companyData?: CompanyData;
     status: ConsumerStatus;
+    motherName?: string;
+    birthday: Date;
     states?: ConsumerState[];
     addresses?: Address[];
     bankings?: Banking[];
