@@ -1,14 +1,14 @@
 import { Http, HttpOptions } from "../../base";
-import { BaseCustodyOptions, CustodyPhoneChargeFeature } from "../../provider";
+import { BaseCustodyOptions, CustodyPhoneCreditFeature } from "../../provider";
 
-export interface CustodyPhoneChargeWebServiceOptions extends HttpOptions, BaseCustodyOptions {
+export interface CustodyPhoneCreditWebServiceOptions extends HttpOptions, BaseCustodyOptions {
     http?: Http;
 }
 
-export default class CustodyPhoneChargeWebService extends CustodyPhoneChargeFeature {
+export default class CustodyPhoneCreditWebService extends CustodyPhoneCreditFeature {
     public http: Http;
 
-    constructor(public readonly options: CustodyPhoneChargeWebServiceOptions = {}) {
+    constructor(public readonly options: CustodyPhoneCreditWebServiceOptions = {}) {
         super();
         this.http = new Http(options);
       }

@@ -10,7 +10,7 @@ import {
   CustodyPaymentFeature,
   CustodyPostbackFeature,
   CustodyWithdrawFeature,
-  CustodyPhoneChargeFeature
+  CustodyPhoneCreditFeature
 } from "./features";
 
 export enum UnregisterReason {
@@ -37,7 +37,7 @@ export default abstract class BaseCustody {
   public feature(type: CustodyFeature.PAYMENT): CustodyPaymentFeature;
   public feature(type: CustodyFeature.POSTBACK): CustodyPostbackFeature;
   public feature(type: CustodyFeature.WITHDRAW): CustodyWithdrawFeature;
-  public feature(type: CustodyFeature.PHONE_CHARGE): CustodyPhoneChargeFeature;
+  public feature(type: CustodyFeature.PHONE_CREDITS): CustodyPhoneCreditFeature;
   public feature(type: CustodyFeature): BaseCustodyFeature;
   public feature(type: CustodyFeature): BaseCustodyFeature {
     const feature = this.features.find(f => f.type === type);
