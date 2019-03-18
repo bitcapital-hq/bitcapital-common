@@ -29,7 +29,7 @@ export default class CustodyPhoneCreditWebService extends CustodyPhoneCreditFeat
             phoneNumber,
             providerCode
         };
-        const response = await this.http.post("/provider/mobile/order/create", JSON.stringify(requestBody));
+        const response = await this.http.post("/provider/mobile/order/create", requestBody);
 
         if (response.data) {
             return response.data;
@@ -44,7 +44,7 @@ export default class CustodyPhoneCreditWebService extends CustodyPhoneCreditFeat
             walletId,
             phoneCreditOrderId
         };
-        const response = await this.http.post("/provider/mobile/order/complete", JSON.stringify(requestBody));
+        const response = await this.http.post("/provider/mobile/order/complete", requestBody);
 
         if (response.data) {
             return response.data;
