@@ -13,4 +13,5 @@ export default class CustodyBoletoWebService extends CustodyBoletoFeature {
     getById(externalId: string, extra?: any): Promise<Boleto>;
     validate(barCode: string, extra?: BoletoPaymentExtra): Promise<any>;
     pay(barCode: string, payment: PaymentSchema, extra?: BoletoPaymentExtra): Promise<PaymentSchema>;
+    getByDateRange(start: Date, end: Date, walletId: string, extra?: any): Promise<any>;
 }
