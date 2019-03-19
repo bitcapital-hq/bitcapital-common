@@ -23,12 +23,7 @@ export default class CustodyPhoneCreditWebService extends CustodyPhoneCreditFeat
         throw response;
     }
 
-    public async createOrder(phoneCode:string, phoneNumber:string, providerCode:string){
-        const requestBody = {
-            phoneCode,
-            phoneNumber,
-            providerCode
-        };
+    public async createOrder(requestBody){
         const response = await this.http.post("/provider/mobile/order/create", requestBody);
 
         if (response.data) {

@@ -11,7 +11,7 @@ export abstract class CustodyPhoneCreditFeature extends BaseCustodyFeature{
 
     public abstract async getMobileCreditProviders(): Promise<MobileCreditProvider[]>;
 
-    public abstract async createOrder(phoneCode:string, phoneNumber:string, providerCode:string);
+    public abstract async createOrder(requestBody);
 
     public abstract async completeOrder(mountKey:string, walletId:string, phoneCreditOrderId:string);
 }

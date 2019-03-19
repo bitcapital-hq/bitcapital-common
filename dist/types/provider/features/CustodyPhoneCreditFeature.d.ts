@@ -7,6 +7,6 @@ export interface MobileCreditProvider {
 export declare abstract class CustodyPhoneCreditFeature extends BaseCustodyFeature {
     type: CustodyFeature;
     abstract getMobileCreditProviders(): Promise<MobileCreditProvider[]>;
-    abstract createOrder(phoneCode: string, phoneNumber: string, providerCode: string): any;
+    abstract createOrder(requestBody: any): any;
     abstract completeOrder(mountKey: string, walletId: string, phoneCreditOrderId: string): any;
 }
