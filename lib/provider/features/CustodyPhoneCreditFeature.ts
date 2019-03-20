@@ -13,5 +13,9 @@ export abstract class CustodyPhoneCreditFeature extends BaseCustodyFeature{
 
     public abstract async createOrder(requestBody);
 
-    public abstract async completeOrder(mountKey:string, walletId:string, phoneCreditOrderId:string);
+    public abstract async completeOrder(requestBody);
+
+    public abstract async getOrderHistory(walletId:string);
+
+    public abstract async getOrderAmountForWalletToday(walletId:string);
 }

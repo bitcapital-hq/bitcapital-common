@@ -8,5 +8,7 @@ export declare abstract class CustodyPhoneCreditFeature extends BaseCustodyFeatu
     type: CustodyFeature;
     abstract getMobileCreditProviders(): Promise<MobileCreditProvider[]>;
     abstract createOrder(requestBody: any): any;
-    abstract completeOrder(mountKey: string, walletId: string, phoneCreditOrderId: string): any;
+    abstract completeOrder(requestBody: any): any;
+    abstract getOrderHistory(walletId: string): any;
+    abstract getOrderAmountForWalletToday(walletId: string): any;
 }

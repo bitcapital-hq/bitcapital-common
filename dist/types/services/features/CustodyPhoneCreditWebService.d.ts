@@ -9,5 +9,7 @@ export default class CustodyPhoneCreditWebService extends CustodyPhoneCreditFeat
     constructor(options?: CustodyPhoneCreditWebServiceOptions);
     getMobileCreditProviders(): Promise<any>;
     createOrder(requestBody: any): Promise<any>;
-    completeOrder(amountKey: string, walletId: string, phoneCreditOrderId: string): Promise<any>;
+    completeOrder(requestBody: any): Promise<any>;
+    getOrderHistory(walletId: string): Promise<any>;
+    getOrderAmountForWalletToday(walletId: string): Promise<any>;
 }
