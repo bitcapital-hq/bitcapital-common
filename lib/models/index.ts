@@ -8,3 +8,4 @@ export * from "./OAuth";
 export * from "./Payment";
 export * from "./Transaction";
 export * from "./Boleto";
+export * from "./PhoneCredit";
