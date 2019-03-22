@@ -4,5 +4,7 @@ export enum DocumentType {
   BRL_INDIVIDUAL_REG = "brl_individual_reg",
   BRL_DRIVERS_LICENSE = "brl_drivers_license",
   BRL_ADDRESS_STATEMENT = "brl_address_statement",
-  PASSPORT = "passport"
+  PASSPORT = "passport",
+  PROOF_OF_ADDRESS = "proof_of_address",
+  OTHER = "other"
 }

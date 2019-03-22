@@ -14,6 +14,7 @@ export interface DocumentSchema extends BaseModelSchema {
     verifiedAt?: Date | string;
     states?: DocumentStateSchema[];
 }
+export declare const OperatorOnlyDocuments: DocumentType[];
 export declare class Document extends BaseModel implements DocumentSchema {
     consumer?: Consumer;
     type: DocumentType;

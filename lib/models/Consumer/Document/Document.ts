@@ -17,6 +17,8 @@ export interface DocumentSchema extends BaseModelSchema {
   states?: DocumentStateSchema[];
 }
 
+export const OperatorOnlyDocuments = [DocumentType.PROOF_OF_ADDRESS, DocumentType.OTHER];
+
 export class Document extends BaseModel implements DocumentSchema {
   @IsOptional() consumer?: Consumer = undefined;
 
