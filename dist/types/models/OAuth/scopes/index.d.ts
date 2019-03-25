@@ -4,6 +4,7 @@ import { UsersScopes } from "./users";
 import { PaymentsScopes } from "./payments";
 import { TransactionsScopes } from "./transactions";
 import { WalletsScopes } from "./wallets";
+import { PhoneCreditScopes } from "./phonecredits";
 declare const scopes: {
     assets: typeof AssetsScopes;
     domains: typeof DomainsScopes;
@@ -11,5 +12,6 @@ declare const scopes: {
     payments: typeof PaymentsScopes;
     transactions: typeof TransactionsScopes;
     wallets: typeof WalletsScopes;
+    phoneCredits: typeof PhoneCreditScopes;
 };
 export default scopes;
