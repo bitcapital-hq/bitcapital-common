@@ -8,4 +8,8 @@ export default class CustodyPhoneCreditWebService extends CustodyPhoneCreditFeat
     http: Http;
     constructor(options?: CustodyPhoneCreditWebServiceOptions);
     getMobileCreditProviders(): Promise<any>;
+    createOrder(requestBody: any): Promise<any>;
+    completeOrder(requestBody: any): Promise<any>;
+    getOrderHistory(walletId: string): Promise<any>;
+    getOrderAmountForWalletToday(walletId: string): Promise<any>;
 }
