@@ -64,8 +64,13 @@ export default class CustodyBoletoWebService extends CustodyBoletoFeature {
     throw response;
   }
 
-  public async getByDateRange(start: Date, end: Date, walletId: string, extra?: any): Promise<any> {
-    const response = await this.http.post(`/provider/boleto/getByDateRange`, { start, end, walletId, ...extra });
+  public async getByDateRange(walletId: string, start: Date, end: Date, extra?: any): Promise<any> {
+    const response = await this.http.get(`/provider/boleto/getByDateRange/${walletId}/${start}/${end}`, {
+      walletId,
+      start,
+      end,
+      ...extra
+    });
 
     if (response.data) {
       return response.data;
