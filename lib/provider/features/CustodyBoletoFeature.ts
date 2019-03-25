@@ -46,6 +46,15 @@ export abstract class CustodyBoletoFeature extends BaseCustodyFeature {
   public abstract async validate(barcode: string, extra?: BoletoPaymentExtra): Promise<any>;
 
   /**
+   * Gets boletos between a specific date range
+   *
+   * @param start The start of the period
+   * @param end The end of the period
+   * @param walletId The wallet ID that owns the boletos
+   */
+  public abstract async getByDateRange(start: Date, end: Date, walletId: string, extra?: any): Promise<any>;
+
+  /**
    * Pays a boleto based on a barCode string and a source wallet.
    *
    * @param barcode The boleto barcode to be payed

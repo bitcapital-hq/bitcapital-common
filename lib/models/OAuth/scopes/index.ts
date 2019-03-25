@@ -4,6 +4,7 @@ import { UsersScopes } from "./users";
 import { PaymentsScopes } from "./payments";
 import { TransactionsScopes } from "./transactions";
 import { WalletsScopes } from "./wallets";
+import { PhoneCreditScopes } from "./phonecredits";
 
 const scopes = {
   assets: AssetsScopes,
@@ -11,7 +12,8 @@ const scopes = {
   users: UsersScopes,
   payments: PaymentsScopes,
   transactions: TransactionsScopes,
-  wallets: WalletsScopes
+  wallets: WalletsScopes,
+  phoneCredits: PhoneCreditScopes
 };
 
 export default scopes;

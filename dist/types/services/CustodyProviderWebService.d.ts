@@ -1,6 +1,6 @@
 import { Http, HttpOptions } from "../base";
 import { UserSchema, WalletSchema } from "../models";
-import { BaseCustody, BaseCustodyOptions, UnregisterReason, CustodyFeature, BaseCustodyFeature, CustodyAuditFeature, CustodyBlockFeature, CustodyBoletoFeature, CustodyCardFeature, CustodyDepositFeature, CustodyPaymentFeature, CustodyPostbackFeature, CustodyWithdrawFeature } from "../provider";
+import { BaseCustody, BaseCustodyOptions, UnregisterReason, CustodyFeature, BaseCustodyFeature, CustodyAuditFeature, CustodyBlockFeature, CustodyBoletoFeature, CustodyCardFeature, CustodyDepositFeature, CustodyPaymentFeature, CustodyPostbackFeature, CustodyWithdrawFeature, CustodyPhoneCreditFeature } from "../provider";
 export interface CustodyProviderWebServiceOptions extends HttpOptions, BaseCustodyOptions {
 }
 export default abstract class CustodyProviderWebService extends BaseCustody {
@@ -15,6 +15,7 @@ export default abstract class CustodyProviderWebService extends BaseCustody {
     feature(type: CustodyFeature.PAYMENT): CustodyPaymentFeature;
     feature(type: CustodyFeature.POSTBACK): CustodyPostbackFeature;
     feature(type: CustodyFeature.WITHDRAW): CustodyWithdrawFeature;
+    feature(type: CustodyFeature.PHONE_CREDITS): CustodyPhoneCreditFeature;
     feature(type: CustodyFeature): BaseCustodyFeature;
     register(user: UserSchema, wallet: WalletSchema, externalId?: any): Promise<{
         externalId: string;

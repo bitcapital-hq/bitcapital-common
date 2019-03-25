@@ -11,6 +11,8 @@ export interface AssetSchema extends BaseModelSchema {
   wallets?: WalletSchema[];
   payments?: PaymentSchema[];
   provider?: CustodyProvider;
+  balance?: string;
+  root?: boolean;
 }
 
 export class Asset extends BaseModel implements AssetSchema {
@@ -23,6 +25,10 @@ export class Asset extends BaseModel implements AssetSchema {
   @IsOptional() wallets?: Wallet[] = undefined;
 
   @IsOptional() payments?: Payment[] = undefined;
+
+  @IsOptional() balance?: string = undefined;
+
+  @IsOptional() root?: boolean = undefined;
 
   @IsOptional()
   @IsEnum(CustodyProvider)
