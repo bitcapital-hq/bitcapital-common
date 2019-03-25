@@ -43,7 +43,7 @@ export declare abstract class CustodyBoletoFeature extends BaseCustodyFeature {
      * @param end The end of the period
      * @param walletId The wallet ID that owns the boletos
      */
-    abstract getByDateRange(start: Date, end: Date, walletId: string, extra?: any): Promise<any>;
+    abstract getByDateRange(walletId: string, start: Date, end: Date, extra?: any): Promise<any>;
     /**
      * Pays a boleto based on a barCode string and a source wallet.
      *
