@@ -1,10 +1,10 @@
 import { BaseModel, BaseModelSchema } from "../../base";
+import { OAuthAccessToken, OAuthAccessTokenSchema } from "../OAuth";
 import { Payment, PaymentSchema } from "../Payment";
-import { User, UserSchema } from "../User";
 import { Wallet, WalletSchema } from "../Wallet";
 import { TransactionState, TransactionStateSchema } from "./TransactionState";
-import { TransactionType } from "./TransactionType";
 import { TransactionStatus } from "./TransactionStatus";
+import { TransactionType } from "./TransactionType";
 export { TransactionType };
 export interface TransactionAdditionalData {
     hash?: string;
@@ -23,13 +23,13 @@ export interface TransactionSchema extends BaseModelSchema {
     payments?: PaymentSchema[];
     status?: TransactionStatus;
     states?: TransactionStateSchema[];
-    createdBy?: UserSchema;
+    createdBy?: OAuthAccessTokenSchema;
     additionalData?: TransactionAdditionalData;
 }
 export declare class Transaction extends BaseModel implements TransactionSchema {
     type: TransactionType;
     source: Wallet;
-    createdBy?: User;
+    createdBy?: OAuthAccessToken;
     payments?: Payment[];
     status?: TransactionStatus;
     states?: TransactionState[];

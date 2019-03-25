@@ -1,18 +1,18 @@
 import { IsNotEmpty, IsOptional } from "class-validator";
 import { BaseModel, BaseModelSchema } from "../../base";
 import { Domain, DomainSchema } from "../Domain";
-import { User, UserSchema } from "../User";
+import { Wallet, WalletSchema } from "../Wallet";
 
 export interface ProductSchema extends BaseModelSchema {
   name: string;
   domain?: DomainSchema;
-  users?: UserSchema[];
+  wallets?: WalletSchema[];
 }
 
 export class Product extends BaseModel implements ProductSchema {
   @IsNotEmpty() name: string = undefined;
   @IsOptional() domain?: Domain = undefined;
-  users?: User[] = undefined;
+  wallets?: Wallet[] = undefined;
 
   constructor(data: Partial<ProductSchema>) {
     super(data);
@@ -20,5 +20,6 @@ export class Product extends BaseModel implements ProductSchema {
     Object.assign(this, data);
 
     this.domain = data.domain && new Domain(data.domain);
+    this.wallets = data.wallets && data.wallets.map(wallet => new Wallet(wallet));
   }
 }

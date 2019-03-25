@@ -6,10 +6,16 @@ import { ConsumerState, ConsumerStateSchema } from "./ConsumerState";
 import { ConsumerStatus } from "./ConsumerStatus";
 import { Document, DocumentSchema } from "./Document";
 import { Phone, PhoneSchema } from "./Phone";
+import { AccountType } from "./AccountType";
+import { CompanyData } from "./CompanyData";
 export interface ConsumerSchema extends BaseModelSchema {
-    status?: ConsumerStatus;
     user?: UserSchema;
     taxId?: string;
+    type: AccountType;
+    companyData?: CompanyData;
+    status: ConsumerStatus;
+    motherName?: string;
+    birthday: Date;
     addresses?: AddressSchema[];
     bankings?: BankingSchema[];
     documents?: DocumentSchema[];
@@ -19,7 +25,11 @@ export interface ConsumerSchema extends BaseModelSchema {
 export declare class Consumer extends BaseModel implements ConsumerSchema {
     user?: User;
     taxId?: string;
+    type: AccountType;
+    companyData?: CompanyData;
     status: ConsumerStatus;
+    motherName?: string;
+    birthday: Date;
     states?: ConsumerState[];
     addresses?: Address[];
     bankings?: Banking[];

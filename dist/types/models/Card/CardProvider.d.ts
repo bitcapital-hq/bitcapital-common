@@ -1,4 +1,4 @@
 export declare enum CardProvider {
-    CDT_CARDS = "cards",
+    CDT_CARDS = "cdt-visa",
     NONE = "none"
 }
