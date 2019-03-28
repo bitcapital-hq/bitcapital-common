@@ -25,7 +25,7 @@ export default class CustodyWithdrawWebService extends CustodyWithdrawFeature {
   }
 
   public async withdraw(payment: PaymentSchema, extra?: any): Promise<Payment> {
-    const response = await this.http.post("/provider/withdraw", { payment, extra });
+    const response = await this.http.post("/provider/withdraw/", { payment, extra });
 
     if (response.data && response.data.id) {
       return new Payment(response.data);
@@ -35,7 +35,7 @@ export default class CustodyWithdrawWebService extends CustodyWithdrawFeature {
   }
 
   public async onWithdraw(payment: PaymentSchema, extra?: any): Promise<Payment> {
-    const response = await this.http.post("/provider/withdraw/postback", { payment, extra });
+    const response = await this.http.post("/provider/withdraw/onwithdraw", { payment, extra });
 
     if (response.data && response.data.id) {
       return new Payment(response.data);
