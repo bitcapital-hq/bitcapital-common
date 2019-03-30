@@ -5300,9 +5300,9 @@ triple-beam@^1.2.0, triple-beam@^1.3.0:
   resolved "https://registry.yarnpkg.com/triple-beam/-/triple-beam-1.3.0.tgz#a595214c7298db8339eeeee083e4d10bd8cb8dd9"
   integrity sha512-XrHUvV5HpdLmIj4uVMxHggLbFSZYIn7HEWsqePZcI50pco+MPqJ50wMGY794X7AOOhxOBAjbkqfAbEe/QMp2Lw==
 
-ts-framework-common@nxtep-io/ts-framework-common#2.3.3:
-  version "2.3.3"
-  resolved "https://codeload.github.com/nxtep-io/ts-framework-common/tar.gz/a2e3c45a90919f09e61cfef8eb14d8e6f8246809"
+ts-framework-common@nxtep-io/ts-framework-common#2.3.4:
+  version "2.3.4"
+  resolved "https://codeload.github.com/nxtep-io/ts-framework-common/tar.gz/eb0e1bd741ef1e7ef129a8c697503d40c4d94f98"
   dependencies:
     "@sentry/node" "^4.4.1"
     "@types/express" "^4.16.0"
