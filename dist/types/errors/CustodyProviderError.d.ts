@@ -1,6 +1,6 @@
 import { AxiosError, AxiosRequestConfig, AxiosResponse } from "axios";
-import { BaseError } from "ts-framework-common";
 import { CustodyProvider } from "../provider";
+import { BaseError } from "./BaseError";
 export declare class CustodyProviderError extends BaseError {
     config?: AxiosRequestConfig;
     response?: AxiosResponse;
