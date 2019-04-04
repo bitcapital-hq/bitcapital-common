@@ -4,6 +4,7 @@ export enum ConsumerStatus {
   REJECTED = "rejected",
 
   /* Pending states */
+  PENDING_PHONE_VERIFICATION = "pending_phone_verification",
   PENDING_DOCUMENTS = "pending_documents",
   PENDING_SELFIE = "pending_selfie",
   PENDING_DELETION = "pending_deletion",
