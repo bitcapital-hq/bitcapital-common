@@ -52,7 +52,7 @@ test:
     - docker
 
 publish-master:
-  stage: build
+  stage: publish
   image: node:10-alpine
   dependencies:
     - dependencies-install
