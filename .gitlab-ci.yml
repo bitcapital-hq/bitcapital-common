@@ -57,8 +57,10 @@ publish-master:
   dependencies:
     - dependencies-install
   script:
-    - yarn config set registry https://yarn.btcore.app
-    - yarn publish --tag "${CI_COMMIT_REF_SLUG}"
+    - npm config set registry https://yarn.btcore.app
+    - npm config set always-auth true
+    - echo $NPM_RC >> ~/.npmrc
+    - yarn publish --non-interactive --tag "${CI_COMMIT_REF_SLUG}"
   only:
     - master
     - nightly
