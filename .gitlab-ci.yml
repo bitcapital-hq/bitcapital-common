@@ -67,3 +67,19 @@ publish-master:
     - nightly
   tags:
     - docker
+
+publish-tag:
+  stage: publish
+  image: node:10-alpine
+  dependencies:
+    - dependencies-install
+  script:
+    # Ensures no previous package is published with same tag
+    # This is dangerous and should be removed in production
+    - npm unpublish --non-interactive --registry https://yarn.btcore.app --tag "${CI_COMMIT_REF_NAME}" || true
+    # Publishes package to private NPM registry
+    - npm publish --non-interactive --registry https://yarn.btcore.app --tag "${CI_COMMIT_REF_NAME}"
+  only:
+    - tags
+  tags:
+    - docker
