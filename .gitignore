@@ -75,3 +75,4 @@ $RECYCLE.BIN/
 *.msp
 *.lnk
 junit.xml
+dist/

@@ -60,7 +60,7 @@ publish-master:
     - npm config set registry https://yarn.btcore.app
     - npm config set always-auth true
     - echo $NPM_RC >> ~/.npmrc
-    - yarn publish --non-interactive --tag "${CI_COMMIT_REF_SLUG}"
+    - npm publish --non-interactive --registry https://yarn.btcore.app --tag "${CI_COMMIT_REF_SLUG}"
   only:
     - master
     - nightly
