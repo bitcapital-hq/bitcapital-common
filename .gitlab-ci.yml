@@ -57,9 +57,13 @@ publish-master:
   dependencies:
     - dependencies-install
   script:
+    # Ensures no previous package is published with same tag
+    # This is dangerous and should be removed in production
+    - npm unpublish --non-interactive --registry https://yarn.btcore.app --tag "${CI_COMMIT_REF_SLUG}" || true
+    # Publishes package to private NPM registry
     - npm publish --non-interactive --registry https://yarn.btcore.app --tag "${CI_COMMIT_REF_SLUG}"
   only:
-    - master
+    # - master
     - nightly
   tags:
     - docker
