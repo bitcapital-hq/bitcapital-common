@@ -76,7 +76,7 @@ publish-tag:
   script:
     # Ensures no previous package is published with same tag
     # This is dangerous and should be removed in production
-    - npm unpublish --non-interactive --registry https://yarn.btcore.app --tag "${CI_COMMIT_REF_NAME}" || true
+    - npm unpublish --non-interactive --registry https://yarn.btcore.app --tag "${CI_COMMIT_REF_NAME}" --force || true
     # Publishes package to private NPM registry
     - npm publish --non-interactive --registry https://yarn.btcore.app --tag "${CI_COMMIT_REF_NAME}"
   only:
