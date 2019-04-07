@@ -35,6 +35,8 @@ build-tsc:
     - dependencies-install
   script:
     - yarn build
+  tags:
+    - docker
 
 test:
   stage: audit
@@ -46,6 +48,8 @@ test:
   artifacts:
     reports:
       junit: junit.xml
+  tags:
+    - docker
 
 publish-master:
   stage: build
@@ -58,3 +62,5 @@ publish-master:
   only:
     - master
     - nightly
+  tags:
+    - docker
