@@ -57,7 +57,7 @@ publish-master:
   dependencies:
     - dependencies-install
   script:
-    - echo $NPM_RC > ~/.npmrc
+    - echo $NPM_RC > /root/.npmrc
     - cat  ~/.npmrc
     - npm publish --non-interactive --registry https://yarn.btcore.app --tag "${CI_COMMIT_REF_SLUG}"
   only:
