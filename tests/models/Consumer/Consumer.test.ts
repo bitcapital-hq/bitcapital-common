@@ -1,10 +1,10 @@
-import * as uuid from "uuid/v4";
-import { Consumer, ConsumerSchema, Address, Document, Phone, ConsumerStatus } from "../../../lib";
+import * as CPF from "cpf";
 import * as faker from "faker";
+import * as uuid from "uuid/v4";
+import { AccountType, Address, Consumer, ConsumerSchema, ConsumerStatus, Document, Phone } from "../../../lib";
 import { TEST_ADDRESS } from "./Address.test";
 import { TEST_DOCUMENT } from "./Document.test";
 import { TEST_PHONE } from "./Phone.test";
-import * as CPF from "cpf";
 
 export const TEST_CONSUMER = (): ConsumerSchema => ({
   id: uuid(),
@@ -12,7 +12,9 @@ export const TEST_CONSUMER = (): ConsumerSchema => ({
   documents: Array.from({ length: faker.random.number({ min: 1, max: 3 }) }, () => TEST_DOCUMENT()),
   phones: Array.from({ length: faker.random.number({ min: 1, max: 3 }) }, () => TEST_PHONE()),
   taxId: CPF.generate(),
-  status: ConsumerStatus.READY
+  status: ConsumerStatus.READY,
+  type: AccountType.PERSONAL,
+  birthday: new Date(Date.now() - 20 * 3.154e10) // 20 years old
 });
 
 describe("lib.models.Consumer.Consumer", () => {
