@@ -1,4 +1,7 @@
 export interface BoletoEmissionRequestSchema {
     amount: number;
-    expiresAt?: Date | string;
+    destination: string;
+    extra?: {
+        expiresAt?: Date | string;
+    };
 }
