@@ -6,7 +6,7 @@ export declare enum BankingType {
 }
 export interface BankingSchema extends BaseModelSchema {
     consumer?: ConsumerSchema;
-    type: BankingType;
+    type?: BankingType;
     bank: number;
     agency: number;
     agencyDigit: string;
