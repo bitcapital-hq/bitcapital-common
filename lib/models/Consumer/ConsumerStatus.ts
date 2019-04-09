@@ -8,6 +8,7 @@ export enum ConsumerStatus {
   PENDING_DOCUMENTS = "pending_documents",
   PENDING_SELFIE = "pending_selfie",
   PENDING_DELETION = "pending_deletion",
+  PENDING_KYC_RECHECK = "pending_kyc_recheck",
 
   /* Processing states */
   PROCESSING_DOCUMENTS = "processing_documents",

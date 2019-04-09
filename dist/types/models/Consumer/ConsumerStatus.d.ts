@@ -5,6 +5,7 @@ export declare enum ConsumerStatus {
     PENDING_DOCUMENTS = "pending_documents",
     PENDING_SELFIE = "pending_selfie",
     PENDING_DELETION = "pending_deletion",
+    PENDING_KYC_RECHECK = "pending_kyc_recheck",
     PROCESSING_DOCUMENTS = "processing_documents",
     PROCESSING_WALLETS = "processing_wallets",
     PROVIDER_FAILED = "provider_failed",
