@@ -35,6 +35,8 @@ build-tsc:
     - dependencies-install
   script:
     - yarn build
+  tags:
+    - docker
 
 test:
   stage: audit
@@ -46,43 +48,38 @@ test:
   artifacts:
     reports:
       junit: junit.xml
-
-publish-github:
-  stage: publish
-  dependencies:
-    - build-tsc
   tags:
     - docker
+
+publish-master:
+  stage: publish
   image: node:10-alpine
-  before_script:
-    - apk add --update openssh-client bash git && rm -rf /var/cache/apk/*
-    - eval $(ssh-agent -s)
-    - echo "$SSH_PRIVATE_KEY" | ssh-add -
-    - mkdir -p ~/.ssh
-    - bash -c '[[ -f /.dockerenv ]] && echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config'
-    - git --version
+  dependencies:
+    - dependencies-install
   script:
-    - git remote add github "$GITHUB_URL"
-    - git push github "$CI_COMMIT_SHA:refs/heads/$CI_COMMIT_REF_NAME"
+    # Ensures no previous package is published with same tag
+    # This is dangerous and should be removed in production
+    - npm unpublish --non-interactive --registry https://yarn.btcore.app --tag "${CI_COMMIT_REF_SLUG}" || true
+    # Publishes package to private NPM registry
+    - npm publish --non-interactive --registry https://yarn.btcore.app --tag "${CI_COMMIT_REF_SLUG}"
   only:
-    - branches
-
-publish-github-tags:
-  stage: publish
-  dependencies:
-    - build-tsc
+    # - master
+    - nightly
   tags:
     - docker
+
+publish-tag:
+  stage: publish
   image: node:10-alpine
-  before_script:
-    - apk add --update openssh-client bash git && rm -rf /var/cache/apk/*
-    - eval $(ssh-agent -s)
-    - echo "$SSH_PRIVATE_KEY" | ssh-add -
-    - mkdir -p ~/.ssh
-    - bash -c '[[ -f /.dockerenv ]] && echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config'
-    - git --version
+  dependencies:
+    - dependencies-install
   script:
-    - git remote add github "$GITHUB_URL"
-    - git push github "$CI_COMMIT_SHA:refs/heads/$CI_COMMIT_REF_NAME" --tags
+    # Ensures no previous package is published with same tag
+    # This is dangerous and should be removed in production
+    - npm unpublish --non-interactive --registry https://yarn.btcore.app --tag "${CI_COMMIT_REF_NAME}" --force || true
+    # Publishes package to private NPM registry
+    - npm publish --non-interactive --registry https://yarn.btcore.app --tag "${CI_COMMIT_REF_NAME}"
   only:
     - tags
+  tags:
+    - docker

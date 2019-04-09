@@ -6,7 +6,6 @@ import { OAuthCredentials } from "../OAuth";
 import { Wallet, WalletSchema } from "../Wallet";
 import { UserRole } from "./UserRole";
 import { UserStatus } from "./UserStatus";
-import { Product, ProductSchema } from "../Domain/Product";
 import { CardSchema, Card } from "../Card";
 import { UserState, UserStateSchema } from "./UserState";
 
@@ -22,7 +21,6 @@ export interface UserSchema extends BaseModelSchema {
   credentials?: OAuthCredentials;
   domain?: DomainSchema;
   consumer?: ConsumerSchema;
-  product?: ProductSchema;
   wallets?: WalletSchema[];
   cards?: CardSchema[];
   virtual?: boolean;
@@ -54,7 +52,6 @@ export class User extends BaseModel implements UserSchema {
   states?: UserState[];
   consumer?: Consumer = undefined;
   wallets?: Wallet[] = undefined;
-  product?: Product = undefined;
   credentials?: OAuthCredentials = undefined;
   cards?: Card[] = undefined;
   virtual: boolean = undefined;
@@ -83,7 +80,6 @@ export class User extends BaseModel implements UserSchema {
     this.states = data.states && data.states.map(state => new UserState(state));
     this.domain = data.domain && new Domain(data.domain);
     this.consumer = data.consumer && new Consumer(data.consumer);
-    this.product = data.product && new Product(data.product);
     this.wallets = data.wallets && data.wallets.map(wallet => new Wallet(wallet));
     this.cards = data.cards && data.cards.map(card => new Card(card));
   }

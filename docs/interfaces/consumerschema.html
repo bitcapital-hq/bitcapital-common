@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>ConsumerSchema | bitcapital-common (v1.5.0)</title>
+	<title>ConsumerSchema | bitcapital-common (v1.6.0)</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -22,7 +22,7 @@
 						<li class="state loading">Preparing search index...</li>
 						<li class="state failure">The search index is not available</li>
 					</ul>
-					<a href="../index.html" class="title">bitcapital-common (v1.5.0)</a>
+					<a href="../index.html" class="title">bitcapital-common (v1.6.0)</a>
 				</div>
 				<div class="table-cell" id="tsd-widgets">
 					<div id="tsd-filter">
@@ -94,13 +94,17 @@
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="consumerschema.html#addresses" class="tsd-kind-icon">addresses</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="consumerschema.html#bankings" class="tsd-kind-icon">bankings</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="consumerschema.html#birthday" class="tsd-kind-icon">birthday</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="consumerschema.html#companydata" class="tsd-kind-icon">company<wbr>Data</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external"><a href="consumerschema.html#createdat" class="tsd-kind-icon">created<wbr>At</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="consumerschema.html#documents" class="tsd-kind-icon">documents</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external"><a href="consumerschema.html#id" class="tsd-kind-icon">id</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="consumerschema.html#mothername" class="tsd-kind-icon">mother<wbr>Name</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="consumerschema.html#phones" class="tsd-kind-icon">phones</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="consumerschema.html#states" class="tsd-kind-icon">states</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="consumerschema.html#status" class="tsd-kind-icon">status</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="consumerschema.html#taxid" class="tsd-kind-icon">tax<wbr>Id</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="consumerschema.html#type" class="tsd-kind-icon">type</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external"><a href="consumerschema.html#updatedat" class="tsd-kind-icon">updated<wbr>At</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="consumerschema.html#user" class="tsd-kind-icon">user</a></li>
 							</ul>
@@ -116,7 +120,7 @@
 					<div class="tsd-signature tsd-kind-icon">addresses<span class="tsd-signature-symbol">:</span> <a href="addressschema.html" class="tsd-signature-type">AddressSchema</a><span class="tsd-signature-symbol">[]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in models/Consumer/Consumer.ts:15</li>
+							<li>Defined in models/Consumer/Consumer.ts:21</li>
 						</ul>
 					</aside>
 				</section>
@@ -126,7 +130,27 @@
 					<div class="tsd-signature tsd-kind-icon">bankings<span class="tsd-signature-symbol">:</span> <a href="bankingschema.html" class="tsd-signature-type">BankingSchema</a><span class="tsd-signature-symbol">[]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in models/Consumer/Consumer.ts:16</li>
+							<li>Defined in models/Consumer/Consumer.ts:22</li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
+					<a name="birthday" class="tsd-anchor"></a>
+					<h3>birthday</h3>
+					<div class="tsd-signature tsd-kind-icon">birthday<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Date</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in models/Consumer/Consumer.ts:20</li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
+					<a name="companydata" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> company<wbr>Data</h3>
+					<div class="tsd-signature tsd-kind-icon">company<wbr>Data<span class="tsd-signature-symbol">:</span> <a href="companydata.html" class="tsd-signature-type">CompanyData</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in models/Consumer/Consumer.ts:17</li>
 						</ul>
 					</aside>
 				</section>
@@ -147,7 +171,7 @@
 					<div class="tsd-signature tsd-kind-icon">documents<span class="tsd-signature-symbol">:</span> <a href="documentschema.html" class="tsd-signature-type">DocumentSchema</a><span class="tsd-signature-symbol">[]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in models/Consumer/Consumer.ts:17</li>
+							<li>Defined in models/Consumer/Consumer.ts:23</li>
 						</ul>
 					</aside>
 				</section>
@@ -163,12 +187,22 @@
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
+					<a name="mothername" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> mother<wbr>Name</h3>
+					<div class="tsd-signature tsd-kind-icon">mother<wbr>Name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in models/Consumer/Consumer.ts:19</li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 					<a name="phones" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagOptional">Optional</span> phones</h3>
 					<div class="tsd-signature tsd-kind-icon">phones<span class="tsd-signature-symbol">:</span> <a href="phoneschema.html" class="tsd-signature-type">PhoneSchema</a><span class="tsd-signature-symbol">[]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in models/Consumer/Consumer.ts:18</li>
+							<li>Defined in models/Consumer/Consumer.ts:24</li>
 						</ul>
 					</aside>
 				</section>
@@ -178,17 +212,17 @@
 					<div class="tsd-signature tsd-kind-icon">states<span class="tsd-signature-symbol">:</span> <a href="consumerstateschema.html" class="tsd-signature-type">ConsumerStateSchema</a><span class="tsd-signature-symbol">[]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in models/Consumer/Consumer.ts:19</li>
+							<li>Defined in models/Consumer/Consumer.ts:25</li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 					<a name="status" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> status</h3>
+					<h3>status</h3>
 					<div class="tsd-signature tsd-kind-icon">status<span class="tsd-signature-symbol">:</span> <a href="../enums/consumerstatus.html" class="tsd-signature-type">ConsumerStatus</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in models/Consumer/Consumer.ts:12</li>
+							<li>Defined in models/Consumer/Consumer.ts:18</li>
 						</ul>
 					</aside>
 				</section>
@@ -198,7 +232,17 @@
 					<div class="tsd-signature tsd-kind-icon">tax<wbr>Id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in models/Consumer/Consumer.ts:14</li>
+							<li>Defined in models/Consumer/Consumer.ts:15</li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
+					<a name="type" class="tsd-anchor"></a>
+					<h3>type</h3>
+					<div class="tsd-signature tsd-kind-icon">type<span class="tsd-signature-symbol">:</span> <a href="../enums/accounttype.html" class="tsd-signature-type">AccountType</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in models/Consumer/Consumer.ts:16</li>
 						</ul>
 					</aside>
 				</section>
@@ -219,7 +263,7 @@
 					<div class="tsd-signature tsd-kind-icon">user<span class="tsd-signature-symbol">:</span> <a href="userschema.html" class="tsd-signature-type">UserSchema</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in models/Consumer/Consumer.ts:13</li>
+							<li>Defined in models/Consumer/Consumer.ts:14</li>
 						</ul>
 					</aside>
 				</section>
@@ -246,6 +290,12 @@
 							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 								<a href="consumerschema.html#bankings" class="tsd-kind-icon">bankings</a>
 							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
+								<a href="consumerschema.html#birthday" class="tsd-kind-icon">birthday</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
+								<a href="consumerschema.html#companydata" class="tsd-kind-icon">company<wbr>Data</a>
+							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external">
 								<a href="consumerschema.html#createdat" class="tsd-kind-icon">created<wbr>At</a>
 							</li>
@@ -254,6 +304,9 @@
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external">
 								<a href="consumerschema.html#id" class="tsd-kind-icon">id</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
+								<a href="consumerschema.html#mothername" class="tsd-kind-icon">mother<wbr>Name</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 								<a href="consumerschema.html#phones" class="tsd-kind-icon">phones</a>
@@ -266,6 +319,9 @@
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 								<a href="consumerschema.html#taxid" class="tsd-kind-icon">tax<wbr>Id</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
+								<a href="consumerschema.html#type" class="tsd-kind-icon">type</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external">
 								<a href="consumerschema.html#updatedat" class="tsd-kind-icon">updated<wbr>At</a>
